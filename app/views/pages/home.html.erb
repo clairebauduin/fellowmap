@@ -3,27 +3,19 @@
   <div class="home-content zi-9999">
     <div class="home-baseline">
       <h1>La stratégie produit peut être sexy, votre roadmap aussi.</h1>
-      <p>Allez à l’essentiel, dessinez votre vision et notifiez vos collègues.</p>
+      <h2>Allez à l’essentiel, dessinez votre vision et notifiez vos collègues.</p>
     </div>
     <div class="home-cta">
-      <%= render 'components/button.html.erb', text: "Connexion", link: new_user_session_path, class: "btn-pp" %>
+      <%= render 'components/button.html.erb', text: "Connexion", link: new_user_session_path, class: "btn-white" %>
     </div>
   </div>
-
 
   <div class="character zi-2">
     <%= image_tag "char-yellow", alt: "fellowmap mascott" %>
   </div>
-
-  <div class="footer">
-    <div class="cookies">
-      <p>🍪 Cookies</p>
-    </div>
-    <div class="legal">
-      <p>📋 Mentions Légales</p>
-    </div>
-  </div>
 </div>
+
+<!-- Rectangles -->
 
 <div class="rectangle-bg rectangle-bg-top">
   <%= image_tag "rectangle-top.svg", alt: "top rectangle background" %>
@@ -33,4 +25,14 @@
   <%= image_tag "rectangle-bottom.svg", alt: "bottom rectangle background" %>
 </div>
 
+
+<!-- Fotter, absolute, en bas -->
+<div class="footer zi-9999">
+  <div class="cookies">
+    <p>🍪 Cookies</p>
+  </div>
+  <div class="legal">
+    <p>📋 Mentions Légales</p>
+  </div>
+</div>
 
