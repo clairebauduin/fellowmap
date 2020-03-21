@@ -4,44 +4,38 @@
   position: relative;
   display: flex;
   align-items: center;
-
-   .footer {
-    position: absolute;
-    left: 80px;
-    bottom: 30px;
-
-    p {
-      color: white;
-
-    }
-  }
+  padding: 0 8% 0 8%;
 }
 
 .home-content {
-  margin-left: 10%;
   margin-top: -80px;
 }
 
 .home-baseline {
   color: $my-white;
-  max-width: 741px;
+}
 
-  h1 {
-  font-weight: bold;
-  font-size: 28px;
-  line-height: 38px;
-  padding-bottom: 15px;
+@media(min-width: 415px) {
+  .home-baseline {
+    max-width: 50vw;
   }
-
-  p {
-    font-size: 20px;
-    line-height: 27px;
-    padding-bottom: 15px;
+  .home-content {
+    margin-left: 8%;
   }
 }
 
 .home-cta {
   position: absolute;
+}
+
+.footer {
+  position: absolute;
+  bottom: 5%;
+  margin-left:8%;
+
+  p {
+    color: white;
+  }
 }
 
 .zi-2 {
