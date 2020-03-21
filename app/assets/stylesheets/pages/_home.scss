@@ -1,1 +1,41 @@
-// Specific CSS for your home-page
+.home-container {
+  min-height: calc(100vh - 80px);
+  background: $my-blue;
+  position: relative;
+
+   .footer {
+    position: absolute;
+    left: 80px;
+    bottom: 30px;
+
+    p {
+      color: white;
+
+    }
+  }
+}
+
+.home-content {
+  color: white;
+  height: 200px;
+  width: 600px;
+  position: absolute;
+  left: 230px;
+  top: 200px;
+  font-family: Nunito;
+
+  h1 {
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 38px;
+  padding-bottom: 15px;
+  }
+
+  p {
+    font-size: 20px;
+    line-height: 27px;
+    padding-bottom: 15px;
+  }
+}
+
+

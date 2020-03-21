@@ -1,9 +1,9 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+.navbar {
+  border-bottom: black solid 1px;
+  height: 80px;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-collapse {
   flex-grow: 0;
 }
 
