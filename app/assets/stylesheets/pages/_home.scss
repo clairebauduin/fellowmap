@@ -2,6 +2,8 @@
   min-height: calc(100vh - 80px);
   background: $my-blue;
   position: relative;
+  display: flex;
+  align-items: center;
 
    .footer {
     position: absolute;
@@ -16,13 +18,13 @@
 }
 
 .home-content {
-  color: white;
-  height: 200px;
-  width: 600px;
-  position: absolute;
-  left: 230px;
-  top: 200px;
-  font-family: Nunito;
+  margin-left: 10%;
+  margin-top: -80px;
+}
+
+.home-baseline {
+  color: $my-white;
+  max-width: 741px;
 
   h1 {
   font-weight: bold;
@@ -38,4 +40,14 @@
   }
 }
 
+.home-cta {
+  position: absolute;
+}
 
+.zi-2 {
+  z-index: 2;
+}
+
+.zi-9999 {
+  z-index: 9999;
+}

@@ -1,0 +1,34 @@
+.rectangle-bg {
+  z-index: 1;
+  position: absolute;
+}
+
+.rectangle-bg-top {
+  right: 10%;
+  top: 80px;
+}
+
+.rectangle-bg-top img {
+  height: 80vh;
+}
+
+.rectangle-bg-bottom img {
+  height: calc(80vh - 80px);
+}
+
+.rectangle-bg-bottom {
+  bottom: 0;
+  right: 3%;
+}
+
+.rectangle-bg-red {
+  filter: invert(73%) sepia(97%) saturate(1569%) hue-rotate(354deg) brightness(100%) contrast(101%);
+}
+
+.rectangle-bg-yellow {
+  filter: invert(73%) sepia(97%) saturate(1569%) hue-rotate(354deg) brightness(100%) contrast(101%);
+}
+
+.rectangle-bg-white {
+  filter: invert(100%) sepia(7%) saturate(7447%) hue-rotate(224deg) brightness(116%) contrast(100%);
+}
