@@ -4,7 +4,7 @@
 }
 
 .rectangle-bg-top {
-  right: 10%;
+  right: 17%;
   top: 80px;
 }
 
@@ -16,9 +16,15 @@
   height: calc(80vh - 80px);
 }
 
+@media(max-width: 768px) {
+  .rectangle-bg-bottom, .rectangle-bg-top {
+    display: none;
+  }
+}
+
 .rectangle-bg-bottom {
   bottom: 0;
-  right: 3%;
+  right: 10%;
 }
 
 .rectangle-bg-red {
