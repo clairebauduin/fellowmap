@@ -1,8 +1,9 @@
 .form-control {
-  background-color: #80C7FF;
+  background-color: rgba(255, 255, 255, 0.5);
   border: none;
   border-bottom: $my-white solid 2px;
   width: 280px;
+  font-size: 14px;
 }
 
 input::placeholder {
@@ -17,4 +18,14 @@ input::placeholder {
     font-weight: normal;
     text-decoration: none;
   }
+}
+
+.form-control.is-valid, .form-control.is-valid:focus {
+  background-color: $my-white;
+  border-bottom: $my-green solid 2px;
+  background-image: image-url('check.svg');
+}
+
+.form-check-input.is-valid ~ .form-check-label {
+    color: $my-white;
 }
