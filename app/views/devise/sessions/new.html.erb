@@ -17,23 +17,38 @@
       </div>
 
       <div class="form-actions">
-        <%= f.button :submit, "Connexion", class: "btn-pp" %>
+        <%= f.button :submit, "Connexion", class: "btn-white" %>
       </div>
 
     <% end %>
 
-    <%= render "devise/shared/links" %>
+    <div class="devise-links">
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
 
   <div class="character zi-2">
       <%= image_tag "char-white.svg", alt: "fellowmap mascott" %>
   </div>
+</div>
 
-  <div class="rectangle-bg rectangle-bg-top">
-    <%= image_tag "rectangle-top.svg", alt: "top rectangle background" %>
+<!-- Rectangles -->
+
+<div class="rectangle-bg rectangle-bg-top">
+  <%= image_tag "rectangle-top.svg", alt: "top rectangle background" %>
+</div>
+
+<div class="rectangle-bg rectangle-bg-bottom rectangle-bg-white">
+  <%= image_tag "rectangle-bottom.svg", alt: "bottom rectangle background" %>
+</div>
+
+<!-- Footer, absolute, en bas -->
+<div class="footer zi-9999">
+  <div class="cookies">
+    <p>🍪 Cookies</p>
   </div>
-
-  <div class="rectangle-bg rectangle-bg-bottom rectangle-bg-white">
-    <%= image_tag "rectangle-bottom.svg", alt: "bottom rectangle background" %>
+  <div class="legal">
+    <p>📋 Mentions Légales</p>
   </div>
 </div>
+

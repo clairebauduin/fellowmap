@@ -5,14 +5,11 @@
   display: flex;
   align-items: center;
   padding: 0 8% 0 8%;
+  color: $my-white;
 }
 
 .home-content {
   margin-top: -80px;
-}
-
-.home-baseline {
-  color: $my-white;
 }
 
 @media(min-width: 415px) {
@@ -31,7 +28,7 @@
 .footer {
   position: absolute;
   bottom: 5%;
-  margin-left:8%;
+  margin-left: 8%;
 
   p {
     color: white;
