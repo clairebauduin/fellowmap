@@ -2,12 +2,17 @@
   border-bottom: black solid 1px;
   height: 80px;
   z-index: 2;
+
+  .nav-link {
+    color: $my-red;
+  }
+
+  i {
+    font-size: 23px;
+  }
 }
 
 .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}

@@ -1,18 +1,50 @@
-<h2>Forgot your password?</h2>
+<div class="home-container">
+  <div class="home-content forgot-password zi-9999">
+    <h1>Mot de passe oublié ?</h1>
 
-<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= f.error_notification %>
+    <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
+      <div class="form-inputs">
+        <%= f.input :email,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "email" },
+                    label: false,
+                    placeholder: "adresse email" %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, "Valider", class:"btn-white" %>
+      </div>
+    <% end %>
+
+    <div class="devise-links">
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Send me reset password instructions" %>
+  <div class="character zi-2">
+      <%= image_tag "char-white.svg", alt: "fellowmap mascott" %>
   </div>
-<% end %>
+</div>
 
-<%= render "devise/shared/links" %>
+<!-- Rectangles -->
+
+<div class="rectangle-bg rectangle-bg-top">
+  <%= image_tag "rectangle-top.svg", alt: "top rectangle background" %>
+</div>
+
+<div class="rectangle-bg rectangle-bg-bottom rectangle-bg-white">
+  <%= image_tag "rectangle-bottom.svg", alt: "bottom rectangle background" %>
+</div>
+
+<!-- Footer, absolute, en bas -->
+<div class="footer zi-9999">
+  <div class="cookies">
+    <p>🍪 Cookies</p>
+  </div>
+  <div class="legal">
+    <p>📋 Mentions Légales</p>
+  </div>
+</div>

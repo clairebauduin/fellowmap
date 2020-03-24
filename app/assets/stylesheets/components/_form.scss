@@ -1,0 +1,20 @@
+.form-control {
+  background-color: #80C7FF;
+  border: none;
+  border-bottom: $my-white solid 2px;
+  width: 280px;
+}
+
+input::placeholder {
+  font-size: 14px;
+}
+
+.devise-links {
+  position: absolute;
+  padding-top: 20px;
+
+  a {
+    font-weight: normal;
+    text-decoration: none;
+  }
+}

@@ -1,9 +1,22 @@
 <%#
   Usage:
-  <%= render 'components/_button', text: "ButtonText", link: "link", class: "Classes" %>
+  <%= render 'components/button', text: "button text", class: "classes", form: "form_id", type: "type" %>
 
-<% text = local_assigns.fetch(:text, "OK") %>
-<% link = local_assigns.fetch(:link, 'javascript:;') %>
+<% text = yield.presence || local_assigns.fetch(:text, "OK") %>
 <% classes = local_assigns.fetch(:class, "") %>
+<% action = local_assigns.fetch(:action, "") %>
+<% target = local_assigns.fetch(:target, "") %>
+<% form = local_assigns.fetch(:form, "") %>
+<% type = local_assigns.fetch(:type, "button") %>
 
-<%= link_to text, link, class: "btn #{classes}" %>
+
+
+<button
+  type="<%= type %>"
+  data-action="<%= action %>"
+  data-target="<%= target %>"
+  form="<%= form %>"
+  class="btn btn-default <%= classes %>"
+>
+  <%= text %>
+</button>
