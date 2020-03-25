@@ -2,6 +2,10 @@
   <div class="home-content sign-in zi-9999">
     <h1>Connexion</h1>
 
+    <div class="devise-links-1">
+      <%= render "devise/shared/links-1" %>
+    </div>
+
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs">
         <%= f.input :email,
@@ -13,7 +17,7 @@
                     required: false,
                     label: false,
                     placeholder: "mot de passe" %>
-        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        <%= f.input :remember_me, :label => "Se souvenir du compte", as: :boolean if devise_mapping.rememberable? %>
       </div>
 
       <div class="form-actions">
@@ -22,8 +26,8 @@
 
     <% end %>
 
-    <div class="devise-links">
-      <%= render "devise/shared/links" %>
+    <div class="devise-links-2">
+      <%= render "devise/shared/links-2" %>
     </div>
   </div>
 

@@ -1,20 +1,36 @@
 .form-control {
-  background-color: #80C7FF;
+  background-color: rgba(255, 255, 255, 0.5);
   border: none;
   border-bottom: $my-white solid 2px;
   width: 280px;
+  font-size: 14px;
+  height: 48px;
+}
+
+.form-actions {
+  margin-top: 30px;
 }
 
 input::placeholder {
   font-size: 14px;
 }
 
-.devise-links {
-  position: absolute;
-  padding-top: 20px;
+.form-control.is-valid, .form-control.is-valid:focus {
+  background-color: $my-white;
+  border-bottom: $my-green solid 2px;
+  background-image: image-url('check.svg');
+}
 
-  a {
-    font-weight: normal;
-    text-decoration: none;
-  }
+.form-check-input.is-valid ~ .form-check-label {
+    color: $my-white;
+}
+
+.invalid-feedback {
+  color: $my-red;
+  font-weight: bold;
+}
+
+.form-control.is-invalid {
+  border-bottom: $my-red solid 2px;
+  color: $my-red;
 }
