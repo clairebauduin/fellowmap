@@ -13,3 +13,14 @@
   box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5);
   margin: 4px 0 0 4px;
 }
+
+button.roadmap-name.dropdown-toggle.dropdown-toggle-split,
+button.roadmap-name.dropdown-toggle.dropdown-toggle-split:focus,
+button.roadmap-name.dropdown-toggle.dropdown-toggle-split:hover {
+  background: transparent;
+  border: 0px;
+  box-shadow: none;
+  outline: none;
+  font-weight: bold;
+}
+

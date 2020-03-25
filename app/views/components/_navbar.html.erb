@@ -1,33 +1,36 @@
 <div class="navbar navbar-expand-sm navbar-light d-flex justify-content-between">
 
-  <div class="navbar-logo">
-    <%= link_to root_path, class: "navbar-brand pl-4" do %>
-      <%= image_tag "logo.png" %>
-    <% end %>
-  </div>
+
+  <% if controller_name === "pages" %>
+    <div class="navbar-logo">
+      <%= link_to root_path, class: "navbar-brand pl-4" do %>
+        <%= image_tag "logo.png" %>
+      <% end %>
+    </div>
+  <% end %>
 
 
   <% if user_signed_in? %>
 
     <% if controller_name === "roadmaps" && action_name === "show" %>
-
-        <div class="menu pr-4">
+        <div class="roadmap-selection pl-4">
           <%= link_to "🗑️", roadmap_path(@roadmap),
+                            class: "decoration-none emoji-20",
                             method: :delete,
-                            data: { confirm: "Are you sure?" } %>
-          <%= link_to "✏️", edit_roadmap_path(@roadmap) %>
-          <button type="link" class="roadmap-name dropdown dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= @roadmap.name %>
+                            data: { confirm: "Êtes-vous sûr(e) de vouloir supprimer la roadmap? Son contenu disparaîtra à tout jamais." } %>
+          <%= link_to "✏️", edit_roadmap_path(@roadmap), class: "decoration-none emoji-20" %>
+          <button type="link" class="roadmap-name dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="roadmap-name-ellipsis"><%= @roadmap.name %></span> <%= image_tag "dropdown-arrow.svg", alt: "dropdown arrow" %>
           </button>
           <div class="dropdown-menu dropdown dropdown-roadmap">
-            <%= link_to "+ Créer une roadmap", new_roadmap_path %>
-            <% @roadmaps.each do |roadmap| %>
-              <%= link_to roadmap.name, roadmap_path(roadmap), class: "dropdown-item" %>
-            <% end %>
+            <div class="roadmaps-list">
+              <%= link_to "+ Créer une roadmap", new_roadmap_path, class: "c-blue dropdown-item" %>
+              <% @roadmaps.each do |roadmap| %>
+                <%= link_to roadmap.name, roadmap_path(roadmap), class: "dropdown-item" %>
+              <% end %>
+            </div>
           </div>
         </div>
-    <% else %>
-      <%= link_to "Mes roadmaps", roadmap_path(@roadmaps.first) %>
     <% end %>
 
     <div class="navbar-links">
@@ -51,5 +54,3 @@
 
   <% end %>
 </div>
-
-<!-- finir avec les règles -->

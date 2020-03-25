@@ -6,7 +6,12 @@
       <h2>Allez à l’essentiel, dessinez votre vision et notifiez vos collègues.</p>
     </div>
     <div class="home-cta">
-      <%= render 'components/button_link.html.erb', text: "Connexion", link: new_user_session_path, class: "btn-white btn-landing" %>
+      <% if user_signed_in? %>
+        <%= render 'components/button_link.html.erb', text: "C'est parti", link: roadmap_path(@roadmaps.last.id), class: "btn-white btn-landing" %>
+      <% else %>
+        <%= render 'components/button_link.html.erb', text: "Connexion", link: new_user_session_path, class: "btn-white btn-landing" %>
+      <% end %>
+
     </div>
   </div>
 
