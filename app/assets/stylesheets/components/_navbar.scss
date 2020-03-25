@@ -16,3 +16,12 @@
   flex-grow: 0;
 }
 
+@media(min-width: 415px) {
+  .mobile-link {
+    display: none;
+  }
+}
+
+.navbar-links {
+  display: flex;
+}

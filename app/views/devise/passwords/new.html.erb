@@ -2,6 +2,10 @@
   <div class="home-content forgot-password zi-9999">
     <h1>Mot de passe oublié ?</h1>
 
+    <div class="devise-links-1">
+      <%= render "devise/shared/links-1" %>
+    </div>
+
     <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
       <%= f.error_notification %>
 
@@ -19,8 +23,8 @@
       </div>
     <% end %>
 
-    <div class="devise-links">
-      <%= render "devise/shared/links" %>
+    <div class="devise-links-2">
+      <%= render "devise/shared/links-2" %>
     </div>
   </div>
 

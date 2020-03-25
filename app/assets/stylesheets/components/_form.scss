@@ -4,20 +4,15 @@
   border-bottom: $my-white solid 2px;
   width: 280px;
   font-size: 14px;
+  height: 48px;
+}
+
+.form-actions {
+  margin-top: 30px;
 }
 
 input::placeholder {
   font-size: 14px;
-}
-
-.devise-links {
-  position: absolute;
-  padding-top: 20px;
-
-  a {
-    font-weight: normal;
-    text-decoration: none;
-  }
 }
 
 .form-control.is-valid, .form-control.is-valid:focus {
@@ -28,4 +23,14 @@ input::placeholder {
 
 .form-check-input.is-valid ~ .form-check-label {
     color: $my-white;
+}
+
+.invalid-feedback {
+  color: $my-red;
+  font-weight: bold;
+}
+
+.form-control.is-invalid {
+  border-bottom: $my-red solid 2px;
+  color: $my-red;
 }
