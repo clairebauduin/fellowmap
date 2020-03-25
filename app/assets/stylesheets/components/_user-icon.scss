@@ -1,0 +1,13 @@
+.user-icon, .user-icon:hover {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
+
+@media (min-width: 415px) {
+  .menu-mobile {
+    display: none;
+  }
+}

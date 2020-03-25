@@ -15,11 +15,24 @@ p {
   font-size: 14px;
 }
 
-a {
+a, .devise-links a {
   color: $my-black;
-  font-weight: bold;
 }
 
-a:hover {
+a:hover, .devise-links a {
   color: $my-black;
+}
+
+.devise-links-1 {
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.devise-links-2 {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.navbar a {
+  font-weight: bold;
 }

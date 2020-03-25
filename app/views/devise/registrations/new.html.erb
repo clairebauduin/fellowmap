@@ -2,6 +2,10 @@
   <div class="home-content sign-up zi-9999">
     <h1>Inscription</h1>
 
+    <div class="devise-links-1">
+      <%= render "devise/shared/links-1" %>
+    </div>
+
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
 
@@ -29,8 +33,8 @@
       </div>
     <% end %>
 
-    <div class="devise-links">
-      <%= render "devise/shared/links" %>
+    <div class="devise-links-2">
+      <%= render "devise/shared/links-2" %>
     </div>
   </div>
 

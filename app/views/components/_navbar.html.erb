@@ -1,15 +1,34 @@
 <div class="navbar navbar-expand-sm navbar-light d-flex justify-content-between">
-  <%= link_to "#", class: "navbar-brand pl-4" do %>
-    <%= image_tag "logo.png" %>
-  <% end %>
 
-  <div class="collapse navbar-collapse pr-4" id="navbarSupportedContent">
-      <% if user_signed_in? %>
-        <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "nav-link" %>
-        <i class="fas fa-user-alt pl-3"></i>
-      <% else %>
-          <%= link_to "Connexion", new_user_session_path, class: "c-black" %>
-      <% end %>
-    </ul>
+  <div class="navbar-logo">
+    <%= link_to root_path, class: "navbar-brand pl-4" do %>
+      <%= image_tag "logo.png" %>
+    <% end %>
   </div>
+
+
+  <% if user_signed_in? %>
+
+    <div class="navbar-links">
+      <div class="collapse navbar-collapse pr-4" id="navbarSupportedContent">
+        <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "nav-link" %>
+      </div>
+
+      <div class="menu pr-4">
+        <%= image_tag "user.svg", alt: "user icon", class: "user-icon" %>
+        <div class="dropdown dropdown-navbar">
+          <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "nav-link mobile-link" %>
+        </div>
+      </div>
+    </div>
+
+  <% else %>
+
+    <div class="collapse navbar-collapse pr-4" id="navbarSupportedContent">
+      <%= link_to "Connexion", new_user_session_path, class: "c-black" %>
+    </div>
+
+  <% end %>
 </div>
+
+<!-- finir avec les règles -->

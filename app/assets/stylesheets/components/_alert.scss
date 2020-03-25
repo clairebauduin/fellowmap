@@ -1,6 +1,48 @@
 .alert {
   position: fixed;
   bottom: 16px;
+  opacity: 1;
   right: 16px;
   z-index: 1000;
+  max-width: 308px;
+  border: 1px solid $my-yellow;
+  box-shadow: 2px 3px 0px $my-yellow;
+  border-radius: 10px;
+  background-color: $my-white;
+  color: $my-black;
+  animation-duration: 0.5s;
+  animation-name: slidein;
+  animation-iteration-count: 1;
+}
+
+.alert-warning {
+  border: 1px solid $my-red;
+  box-shadow: 2px 3px 0px $my-red;
+}
+
+.alert-info {
+  border: 1px solid $my-green;
+  box-shadow: 2px 3px 0px $my-green;
+}
+
+.alert-danger {
+  border: 1px solid $my-red;
+  box-shadow: 2px 3px 0px $my-red;
+}
+
+.close span, .close {
+  color: $my-black;
+  opacity: 1.0;
+}
+
+@keyframes slidein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 16px;
+    opacity: 1;
+  }
 }
