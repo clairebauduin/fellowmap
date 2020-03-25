@@ -4,6 +4,9 @@
   box-sizing: border-box;
   box-shadow: 2px 3px 0px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
+  max-width: 200px;
+  max-height: 130px;
+  overflow-x: scroll;
 }
 
 .dropdown-navbar {
@@ -12,6 +15,14 @@
   right: 34px;
   padding: 20px;
   margin-top: 10px;
+}
+
+.dropdown-roadmap {
+  display: none;
+  margin-top: 10px;
+  position: absolute;
+  top: 50px;
+  left: 640px;
 }
 
 .dropdown-show {display:block;}

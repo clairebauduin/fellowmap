@@ -1,8 +1,8 @@
 class RoadmapsController < ApplicationController
   before_action :set_roadmap, only: [:edit, :show, :update, :destroy]
+  before_action :set_roadmaps, only: [:show, :new, :create, :edit, :update]
 
   def show
-    @roadmaps = Roadmap.all.where(user: current_user)
   end
 
   def new
@@ -35,7 +35,7 @@ class RoadmapsController < ApplicationController
 
     @roadmap = Roadmap.find_by(user: current_user)
     if @roadmap
-      redirect_to roadmaps_path(@roadmap)
+      redirect_to roadmap_path(@roadmap)
     else
       new_roadmap_path
     end
@@ -45,6 +45,10 @@ class RoadmapsController < ApplicationController
 
   def set_roadmap
     @roadmap = Roadmap.find(params[:id])
+  end
+
+  def set_roadmaps
+    @roadmaps = Roadmap.all.where(user: current_user)
   end
 
   def roadmap_params

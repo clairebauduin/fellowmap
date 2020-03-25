@@ -9,6 +9,27 @@
 
   <% if user_signed_in? %>
 
+    <% if controller_name === "roadmaps" && action_name === "show" %>
+
+        <div class="menu pr-4">
+          <%= link_to "🗑️", roadmap_path(@roadmap),
+                            method: :delete,
+                            data: { confirm: "Are you sure?" } %>
+          <%= link_to "✏️", edit_roadmap_path(@roadmap) %>
+          <button type="link" class="roadmap-name dropdown dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= @roadmap.name %>
+          </button>
+          <div class="dropdown-menu dropdown dropdown-roadmap">
+            <%= link_to "+ Créer une roadmap", new_roadmap_path %>
+            <% @roadmaps.each do |roadmap| %>
+              <%= link_to roadmap.name, roadmap_path(roadmap), class: "dropdown-item" %>
+            <% end %>
+          </div>
+        </div>
+    <% else %>
+      <%= link_to "Mes roadmaps", roadmap_path(@roadmaps.first) %>
+    <% end %>
+
     <div class="navbar-links">
       <div class="collapse navbar-collapse pr-4" id="navbarSupportedContent">
         <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "nav-link" %>
