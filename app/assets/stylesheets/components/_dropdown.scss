@@ -58,8 +58,10 @@
   right: -17px;
 }
 
-.roadmap-selection {
-  width: calc(100% - 77px);
+@media(max-width: 414px) {
+  .roadmap-selection {
+    width: calc(100% - 77px);
+  }
 }
 
 span.roadmap-name-ellipsis {
