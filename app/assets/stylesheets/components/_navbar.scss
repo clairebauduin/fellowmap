@@ -25,3 +25,9 @@
 .navbar-links {
   display: flex;
 }
+
+@media(max-width: 415px) {
+  .logo-hide {
+    display: none;
+  }
+}

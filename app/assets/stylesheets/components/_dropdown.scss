@@ -6,7 +6,8 @@
   border-radius: 10px;
   max-width: 200px;
   max-height: 130px;
-  overflow-x: scroll;
+  overflow: hidden;
+  position: relative;
 }
 
 .dropdown-navbar {
@@ -19,10 +20,54 @@
 
 .dropdown-roadmap {
   display: none;
-  margin-top: 10px;
+  margin-top: -10px;
   position: absolute;
-  top: 50px;
-  left: 640px;
 }
 
 .dropdown-show {display:block;}
+
+.dropdown-menu {
+  left: auto;
+  margin-left: 33px;
+  min-width: 208px;
+  min-height: 124px;
+}
+
+.dropdown-item {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding: 10px 0;
+}
+
+.dropdown-item:hover {
+  text-decoration: underline;
+  background-color: $my-white;
+}
+
+.dropdown-toggle::after {
+  display :none
+}
+
+.roadmaps-list {
+  overflow-y: scroll;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding: 10px 20px;
+  right: -17px;
+}
+
+@media(max-width: 414px) {
+  .roadmap-selection {
+    width: calc(100% - 77px);
+  }
+}
+
+span.roadmap-name-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 159px;
+  white-space: nowrap;
+  display: inline-flex;
+}

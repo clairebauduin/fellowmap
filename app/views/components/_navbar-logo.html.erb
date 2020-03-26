@@ -1,10 +1,10 @@
 <div class="navbar navbar-expand-sm navbar-light d-flex justify-content-between">
 
-  <div class="navbar-logo logo-hide">
-    <%= link_to root_path, class: "navbar-brand pl-4" do %>
-      <%= image_tag "logo.png" %>
-    <% end %>
-  </div>
+    <div class="navbar-logo">
+      <%= link_to root_path, class: "navbar-brand pl-4" do %>
+        <%= image_tag "logo.png" %>
+      <% end %>
+    </div>
 
   <% if user_signed_in? %>
 
