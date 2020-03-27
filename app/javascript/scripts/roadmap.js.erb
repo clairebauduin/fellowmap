@@ -1,0 +1,9 @@
+const createTheme = document.querySelector(".create-theme")
+const columns = document.querySelector(".columns")
+
+console.log(createTheme);
+
+createTheme.addEventListener('click', (event) => {
+  console.log(event);
+  columns.insertAdjacentHTML("afterbegin", "<%= render 'columns/new_column' %>");
+});

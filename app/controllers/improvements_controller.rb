@@ -1,0 +1,2 @@
+class ImprovementsController < ApplicationController
+end

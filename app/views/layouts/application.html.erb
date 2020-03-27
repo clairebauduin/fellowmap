@@ -18,7 +18,9 @@
     <% end %>
 
     <%= render 'components/flashes' %>
-    <%= yield %>
+    <div class="body-content">
+      <%= yield %>
+    </div>
 
     <%= javascript_pack_tag 'application' %>
   </body>
