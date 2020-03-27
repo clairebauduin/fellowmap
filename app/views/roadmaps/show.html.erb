@@ -1,8 +1,10 @@
-<div class="home-container">
+<div class="show-container d-flex">
+  <div class="columns col-6 align-items-start d-flex">
+    <%= render 'columns/new_column' %>
+    <%= render 'components/button', text: "+ Crée ton premier thème", class: "create-theme", form: "", type: "" %>
+  </div>
 
-  <%= render 'components/button', text: "+ Crée ton premier thème", class: "", form: "", type: "" %>
-
-
-
-  <h2>Lance toi et crée ta 1ère colonne</h2>
+  <div class="text-helper col-6 align-self-center">
+    <h2>Lance toi et crée ta 1ère colonne !</h2>
+  </div>
 </div>

@@ -1,0 +1,15 @@
+.column-content {
+  width: 350px;
+  color: $my-black;
+  background: $my-white;
+  border: 1px solid $my-black;
+  border-radius: 20px;
+  padding: 45px 30px;
+}
+
+.red-btn {
+  color: $my-red;
+  border: 1px solid $my-red;
+  box-shadow: 3px 3px 0px $my-red;
+  padding: 6px 30px;
+}

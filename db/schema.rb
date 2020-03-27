@@ -10,10 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_25_092302) do
+ActiveRecord::Schema.define(version: 2020_03_26_095601) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "columns", force: :cascade do |t|
+    t.bigint "roadmap_id", null: false
+    t.string "temporality"
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["roadmap_id"], name: "index_columns_on_roadmap_id"
+  end
+
+  create_table "improvements", force: :cascade do |t|
+    t.bigint "column_id", null: false
+    t.string "name"
+    t.text "description"
+    t.string "emoji"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["column_id"], name: "index_improvements_on_column_id"
+  end
+
+  create_table "kpis", force: :cascade do |t|
+    t.bigint "column_id", null: false
+    t.string "emoji"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["column_id"], name: "index_kpis_on_column_id"
+  end
 
   create_table "roadmaps", force: :cascade do |t|
     t.string "name"
@@ -35,5 +64,8 @@ ActiveRecord::Schema.define(version: 2020_03_25_092302) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "columns", "roadmaps"
+  add_foreign_key "improvements", "columns"
+  add_foreign_key "kpis", "columns"
   add_foreign_key "roadmaps", "users"
 end
