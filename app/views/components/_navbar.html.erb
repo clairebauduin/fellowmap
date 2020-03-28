@@ -8,36 +8,18 @@
 
   <% if user_signed_in? %>
 
-    <% if controller_name === "roadmaps" && action_name === "show" %>
-        <div class="roadmap-selection pl-4">
-          <%= link_to image_tag("trash.png"), roadmap_path(@roadmap),
-                            class: "decoration-none emoji mr-2",
-                            method: :delete,
-                            data: { confirm: "Êtes-vous sûr(e) de vouloir supprimer la roadmap? Son contenu disparaîtra à tout jamais." } %>
-          <%= link_to image_tag("pen.png"), edit_roadmap_path(@roadmap), class: "decoration-none emoji" %>
-          <button type="link" class="roadmap-name dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span class="roadmap-name-ellipsis"><%= @roadmap.name %></span> <%= image_tag "dropdown-arrow.svg", alt: "dropdown arrow" %>
-          </button>
-          <div class="dropdown-menu dropdown dropdown-roadmap">
-            <div class="roadmaps-list">
-              <%= link_to "+ Créer une roadmap", new_roadmap_path, class: "c-blue dropdown-item" %>
-              <% @roadmaps.each do |roadmap| %>
-                <%= link_to roadmap.name, roadmap_path(roadmap), class: "dropdown-item" %>
-              <% end %>
-            </div>
-          </div>
-        </div>
-    <% end %>
+    <%= render 'components/roadmap-select.html.erb' %>
 
     <div class="navbar-links">
       <div class="collapse navbar-collapse pr-4" id="navbarSupportedContent">
-        <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "nav-link" %>
+        <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "nav-link c-red" %>
       </div>
 
       <div class="menu pr-4">
         <%= image_tag "profile.png", alt: "user icon", class: "user-icon emoji" %>
         <div class="dropdown dropdown-navbar">
-          <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "nav-link mobile-link" %>
+          <%= link_to "Profil", edit_user_registration_path, class: "nav-link" %>
+          <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "nav-link mobile-link c-red" %>
         </div>
       </div>
     </div>
