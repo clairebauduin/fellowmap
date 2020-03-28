@@ -1,6 +1,6 @@
 class RoadmapsController < ApplicationController
   before_action :set_roadmap, only: [:edit, :show, :update, :destroy]
-  before_action :set_roadmaps, only: [:show, :new, :create, :edit, :update]
+  before_action :set_roadmaps, only: [:show, :new, :create, :edit, :update, :destroy]
 
   def show
   end
@@ -12,10 +12,13 @@ class RoadmapsController < ApplicationController
   def create
     @roadmap = Roadmap.new(roadmap_params)
     @roadmap.user = current_user
+    @show =
     if @roadmap.save
-      render :show
+      redirect_to(@roadmap)
+      flash[:notice] = "Roadmap crée"
     else
       render :new
+      flash[:notice] = "Impossible de créer la roadmap"
     end
   end
 
@@ -24,20 +27,22 @@ class RoadmapsController < ApplicationController
 
   def update
     if @roadmap.update(roadmap_params)
-      render :show
+      redirect_to(@roadmap)
+      flash[:notice] = "Roadmap modifiée"
     else
       render :edit
+      flash[:notice] = "Impossible d'éditer la roadmap"
     end
   end
 
   def destroy
     @roadmap.destroy
-
-    @roadmap = Roadmap.find_by(user: current_user)
-    if @roadmap
-      redirect_to roadmap_path(@roadmap)
+    if !@roadmaps.any?
+      redirect_to(new_roadmap_path)
+      flash[:notice] = "Roadmap supprimée"
     else
-      new_roadmap_path
+      redirect_to(roadmap_path(@roadmaps.last.id))
+      flash[:notice] = "Roadmap supprimée"
     end
   end
 
