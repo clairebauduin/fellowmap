@@ -3,6 +3,7 @@ class RoadmapsController < ApplicationController
   before_action :set_roadmaps, only: [:show, :new, :create, :edit, :update]
 
   def show
+    @roadmap = Roadmap.find(params[:id])
   end
 
   def new
@@ -12,8 +13,9 @@ class RoadmapsController < ApplicationController
   def create
     @roadmap = Roadmap.new(roadmap_params)
     @roadmap.user = current_user
+    @show =
     if @roadmap.save
-      render :show
+      redirect_to(@roadmap)
     else
       render :new
     end
