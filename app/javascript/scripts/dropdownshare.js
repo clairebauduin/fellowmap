@@ -25,17 +25,17 @@ if(typeof(shareIcon) != "undefined") {
     alertCopy.classList.toggle("alert-copy-show");
     event.preventDefault();
   })
+  window.addEventListener("click", function(event){
+    if (!event.target.matches(".share-icon")
+     && !event.target.matches(".dropdown-share")
+     && !event.target.matches(".share-input")
+     && !event.target.matches("#btn-copy")
+     && !event.target.matches("#share-title")
+     && !event.target.matches(".dropdown-roadmap")) {
+      dropdownShare.classList.remove("dropdown-share-show");
+      dropdownRoadmap.classList.remove("show");
+    }
+  })
 }
 
-window.addEventListener("click", function(event){
-  if (!event.target.matches(".share-icon")
-   && !event.target.matches(".dropdown-share")
-   && !event.target.matches(".share-input")
-   && !event.target.matches("#btn-copy")
-   && !event.target.matches("#share-title")
-   && !event.target.matches(".dropdown-roadmap")) {
-    dropdownShare.classList.remove("dropdown-share-show");
-    dropdownRoadmap.classList.remove("show");
-  }
-})
 
