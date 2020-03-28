@@ -1,6 +1,7 @@
 class RoadmapsController < ApplicationController
   before_action :set_roadmap, only: [:edit, :show, :update, :destroy]
-  before_action :set_roadmaps, only: [:show, :new, :create, :edit, :update, :destroy]
+  before_action :set_roadmaps, only: [:show, :new, :create, :edit, :update]
+  skip_before_action :authenticate_user!, only: [:show]
 
   def show
   end
