@@ -10,11 +10,11 @@
 
     <% if controller_name === "roadmaps" && action_name === "show" %>
         <div class="roadmap-selection pl-4">
-          <%= link_to "🗑️", roadmap_path(@roadmap),
-                            class: "decoration-none emoji-20",
+          <%= link_to image_tag("trash.png"), roadmap_path(@roadmap),
+                            class: "decoration-none emoji mr-2",
                             method: :delete,
                             data: { confirm: "Êtes-vous sûr(e) de vouloir supprimer la roadmap? Son contenu disparaîtra à tout jamais." } %>
-          <%= link_to "✏️", edit_roadmap_path(@roadmap), class: "decoration-none emoji-20" %>
+          <%= link_to image_tag("pen.png"), edit_roadmap_path(@roadmap), class: "decoration-none emoji" %>
           <button type="link" class="roadmap-name dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span class="roadmap-name-ellipsis"><%= @roadmap.name %></span> <%= image_tag "dropdown-arrow.svg", alt: "dropdown arrow" %>
           </button>
@@ -35,7 +35,7 @@
       </div>
 
       <div class="menu pr-4">
-        <%= image_tag "user.svg", alt: "user icon", class: "user-icon" %>
+        <%= image_tag "profile.png", alt: "user icon", class: "user-icon emoji" %>
         <div class="dropdown dropdown-navbar">
           <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "nav-link mobile-link" %>
         </div>
