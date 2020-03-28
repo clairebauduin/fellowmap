@@ -7,7 +7,23 @@
   margin: 0;
   font-weight: bold;
   transition-property: margin, box-shadow;
+  margin-bottom: 20px;
 }
+
+.btn-red {
+  color: $my-red;
+  border: 1px solid $my-red;
+  box-shadow: 3px 3px 0px $my-red;
+  padding: 6px 30px;
+}
+
+.btn-red:hover {
+  color: $my-red;
+  border: 1px solid $my-red;
+  box-shadow: 3px 3px 0px $my-red;
+  padding: 6px 30px;
+}
+
 
 .btn-landing:hover {
   box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5);
