@@ -34,3 +34,16 @@ input::placeholder {
   border-bottom: $my-red solid 2px;
   color: $my-red;
 }
+
+.share-input {
+  border: 2px solid rgba(0, 0, 0, 0.18);
+  height: 35px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.share-link {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column
+}

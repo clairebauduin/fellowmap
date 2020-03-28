@@ -24,8 +24,6 @@
   position: absolute;
 }
 
-.dropdown-show {display:block;}
-
 .dropdown-menu {
   left: auto;
   margin-left: 33px;
@@ -47,6 +45,18 @@
 .dropdown-toggle::after {
   display :none
 }
+
+.dropdown-share {
+  display: none;
+  position: absolute;
+  padding: 20px;
+  margin-top: 104px;
+  min-width: 280px;
+  min-height: 150px;
+  margin-left: -18px;
+}
+
+.dropdown-show, .dropdown-share-show {display:block;}
 
 .roadmaps-list {
   overflow-y: scroll;
@@ -76,4 +86,8 @@ span.roadmap-name-ellipsis {
   max-width: 159px;
   white-space: nowrap;
   display: inline-flex;
+}
+
+.roadmap-name {
+  height: 100%;
 }

@@ -8,6 +8,7 @@
   font-weight: bold;
   transition-property: margin, box-shadow;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .btn-red {
@@ -15,6 +16,7 @@
   border: 1px solid $my-red;
   box-shadow: 3px 3px 0px $my-red;
   padding: 6px 30px;
+  text-align: center;
 }
 
 .btn-red:hover {
