@@ -31,3 +31,22 @@
 .menu {
   padding-top: 3px
 }
+
+.emoji, .emoji img {
+  width: 20px;
+}
+
+.emoji-roadmap {
+  padding-right: 30px;
+  margin-left: 10px;
+  height: 90%;
+  align-items: center;
+  display: flex;
+}
+
+.share-roadmap {
+  padding-left: 10px;
+  height: 90%;
+  align-items: center;
+  display: flex;
+}
