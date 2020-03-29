@@ -31,8 +31,10 @@
   }
 }
 
-.menu {
-  padding-top: 3px
+@media(min-width: 416px) {
+  .menu {
+    padding-top: 3px
+  }
 }
 
 .emoji, .emoji img {
