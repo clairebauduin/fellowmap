@@ -1,6 +1,5 @@
-<div class="home-container">
-
-  <div class="home-content zi-9999">
+<div class="home-container1">
+  <div class="home-content zi-2">
     <div class="home-baseline">
       <h1>La stratégie produit peut être sexy, votre roadmap aussi.</h1>
       <h2>Allez à l’essentiel, dessinez votre vision et notifiez vos collègues.</p>
@@ -14,10 +13,29 @@
         <%= render 'components/button_link.html.erb', text: "Connexion", link: new_user_session_path, class: "btn-white btn-landing" %>
       <% end %>
     </div>
-
     <%= render 'components/footer.html.erb' %>
   </div>
+  <div class="character zi-2">
+    <%= image_tag "char-yellow", alt: "fellowmap mascott" %>
+  </div>
+</div>
 
+<div class="home-container2 bg-red">
+  <div class="home-content zi-2">
+    <div class="home-baseline">
+      <h1>La stratégie produit peut être sexy, votre roadmap aussi.</h1>
+      <h2>Allez à l’essentiel, dessinez votre vision et notifiez vos collègues.</p>
+    </div>
+    <div class="home-cta">
+      <% if @roadmaps.last.nil? && user_signed_in? %>
+        <%= render 'components/button_link.html.erb', text: "C'est parti", link: new_roadmap_path, class: "btn-white btn-landing" %>
+      <% elsif user_signed_in? %>
+        <%= render 'components/button_link.html.erb', text: "C'est parti", link: roadmap_path(@roadmaps.last.id), class: "btn-white btn-landing" %>
+      <% else %>
+        <%= render 'components/button_link.html.erb', text: "Connexion", link: new_user_session_path, class: "btn-white btn-landing" %>
+      <% end %>
+    </div>
+  </div>
   <div class="character zi-2">
     <%= image_tag "char-yellow", alt: "fellowmap mascott" %>
   </div>

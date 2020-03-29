@@ -1,19 +1,44 @@
-.home-container {
+.home-container0 {
   min-height: 100vh;
   position: relative;
   display: flex;
   align-items: center;
   padding: 0 8% 0 8%;
   color: $my-white;
+  scroll-behavior: smooth;
 }
 
-.home-content {
-  margin-top: -80px;
+.home-container1 {
+  min-height: 90vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 8% 0 8%;
+  color: $my-white;
+  scroll-behavior: smooth;
+}
+
+.home-container2 {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 8% 0 8%;
+  color: $my-white;
+  scroll-behavior: smooth;
+  border-top: 10px white solid;
+}
+
+@media(max-width: 415px){
+  .home-content {
+    margin-top: 150px;
+  }
 }
 
 @media(min-width: 415px) {
   .home-baseline {
-    max-width: 50vw;
+    max-width: 37vw;
+    margin-top: -80px;
   }
   .home-content {
     margin-left: 8%;

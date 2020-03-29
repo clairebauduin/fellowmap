@@ -9,6 +9,7 @@
   transition-property: margin, box-shadow;
   margin-bottom: 20px;
   text-align: center;
+  text-decoration: none;
 }
 
 .btn-red {
@@ -17,6 +18,7 @@
   box-shadow: 3px 3px 0px $my-red;
   padding: 6px 30px;
   text-align: center;
+  text-decoration: none;
 }
 
 .btn-red:hover {
@@ -24,17 +26,19 @@
   border: 1px solid $my-red;
   box-shadow: 3px 3px 0px $my-red;
   padding: 6px 30px;
+  text-decoration: none;
 }
 
 
 .btn-landing:hover {
   box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5);
   margin: 4px 0 0 4px;
+  text-decoration: none;
 }
 
-button.roadmap-name.dropdown-toggle.dropdown-toggle-split,
-button.roadmap-name.dropdown-toggle.dropdown-toggle-split:focus,
-button.roadmap-name.dropdown-toggle.dropdown-toggle-split:hover {
+button.roadmap-name,
+button.roadmap-name:focus,
+button.roadmap-name:hover {
   background: transparent;
   border: 0px;
   box-shadow: none;
