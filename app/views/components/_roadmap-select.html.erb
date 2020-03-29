@@ -8,7 +8,7 @@
                         data: { confirm: "Êtes-vous sûr(e) de vouloir supprimer la roadmap? Son contenu disparaîtra à tout jamais." } %>
       <%= link_to image_tag("pen.png"), edit_roadmap_path(@roadmap), class: "decoration-none emoji emoji-roadmap" %>
       <button class="roadmap-name">
-        <span class="roadmap-name-ellipsis"><%= @roadmap.name %></span> <%= image_tag "dropdown-arrow.svg", alt: "dropdown arrow" %>
+        <span class="roadmap-name-ellipsis"><%= @roadmap.name %> <%= image_tag "dropdown-arrow.svg", class: "ml-1", alt: "dropdown arrow" %></span>
       </button>
       <div class="dropdown dropdown-roadmap">
         <div class="roadmaps-list">
