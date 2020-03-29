@@ -1,7 +1,11 @@
 .navbar {
-  border-bottom: black solid 1px;
+  border-bottom: $my-black solid 1px;
   height: 80px;
   z-index: 2;
+  overflow: hidden;
+  position: fixed;
+  background: $my-white;
+  width: 100%;
 
   i {
     font-size: 23px;

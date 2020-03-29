@@ -1,5 +1,4 @@
 .column-content {
-  width: 350px;
   color: $my-black;
   background: $my-white;
   border: 1px solid $my-black;
@@ -7,9 +6,46 @@
   padding: 45px 30px;
 }
 
-.red-btn {
-  color: $my-red;
-  border: 1px solid $my-red;
-  box-shadow: 3px 3px 0px $my-red;
-  padding: 6px 30px;
+.columns {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 35px;
+  grid-row-gap: 0px;
+  grid-auto-flow: column;
+}
+
+@media(max-width: 415px) {
+  .columns {
+    grid-column-gap: 20px;
+  }
+}
+
+.columns:after {
+  content: "";
+  width: 1px;
+  height: 1px;
+}
+
+.columns:before{
+  content: "";
+  width: 1px;
+  height: 1px;
+}
+
+.columns > * {
+  margin: 0 auto;
+  width: 350px;
+  display: inline-block;
+}
+
+@media(max-width: 415px) {
+  .columns > * {
+    width: 77vw;
+  }
+}
+
+.text-helper h2 {
+  width: 80%;
+  margin-top: 130px;
 }

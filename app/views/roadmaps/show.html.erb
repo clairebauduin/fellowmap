@@ -1,10 +1,12 @@
-<div class="show-container d-flex">
-  <div class="columns col-6 align-items-start d-flex">
+<div class="show-container">
+  <div class="columns">
     <% if !current_user.nil? && Roadmap.where(user_id: current_user.id).map(&:id).include?(params[:id].to_i) %>
     <!-- Si connecté & sur sa roadmap -->
       <%= render 'columns/column_admin' %>
+      <%= render 'columns/column_admin' %>
+      <%= render 'columns/column_admin' %>
       <%= render 'components/button', text: "+ Crée ton premier thème", class: "create-theme", form: "", type: "" %>
-      <div class="text-helper col-6 align-self-center">
+      <div class="text-helper">
         <h2>Lance toi et crée ta 1ère colonne !</h2>
       </div>
     <% else %>

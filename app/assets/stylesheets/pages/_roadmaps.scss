@@ -1,14 +1,15 @@
 .show-container {
-  padding: 40px 40px;
-  min-height: calc(100vh - 80px);
+  padding: 130px 0 20px 0;
+  min-height: 100vh;
   color: $my-white;
+  overflow-x: auto;
 }
 
 .create-theme {
   width: 200px;
   height: 80px;
   padding: 6px 10px;
-  margin: 20px;
+  margin: 0;
   font-size: 14px;
 }
 

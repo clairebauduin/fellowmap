@@ -9,14 +9,14 @@
 <% form = local_assigns.fetch(:form, "") %>
 <% type = local_assigns.fetch(:type, "button") %>
 
-
-
-<button
-  type="<%= type %>"
-  data-action="<%= action %>"
-  data-target="<%= target %>"
-  form="<%= form %>"
-  class="btn btn-white <%= classes %>"
->
-  <%= text %>
-</button>
+<div class="add-column">
+  <button
+    type="<%= type %>"
+    data-action="<%= action %>"
+    data-target="<%= target %>"
+    form="<%= form %>"
+    class="btn btn-white <%= classes %>"
+  >
+    <%= text %>
+  </button>
+</div>
