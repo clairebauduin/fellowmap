@@ -1,11 +1,11 @@
 .rectangle-bg {
   z-index: 1;
-  position: absolute;
+  position: fixed;
 }
 
 .rectangle-bg-top {
   right: 17%;
-  top: 80px;
+  top: 0px;
 }
 
 .rectangle-bg-top img {

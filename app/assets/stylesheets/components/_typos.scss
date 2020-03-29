@@ -3,7 +3,15 @@ h1 {
   font-size: 28px;
   line-height: 38px;
   padding-bottom: 15px;
-  }
+}
+
+.home-baseline h1 {
+  font-size: 38px;
+}
+
+.home-baseline h2 {
+  font-weight: normal;
+}
 
 h2 {
   font-size: 20px;
@@ -23,6 +31,8 @@ p {
 
 a, .devise-links a {
   color: $my-black;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 a:hover, .devise-links a {

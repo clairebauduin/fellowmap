@@ -12,7 +12,7 @@
 
 .dropdown-navbar {
   display: none;
-  position: absolute;
+  position: fixed;
   right: 34px;
   padding: 20px;
   margin-top: 10px;
@@ -20,15 +20,10 @@
 
 .dropdown-roadmap {
   display: none;
-  margin-top: -10px;
-  position: absolute;
-}
-
-.dropdown-menu {
-  left: auto;
-  margin-left: 33px;
-  min-width: 208px;
-  min-height: 124px;
+  top: 70px;
+  position: fixed;
+  width: 100%;
+  height: 122px;
 }
 
 .dropdown-item {
@@ -48,7 +43,7 @@
 
 .dropdown-share {
   display: none;
-  position: absolute;
+  position: fixed;
   padding: 20px;
   margin-top: 104px;
   min-width: 280px;
@@ -60,12 +55,15 @@
 
 .roadmaps-list {
   overflow-y: scroll;
-  position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   padding: 10px 20px;
-  right: -17px;
+  position: absolute;
+}
+
+.roadmaps-list a {
+  text-decoration: none;
 }
 
 @media(max-width: 414px) {
@@ -86,8 +84,11 @@ span.roadmap-name-ellipsis {
   max-width: 159px;
   white-space: nowrap;
   display: inline-flex;
+  height: 60px;
+  align-items: center;
 }
 
 .roadmap-name {
   height: 100%;
+  background: none;
 }
