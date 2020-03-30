@@ -14,6 +14,26 @@
   background-color: $my-white;
 }
 
+.bg-gray {
+  background-color: $my-gray;
+}
+
+.bg-yellow02 {
+  background-color: rgba(255, 185, 6, 0.25);
+}
+
+.bg-blue02 {
+  background-color: rgba(65, 138, 255, 0.2);
+}
+
+.bg-red02 {
+  background-color: rgba(241, 61, 61, 0.25);
+}
+
+.bg-white02 {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
 .c-blue {
   color: $my-blue;
 }
@@ -53,4 +73,3 @@
 .c-yellow:hover  {
   color: $my-yellow;
 }
-
