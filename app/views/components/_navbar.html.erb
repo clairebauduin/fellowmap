@@ -1,8 +1,7 @@
 <div class="navbar bg-white navbar-expand-sm navbar-light d-flex justify-content-between">
-
-  <div class="navbar-home logo-hide">
-    <%= link_to root_path, class: "navbar-brand pl-4" do %>
-      <%= image_tag "logo.svg" %>
+  <div class="navbar-home logo-mini">
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag "logo-mini.svg" %>
     <% end %>
   </div>
 
@@ -11,16 +10,9 @@
     <%= render 'components/roadmap-select.html.erb' %>
 
     <div class="navbar-links">
-      <div class="collapse navbar-collapse pr-4" id="navbarSupportedContent">
-        <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "nav-link c-red" %>
-      </div>
 
-      <div class="menu pr-4">
+      <div class="menu">
         <%= image_tag "profile.png", alt: "user icon", class: "user-icon emoji" %>
-        <div class="dropdown dropdown-navbar">
-          <%= link_to "Profil", edit_user_registration_path, class: "nav-link" %>
-          <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "nav-link mobile-link c-red" %>
-        </div>
       </div>
     </div>
 
@@ -32,3 +24,37 @@
 
   <% end %>
 </div>
+
+<!-- Dropdown de la liste des roadmaps après click : en absolute hors navbar (bug mobile si inclus dans navbar) -->
+<div class="dropdown dropdown-roadmap">
+  <div class="roadmaps-list">
+    <%= link_to "+ Créer une roadmap", new_roadmap_path, class: "c-blue dropdown-item" %>
+    <% @roadmaps.each do |roadmap| %>
+      <%= link_to roadmap.name, roadmap_path(roadmap), class: "dropdown-item" %>
+    <% end %>
+  </div>
+</div>
+
+
+<!-- Dropdown du bouton de partage après click : en absolute hors navbar (bug mobile si inclus dans navbar) -->
+<div class="dropdown dropdown-share">
+  <div class="form-group share-link">
+    <h3 id="share-title">Votre lien partageable :</h3>
+    <input class="form-control share-input" value="<%= request.original_url %>" readonly>
+    <%= link_to "Copier", "#", class: "btn-white", id: "btn-copy" %>
+  </div>
+</div>
+
+<div class="alert-copy alert alert-info alert-dismissible fade show m-1" role="alert">
+  Lien copié dans le presse-papier.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">×</span>
+  </button>
+</div>
+
+<!-- Dropdown de l'emoji profil : en absolute hors navbar (bug mobile si inclus dans navbar) -->
+<div class="dropdown dropdown-navbar">
+  <%= link_to "Profil", edit_user_registration_path, class: "nav-link" %>
+  <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "nav-link c-red" %>
+</div>
+

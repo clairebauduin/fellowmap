@@ -8,6 +8,11 @@
   max-height: 130px;
   overflow: hidden;
   position: relative;
+  z-index: 10000;
+  left: 50%;
+  right: auto;
+  text-align: center;
+  transform: translate(-50%, 0);
 }
 
 .dropdown-navbar {
@@ -15,7 +20,10 @@
   position: fixed;
   right: 34px;
   padding: 20px;
-  margin-top: 10px;
+  top: 70px;
+  left: auto;
+  text-align: center;
+  transform: translate(0, 0);
 }
 
 .dropdown-roadmap {
@@ -45,10 +53,9 @@
   display: none;
   position: fixed;
   padding: 20px;
-  margin-top: 104px;
+  top: 70px;
   min-width: 280px;
   min-height: 150px;
-  margin-left: -18px;
 }
 
 .dropdown-show, .dropdown-share-show {display:block;}
@@ -64,6 +71,7 @@
 
 .roadmaps-list a {
   text-decoration: none;
+  font-weight: bold;
 }
 
 @media(max-width: 414px) {

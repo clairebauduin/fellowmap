@@ -6,10 +6,12 @@ const userIcon = document.querySelectorAll(".user-icon")[0]
 if(typeof(userIcon) != "undefined") {
   userIcon.addEventListener("click", function(event){
     dropdownNavbar.classList.toggle("dropdown-show");
+    event.preventDefault();
   })
     window.addEventListener("click", function(event){
     if (!event.target.matches(".user-icon")) {
       dropdownNavbar.classList.remove("dropdown-show");
+      event.preventDefault();
     }
   })
 }
