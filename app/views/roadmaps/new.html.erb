@@ -33,3 +33,8 @@
   <%= image_tag "rectangle-bottom.svg", alt: "bottom rectangle background" %>
 </div>
 
+
+<!-- Afficher un loader cool si j'ai créé mon user avant de créer la roadmap : -->
+<% if request.referrer.last(7) == 'sign_up' %>
+  <%= render 'components/loader_signup' %>
+<% end %>

@@ -1,0 +1,182 @@
+.spin {
+  position: relative;
+  height: 80px;
+  width: 80px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.loader-text {
+  margin-top: 20px;
+  font-weight: bold;
+  color: $my-white;
+  max-width: 60%;
+  text-align: center;
+}
+
+@keyframes blink {
+    /**
+     * At the start of the animation the dot
+     * has an opacity of .2
+     */
+    0% {
+      opacity: .2;
+    }
+    /**
+     * At 20% the dot is fully visible and
+     * then fades out slowly
+     */
+    20% {
+      opacity: 1;
+    }
+    /**
+     * Until it reaches an opacity of .2 and
+     * the animation can start again
+     */
+    100% {
+      opacity: .2;
+    }
+}
+
+.loader-text span {
+    /**
+     * Use the blink animation, which is defined above
+     */
+    animation-name: blink;
+    /**
+     * The animation should take 1.4 seconds
+     */
+    animation-duration: 1.4s;
+    /**
+     * It will repeat itself forever
+     */
+    animation-iteration-count: infinite;
+    /**
+     * This makes sure that the starting style (opacity: .2)
+     * of the animation is applied before the animation starts.
+     * Otherwise we would see a short flash or would have
+     * to set the default styling of the dots to the same
+     * as the animation. Same applies for the ending styles.
+     */
+    animation-fill-mode: both;
+}
+
+.loader-text span:nth-child(2) {
+    /**
+     * Starts the animation of the third dot
+     * with a delay of .2s, otherwise all dots
+     * would animate at the same time
+     */
+    animation-delay: .2s;
+}
+
+.loader-text span:nth-child(3) {
+    /**
+     * Starts the animation of the third dot
+     * with a delay of .4s, otherwise all dots
+     * would animate at the same time
+     */
+    animation-delay: .4s;
+}
+
+.spin div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  border: 4px solid $my-white;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: $my-white transparent transparent transparent;
+}
+
+.spin div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.spin div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.spin div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader-emoji {
+  position: absolute;
+  background-image: image-url('pen.png');
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  bottom: 31px;
+  left: 31px;
+}
+
+.loader-rocket {
+  animation-name: rocket;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+}
+
+.loader-signup {
+  animation-name: signup;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+}
+
+@keyframes rocket {
+  0% {
+    background-image: image-url('pen.png');
+    bottom: 31px;
+    left: 31px;
+  }
+  25% {
+    background-image: image-url('target.png');
+    bottom: 31px;
+    left: 31px;
+  }
+  50% {
+    background-image: image-url('rocket.png');
+    bottom: 31px;
+    left: 31px;
+  }
+  100% {
+    background-image: image-url('rocket.png');
+    bottom: 410px;
+    left: 400px;
+  }
+}
+
+@keyframes signup {
+  0% {
+    background-image: image-url('pen.png');
+  }
+  100% {
+    background-image: image-url('target.png');
+  }
+}
+
+.loader-container {
+  background: $my-blue;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 99999;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  display: none;
+}
+
+.loader-show {display: flex;}
