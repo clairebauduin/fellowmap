@@ -55,15 +55,20 @@
 }
 
 .emoji-roadmap {
-  padding-right: 30px;
   height: 90%;
   align-items: center;
   display: flex;
 }
 
 .share-roadmap {
-  padding-left: 10px;
   height: 90%;
   align-items: center;
   display: flex;
+}
+
+.emoji-link {
+  padding: 7px;
+  background: #eaeaea;
+  border-radius: 25px;
+  margin: 0 2px;
 }
