@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
 
-
   def after_sign_in_path_for(resource)
     @roadmap = Roadmap.find_by(user: current_user)
     if @roadmap
