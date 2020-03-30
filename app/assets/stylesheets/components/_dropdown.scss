@@ -26,6 +26,12 @@
   transform: translate(0, 0);
 }
 
+@media(max-width: 415px) {
+  .dropdown-navbar  {
+    right: 16px;
+  }
+}
+
 .dropdown-roadmap {
   display: none;
   top: 70px;
@@ -93,7 +99,7 @@ span.roadmap-name-ellipsis {
   max-width: 9vh;
   white-space: nowrap;
   display: inline-flex;
-  height: 60px;
+  height: 41px;
   align-items: center;
 }
 

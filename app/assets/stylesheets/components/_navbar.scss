@@ -30,6 +30,10 @@
   }
 }
 
+.navbar {
+  height: 60px;
+}
+
 .navbar-links {
   display: flex;
 }
@@ -42,7 +46,6 @@
 
 @media(min-width: 416px) {
   .menu {
-    padding-top: 3px;
     padding-right: 1.5rem;
   }
   .navbar-brand {
@@ -71,4 +74,6 @@
   background: #eaeaea;
   border-radius: 25px;
   margin: 0 2px;
+  align-items: center;
+  display: flex;
 }

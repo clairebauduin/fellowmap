@@ -9,11 +9,11 @@
 }
 
 .home-container1 {
-  min-height: 90vh;
+  min-height: 95vh;
   position: relative;
   display: flex;
   align-items: center;
-  padding: 0 8% 0 8%;
+  padding: 0 5% 0 5%;
   color: $my-white;
   scroll-behavior: smooth;
 }
@@ -26,7 +26,6 @@
   padding: 0 8% 0 8%;
   color: $my-white;
   scroll-behavior: smooth;
-  border-top: 10px white solid;
 }
 
 @media(max-width: 415px){
@@ -38,7 +37,6 @@
 @media(min-width: 416px) {
   .home-baseline {
     max-width: 37vw;
-    margin-top: -80px;
   }
   .home-content {
     margin-left: 8%;
