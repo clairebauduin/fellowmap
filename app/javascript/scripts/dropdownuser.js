@@ -11,7 +11,6 @@ if(typeof(userIcon) != "undefined") {
     window.addEventListener("click", function(event){
     if (!event.target.matches(".user-icon")) {
       dropdownNavbar.classList.remove("dropdown-show");
-      event.preventDefault();
     }
   })
 }

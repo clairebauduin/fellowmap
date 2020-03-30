@@ -11,7 +11,6 @@ if(typeof(roadmapName) != "undefined") {
     window.addEventListener("click", function(event){
     if (!event.target.matches(".roadmap-name-ellipsis")) {
       dropdownRoadmap.classList.remove("dropdown-show");
-      event.preventDefault();
     }
   })
 }
