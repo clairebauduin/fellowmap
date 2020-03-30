@@ -11,6 +11,15 @@
   }
 }
 
+@media(max-width: 415px) {
+  .navbar-brand {
+    margin-right: 0;
+  }
+  .menu {
+    padding-right: 0;
+  }
+}
+
 .navbar-collapse {
   flex-grow: 0;
 }
@@ -33,7 +42,11 @@
 
 @media(min-width: 416px) {
   .menu {
-    padding-top: 3px
+    padding-top: 3px;
+    padding-right: 1.5rem;
+  }
+  .navbar-brand {
+    padding-left: 1.5rem;
   }
 }
 
@@ -43,7 +56,6 @@
 
 .emoji-roadmap {
   padding-right: 30px;
-  margin-left: 10px;
   height: 90%;
   align-items: center;
   display: flex;

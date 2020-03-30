@@ -11,14 +11,6 @@
         <span class="roadmap-name-ellipsis"><%= @roadmap.name %></span>
         <%= image_tag "dropdown-arrow.svg", class: "ml-1", alt: "dropdown arrow" %>
       </button>
-      <div class="dropdown dropdown-roadmap">
-        <div class="roadmaps-list">
-          <%= link_to "+ Créer une roadmap", new_roadmap_path, class: "c-blue dropdown-item" %>
-          <% @roadmaps.each do |roadmap| %>
-            <%= link_to roadmap.name, roadmap_path(roadmap), class: "dropdown-item" %>
-          <% end %>
-        </div>
-      </div>
       <%= render 'components/share_button' %>
     </div>
   <% else %>
