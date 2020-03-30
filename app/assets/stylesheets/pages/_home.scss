@@ -31,17 +31,23 @@
 
 @media(max-width: 415px){
   .home-content {
-    margin-top: 150px;
+    margin-top: 90px;
   }
 }
 
-@media(min-width: 415px) {
+@media(min-width: 416px) {
   .home-baseline {
     max-width: 37vw;
     margin-top: -80px;
   }
   .home-content {
     margin-left: 8%;
+  }
+}
+
+@media(max-width: 415px) {
+  .home-baseline {
+    margin-top: 80px;
   }
 }
 

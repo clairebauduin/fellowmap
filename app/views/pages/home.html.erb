@@ -1,5 +1,11 @@
 <div class="home-container1">
   <div class="home-content zi-2">
+    <div class="map zi-2">
+      <div class="bg-map">
+        <%= image_tag "dot", class: "map-dot" %>
+        <%= image_tag "position", class: "map-position" %>
+      </div>
+    </div>
     <div class="home-baseline">
       <h1>La stratégie produit peut être sexy, votre roadmap aussi.</h1>
       <h2>Allez à l’essentiel, dessinez votre vision et notifiez vos collègues.</p>
@@ -14,9 +20,6 @@
       <% end %>
     </div>
     <%= render 'components/footer.html.erb' %>
-  </div>
-  <div class="character zi-2">
-    <%= image_tag "char-yellow", alt: "fellowmap mascott" %>
   </div>
 </div>
 
@@ -35,9 +38,6 @@
         <%= render 'components/button_link.html.erb', text: "Connexion", link: new_user_session_path, class: "btn-white btn-landing" %>
       <% end %>
     </div>
-  </div>
-  <div class="character zi-2">
-    <%= image_tag "char-yellow", alt: "fellowmap mascott" %>
   </div>
 </div>
 

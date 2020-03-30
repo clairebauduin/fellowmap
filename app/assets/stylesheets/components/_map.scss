@@ -1,0 +1,95 @@
+.map {
+  height: calc(100vh - 80px);
+  position: absolute;
+  display: flex;
+  right: 10%;
+  align-items: center;
+  top: 40px;
+}
+
+.bg-map {
+  position: relative;
+  background-image: image-url('map.svg');
+  width: 441px;
+  height: 348px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.map-dot {
+  position: absolute;
+  width: 65px;
+  bottom: 91px;
+  left: 95px;
+  animation-name: map-dot;
+  animation-delay: 0s;
+  animation-duration: 6s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+.map-position {
+  position: absolute;
+  right: 54px;
+  bottom: 254px;
+  animation-name: map-position;
+  animation-delay: 6s;
+  animation-duration: 12s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes map-dot {
+  0%   {bottom: 91px; left: 95px;}
+  15%  {bottom: 101px; left: 147px;}
+  32%  {bottom: 201px; left: 107px;}
+  47% {bottom: 191px; left: 187px;}
+  65% {bottom: 121px; left: 236px;}
+  75% {bottom: 151px; left: 252px;}
+  90% {bottom: 178px; left: 292px;}
+  100% {bottom: 208px; left: 292px;}
+}
+
+@keyframes map-position {
+  0%   {width: 133px;}
+  12%   {width: 153px;}
+  25% {width: 133px;}
+  100% {width: 133px;}
+}
+
+@media(max-width:768px) {
+  .map {
+    position: relative;
+    height: 146px;
+    margin-left: 30px;
+  }
+  .bg-map {
+    width: 184px;
+    height: 146px;
+  }
+  .map-dot {
+    width: 20%;
+    bottom: 31px;
+    left: 28px;
+  }
+  .map-position {
+    width: 20%;
+    right: 31px;
+    bottom: 129px;
+  }
+  @keyframes map-position {
+    0%   {width: 20%;}
+    12%   {width: 30%;}
+    25% {width: 20%;}
+    100% {width: 20%;}
+  }
+  @keyframes map-dot {
+    0%   {bottom: 31px; left: 28px;}
+    15%  {bottom: 41px; left: 56px;}
+    32%  {bottom: 79px; left: 40px;}
+    47% {bottom: 71px; left: 75px;}
+    65% {bottom: 46px; left: 94px;}
+    75% {bottom: 62px; left: 102px;}
+    90% {bottom: 69px; left: 117px;}
+    100% {bottom: 84px; left: 117px;}
+  }
+}
