@@ -10,6 +10,4 @@ Rails.application.routes.draw do
     end
   end
 
-  get '/user' => "roadmaps#new", :as => :user_root
-
 end

@@ -3,11 +3,13 @@
     <% if !current_user.nil? && Roadmap.where(user_id: current_user.id).map(&:id).include?(params[:id].to_i) %>
     <!-- Si connecté & sur sa roadmap -->
       <%= render 'columns/column_admin' %>
-      <%= render 'columns/column_admin' %>
-      <%= render 'columns/column_admin' %>
-      <%= render 'components/button', text: "+ Crée ton premier thème", class: "create-theme", form: "", type: "" %>
+
+      <%= simple_form_for @column, url: roadmap_columns_path(@roadmap), method: :post do |f| %>
+         <%= f.button :submit, "+ Crée ton premier thème", class: "btn btn-white create-theme" %>
+      <% end %>
+
       <div class="text-helper">
-        <h2>Lance toi et crée ta 1ère colonne !</h2>
+        <h2>Lance toi et crée ton 1èr thème !</h2>
       </div>
     <% else %>
     <!-- Si pas connecté ou pas sur sa roadmap -->
@@ -20,3 +22,4 @@
 <% if request.referrer.last(3) == 'new' %>
   <%= render 'components/loader_rocket' %>
 <% end %>
+
