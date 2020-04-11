@@ -1,3 +1,3 @@
 class Kpi < ApplicationRecord
-  belongs_to :column
+  belongs_to :theme
 end

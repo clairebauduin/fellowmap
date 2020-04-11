@@ -1,6 +1,6 @@
-<% @columns.each do |column| %>
+<% @themes.each do |theme| %>
   <div class="column-roadmap">
-    <h2><%= column.name %></h2>
+    <h2><%= theme.name %></h2>
     <div class="column-content">
       <div class="theme">
         <h2>Thème</h2>
@@ -20,7 +20,7 @@
       </div>
     </div>
     <div class="delete-column mt-3 text-center">
-      <%= simple_form_for column, url: roadmap_column_path(id: column.id, roadmap_id: @roadmap.id), method: :delete do |f| %>
+      <%= simple_form_for theme, url: roadmap_theme_path(id: theme.id, roadmap_id: @roadmap.id), method: :delete do |f| %>
         <%= f.button :submit, "Supprimer", class: "btn btn-white btn-red", data: { confirm: 'Tu es sûr(e) de supprimer ce thème? Tout va disparaître.' }  %>
       <% end %>
     </div>

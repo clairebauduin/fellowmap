@@ -1,3 +1,3 @@
 class Improvement < ApplicationRecord
-  belongs_to :column
+  belongs_to :theme
 end

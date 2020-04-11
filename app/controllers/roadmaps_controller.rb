@@ -4,8 +4,8 @@ class RoadmapsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show]
 
   def show
-    @column = Column.new
-    @columns = Column.where(:roadmap_id.in?(current_user.roadmap_ids))
+    @theme = Theme.new
+    @themes = Theme.where(:roadmap_id.in?(current_user.roadmap_ids))
   end
 
   def new

@@ -1,12 +1,12 @@
-class ColumnsController < ApplicationController
+class ThemesController < ApplicationController
   before_action :set_roadmap, only: [:create, :destroy]
-  before_action :set_columns, only: [:create, :destroy]
-  before_action :set_column, only: [:destroy]
+  before_action :set_themes, only: [:create, :destroy]
+  before_action :set_theme, only: [:destroy]
 
   def create
     @roadmap = Roadmap.find(params[:roadmap_id])
-    @column = Column.new(name: "yop", description: "yop", temporality: "yop", roadmap_id: @roadmap.id)
-    if @column.save!
+    @theme = Theme.new(name: "yop", description: "yop", temporality: "yop", roadmap_id: @roadmap.id)
+    if @theme.save!
       redirect_to(@roadmap)
       flash[:notice] = "Colonne crée"
     else
@@ -16,8 +16,8 @@ class ColumnsController < ApplicationController
   end
 
   def destroy
-    @column.destroy
-    if !@columns.any?
+    @theme.destroy
+    if !@themes.any?
       redirect_to(@roadmap)
       flash[:notice] = "Thème supprimé"
     else
@@ -30,15 +30,15 @@ class ColumnsController < ApplicationController
     @roadmap = Roadmap.find(params[:roadmap_id])
   end
 
-  def set_column
-    @column = Column.find(params[:id])
+  def set_theme
+    @theme = Theme.find(params[:id])
   end
 
-  def set_columns
-    @columns = Column.where(:roadmap_id.in?(current_user.roadmap_ids))
+  def set_themes
+    @themes = Theme.where(:roadmap_id.in?(current_user.roadmap_ids))
   end
 
-  def column_params
-    params.require(:column).permit(:temporality, :name, :description, :roadmap_id)
+  def theme_params
+    params.require(:theme).permit(:temporality, :name, :description, :roadmap_id)
   end
 end
