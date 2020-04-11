@@ -5,7 +5,12 @@ class ThemesController < ApplicationController
 
   def create
     @theme = Theme.new(name: "yop", description: "yop", temporality: "yop", roadmap_id: @roadmap.id)
-    if @theme.save!
+    if @theme.save
+      @kpi = Kpi.new(description: "Ton objectif business", theme_id: @theme.id)
+      @kpi.save
+      @improvement = Improvement.new(name: "Amélioration", description: "Description de l'amélioration que tu souhaites apporter",
+                                     emoji: "🚀", description: "Ton objectif business", theme_id: @theme.id)
+      @improvement.save
       redirect_to(@roadmap)
       flash[:notice] = "Colonne crée"
     else
@@ -34,7 +39,7 @@ class ThemesController < ApplicationController
   end
 
   def set_themes
-    @themes = Theme.where(:roadmap_id.in?(current_user.roadmap_ids))
+    @themes = Theme.where(roadmap_id: @roadmap.id)
   end
 
   def theme_params

@@ -1,0 +1,24 @@
+.kpi {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.kpi_description, #kpi_description {
+  width: 100%;
+  background: white;
+  border: transparent;
+  padding-left:10px;
+}
+
+#kpi_description:hover, #kpi_description:focus {
+  border: 1px dashed #979797;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: none;
+  margin:-1px;
+}
+
+.kpi-emoji {
+  margin-bottom: 1rem;
+}
