@@ -5,7 +5,7 @@ class RoadmapsController < ApplicationController
 
   def show
     @theme = Theme.new
-    @themes = Theme.where(:roadmap_id.in?(current_user.roadmap_ids))
+    @themes = Theme.where(roadmap_id: params[:id])
   end
 
   def new
