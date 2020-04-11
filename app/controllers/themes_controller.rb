@@ -4,7 +4,6 @@ class ThemesController < ApplicationController
   before_action :set_theme, only: [:destroy]
 
   def create
-    @roadmap = Roadmap.find(params[:roadmap_id])
     @theme = Theme.new(name: "yop", description: "yop", temporality: "yop", roadmap_id: @roadmap.id)
     if @theme.save!
       redirect_to(@roadmap)
