@@ -35,8 +35,14 @@
           <%= simple_form_for improvement, url: roadmap_theme_improvement_path(id: improvement.id, theme_id: theme.id, roadmap_id: @roadmap.id), method: :patch do |f| %>
             <div class="improvement">
               <div class="improvement-emoji">
-                <%= improvement.emoji %>
+                <div class="emoji-button"><%= improvement.emoji %></div>
+                <%= render 'components/emoji_selector', locals: {improvement: improvement} %>
+                <%= simple_form_for improvement, url: roadmap_theme_improvement_path(id: improvement.id, theme_id: theme.id, roadmap_id: @roadmap.id), method: :patch do |f| %>
+                    <%= f.input :emoji, as: :hidden, input_html: {value: improvement.emoji, class: "patch-emoji"}  %>
+                    <%= f.button :submit, 'patch emoji', class: "patch-emoji-button", style: "display: none;" %>
+                <% end %>
               </div>
+              <%= f.input :name, input_html: {value: improvement.name, class: "improvement-name"}, label: false  %>
               <%= f.input :description, input_html: {value: improvement.description, class: "improvement-description"}, label: false  %>
               <%= button_to 'patch', roadmap_theme_improvement_path(id: improvement.id, theme_id: theme.id, roadmap_id: @roadmap.id), method: 'patch', style: "display: none" %>
               <%= button_to 'delete', roadmap_theme_improvement_path(id: improvement.id, theme_id: theme.id, roadmap_id: @roadmap.id), method: 'delete', class: "delete-kpi", style: "display: none;" %>
@@ -50,3 +56,4 @@
     </div>
   </div>
 <% end %>
+
