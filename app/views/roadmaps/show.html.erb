@@ -19,6 +19,6 @@
 </div>
 
 <!-- Afficher un loader cool si je crée une roadmap : -->
-<% if request.referrer.last(3) == 'new' %>
+<% if !request.referrer.nil? && request.referrer.last(3) == 'new' %>
   <%= render 'components/loader_rocket' %>
 <% end %>

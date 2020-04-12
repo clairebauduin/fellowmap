@@ -1,10 +1,11 @@
 class KpisController < ApplicationController
   before_action :set_theme, only: [:create, :destroy]
-  before_action :set_kpis, only: [:create]
+  before_action :set_kpis, only: [:create, :destroy]
+  before_action :set_kpi, only: [:destroy, :update]
   before_action :set_roadmap, only: [:create, :destroy, :update]
 
   def create
-    @new_kpi = Kpi.new(description: "Ton objectif business", theme_id: @kpis.last.theme_id)
+    @new_kpi = Kpi.new(description: "Ton objectif business", theme_id: @theme.id)
     if @new_kpi.save!
       redirect_to(@roadmap)
       flash[:notice] = "Objectif crée"
@@ -26,7 +27,6 @@ class KpisController < ApplicationController
   end
 
   def update
-    @kpi = Kpi.find(params[:id])
     if @kpi.update(kpi_params)
       redirect_to(@roadmap)
       flash[:notice] = "Kpi modifié"
@@ -44,6 +44,10 @@ class KpisController < ApplicationController
 
   def set_theme
     @theme = Theme.find(params[:theme_id])
+  end
+
+  def set_kpi
+    @kpi = Kpi.find(params[:id])
   end
 
   def set_kpis

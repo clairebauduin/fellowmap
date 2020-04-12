@@ -7,34 +7,46 @@
         <p>Description du problème rencontré par les utilisateurs</p>
       </div>
       <div class="goal">
+        <!-- Create Kpis -->
         <%= simple_form_for @new_kpi, url: roadmap_theme_kpis_path(id: @new_kpi.id, theme_id: theme.id, roadmap_id: @roadmap.id), method: :post do |f| %>
           <%= f.button :submit, "Ajouter un objectif", class: "btn btn-white w-100" %>
         <% end %>
-
+        <!-- Index/Update/Destroy Kpis -->
          <% theme.kpis.each do |kpi| %>
             <%= simple_form_for kpi, url: roadmap_theme_kpi_path(id: kpi.id, theme_id: theme.id, roadmap_id: @roadmap.id), method: :patch do |f| %>
               <div class="kpi">
-                <div class="kpi-emoji"><%= image_tag "target", class: "emoji" %></div>
-                <%= f.input :description, input_html: {value: kpi.description, class: "kpi-description_#{kpi.id}"}, label: false  %>
+                <div class="kpi-emoji">
+                  <%= image_tag "target", class: "emoji" %>
+                 </div>
+                <%= f.input :description, input_html: {value: kpi.description, class: "kpi-description"}, label: false  %>
+                <%= button_to 'patch', roadmap_theme_kpi_path(id: kpi.id, theme_id: theme.id, roadmap_id: @roadmap.id), method: 'patch', style: "display: none" %>
+                <%= button_to 'delete', roadmap_theme_kpi_path(id: kpi.id, theme_id: theme.id, roadmap_id: @roadmap.id), method: 'delete', class: "delete-kpi", style: "display: none;" %>
               </div>
-              <%= f.button :submit, "Mettre à jour", style: "display: none", id: "kpi-patch_#{kpi.id}" %>
             <% end %>
           <% end %>
-
       </div>
-      <div class="improvement">
-        <%= render 'components/button', text:'Ajouter une amélioration', class: "w-100 mb-4" %>
-        <h3><%= image_tag "rocket.png", class: "emoji" %> Amélioration</h3>
-        <p>Description de l'amélioration</p>
-      </div>
-      <div class="save">
-        <%= render 'components/button', text:'Sauvegarder', class: "w-100" %>
+      <div class="improvements">
+        <!-- Create Improvements -->
+        <%= simple_form_for @new_improvement, url: roadmap_theme_improvements_path(id: @new_improvement.id, theme_id: theme.id, roadmap_id: @roadmap.id), method: :post do |f| %>
+          <%= f.button :submit, "Ajouter une amélioration", class: "btn btn-white w-100" %>
+        <% end %>
+        <!-- Index/Update/Destroy Kpis -->
+        <% theme.improvements.each do |improvement| %>
+          <%= simple_form_for improvement, url: roadmap_theme_improvement_path(id: improvement.id, theme_id: theme.id, roadmap_id: @roadmap.id), method: :patch do |f| %>
+            <div class="improvement">
+              <div class="improvement-emoji">
+                <%= improvement.emoji %>
+              </div>
+              <%= f.input :description, input_html: {value: improvement.description, class: "improvement-description"}, label: false  %>
+              <%= button_to 'patch', roadmap_theme_improvement_path(id: improvement.id, theme_id: theme.id, roadmap_id: @roadmap.id), method: 'patch', style: "display: none" %>
+              <%= button_to 'delete', roadmap_theme_improvement_path(id: improvement.id, theme_id: theme.id, roadmap_id: @roadmap.id), method: 'delete', class: "delete-kpi", style: "display: none;" %>
+            </div>
+          <% end %>
+        <% end %>
       </div>
     </div>
     <div class="delete-column mt-3 text-center">
-      <%= simple_form_for theme, url: roadmap_theme_path(id: theme.id, roadmap_id: @roadmap.id), method: :delete do |f| %>
-        <%= f.button :submit, "Supprimer", class: "btn btn-white btn-red", data: { confirm: 'Tu es sûr(e) de supprimer ce thème? Tout va disparaître.' }  %>
-      <% end %>
+      <%= button_to "Supprimer", {controller: :themes, action: 'destroy', id: theme.id, roadmap_id: @roadmap.id }, method: :delete, class: "btn btn-white btn-red", data: { confirm: 'Tu es sûr(e) de supprimer ce thème? Tout va disparaître.' } %>
     </div>
   </div>
 <% end %>

@@ -8,8 +8,8 @@ class ThemesController < ApplicationController
     if @theme.save
       @kpi = Kpi.new(description: "Ton objectif business", theme_id: @theme.id)
       @kpi.save
-      @improvement = Improvement.new(name: "Amélioration", description: "Description de l'amélioration que tu souhaites apporter",
-                                     emoji: "🚀", description: "Ton objectif business", theme_id: @theme.id)
+      @improvement = Improvement.new(name: "Amélioration", description: "Description de l'amélioration apportée",
+                                     emoji: "🚀", theme_id: @theme.id)
       @improvement.save
       redirect_to(@roadmap)
       flash[:notice] = "Colonne crée"

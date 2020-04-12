@@ -7,6 +7,7 @@ class RoadmapsController < ApplicationController
     @new_theme = Theme.new
     @themes = Theme.where(:roadmap_id.in?(current_user.roadmap_ids))
     @new_kpi = Kpi.new
+    @new_improvement = Improvement.new
   end
 
   def new
@@ -30,8 +31,8 @@ class RoadmapsController < ApplicationController
 
   def update
     if @roadmap.update(roadmap_params)
-      redirect_to(@roadmap)
-      flash[:notice] = "Roadmap modifiée"
+        redirect_to(@roadmap)
+        flash[:notice] = "Roadmap modifiée"
     else
       render :edit
       flash[:notice] = "Impossible d'éditer la roadmap"
@@ -40,7 +41,9 @@ class RoadmapsController < ApplicationController
 
   def destroy
     @roadmap.destroy
-    if !@roadmaps.any?
+    if @kpi.nil?
+        redirect_to(@roadmap)
+    elsif !@roadmaps.any?
       redirect_to(new_roadmap_path)
       flash[:notice] = "Roadmap supprimée"
     else
