@@ -14,7 +14,6 @@ if (typeof(kpiDescription) !== 'undefined') {
         kpi.children[2].children[1].children[0].addEventListener('keydown', function keyDownK(e){
           const target = event.currentTarget;
           const currentLength = target.value.length;
-          console.log(currentLength);
           if (currentLength === 0 && e.key === 'Backspace' && fired === false) {
             kpi.children[2].children[5][1].click();
             kpi.children[2].children[1].children[0].removeEventListener("keydown", keyDownK);
@@ -37,7 +36,6 @@ if (typeof(improvementDescription) !== 'undefined') {
         improvement.children[2].children[1].children[0].addEventListener('keydown', function keyDownI(e){
           const target = event.currentTarget;
           const currentLength = target.value.length;
-          console.log(currentLength)
           if (currentLength === 0 && e.key === 'Backspace') {
               improvement.children[2].children[5][1].click()
                kpi.children[2].children[1].children[0].removeEventListener("keydown", keyDownI);

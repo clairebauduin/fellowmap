@@ -8,10 +8,10 @@ class ImprovementsController < ApplicationController
     @new_improvement = Improvement.new(name: "Amélioration", description: "Description de l'amélioration apportée", emoji: "🚀", theme_id: @theme.id)
     if @new_improvement.save!
       redirect_to(@roadmap)
-      flash[:notice] = "Objectif crée"
+      flash[:notice] = "Amélioration crée"
     else
       redirect_to(@roadmap)
-      flash[:notice] = "Impossible de créer l'objectif"
+      flash[:notice] = "Impossible de créer l'amélioration"
     end
   end
 

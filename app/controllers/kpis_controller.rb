@@ -19,20 +19,20 @@ class KpisController < ApplicationController
     @kpi.destroy
     if !@kpis.any?
       redirect_to(@roadmap)
-      flash[:notice] = "Thème supprimé"
+      flash[:notice] = "Objectif supprimé"
     else
       redirect_to(@roadmap)
-      flash[:notice] = "Thème supprimé"
+      flash[:notice] = "Objectife supprimé"
     end
   end
 
   def update
     if @kpi.update(kpi_params)
       redirect_to(@roadmap)
-      flash[:notice] = "Kpi modifié"
+      flash[:notice] = "Objectif modifié"
     else
       redirect_to(@roadmap)
-      flash[:notice] = "Impossible d'éditer le Kpi"
+      flash[:notice] = "Impossible d'éditer l'objectif'"
     end
   end
 
