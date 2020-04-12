@@ -4,13 +4,21 @@
     <!-- Si connecté & sur sa roadmap -->
       <%= render 'columns/column_admin' %>
 
-      <%= simple_form_for @new_theme, url: roadmap_themes_path(@roadmap), method: :post do |f| %>
-         <%= f.button :submit, "+ Crée ton premier thème", class: "btn btn-white create-theme" %>
+      <%= simple_form_for @theme, url: roadmap_themes_path(@roadmap), method: :post do |f| %>
+        <% if @themes.first.nil? %>
+          <%= f.button :submit, "+ Crée ton premier thème", class: "btn btn-white create-theme" %>
+        <% else %>
+          <%= f.button :submit, "+ Ajoute un thème", class: "btn btn-white create-theme" %>
+        <% end %>
       <% end %>
 
-      <div class="text-helper">
-        <h2>Lance toi et crée ton 1èr thème !</h2>
-      </div>
+      <% if @themes.first.nil? %>
+        <div class="text-helper">
+          <h2>Lance toi et crée ton 1èr thème !</h2>
+        </div>
+      <% end %>
+
+
     <% else %>
     <!-- Si pas connecté ou pas sur sa roadmap -->
       <%= render 'columns/column_guest' %>
