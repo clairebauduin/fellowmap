@@ -16,7 +16,6 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'jquery-rails'
-gem 'rails_emoji_picker'
 gem 'gemoji'
 
 group :development do
