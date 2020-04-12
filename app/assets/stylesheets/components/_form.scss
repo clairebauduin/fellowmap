@@ -5,6 +5,11 @@
   width: 280px;
   font-size: 14px;
   height: 48px;
+  color: $my-black;
+}
+
+.form-control:focus {
+  color: $my-black;
 }
 
 .form-actions {
@@ -46,4 +51,8 @@ input::placeholder {
   display: flex;
   justify-content: space-between;
   flex-direction: column
+}
+
+textarea {
+  overflow-y: hidden;
 }
