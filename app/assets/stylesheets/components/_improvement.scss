@@ -1,17 +1,23 @@
 .improvement {
   display: flex;
-  justify-content: space-around;
   flex-wrap: wrap;
   margin-bottom: 1rem;
 }
 
-.improvement_description, #improvement_description, #improvement_name {
+.improvement .form-group {
+  width: 100%;
+}
+
+.improvement .form-group input, .improvement .form-group input:focus,
+.improvement .form-group textarea, .improvement .form-group textarea:focus {
   width: 100%;
   background: white;
   border: transparent;
+  box-shadow: none;
 }
 
-#improvement_description:hover, #improvement_description:focus, #improvement_name:hover, #improvement_name:focus {
+.improvement textarea:hover, .improvement_description textarea:focus,
+.improvement_name input:hover, .improvement_name input:focus {
   border: 1px dashed #979797;
   box-sizing: border-box;
   border-radius: 10px;

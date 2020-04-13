@@ -3,6 +3,7 @@ class KpisController < ApplicationController
   before_action :set_kpis, only: [:create, :destroy]
   before_action :set_kpi, only: [:destroy, :update]
   before_action :set_roadmap, only: [:create, :destroy, :update]
+  skip_before_action :verify_authenticity_token, raise: false
 
   def create
     @new_kpi = Kpi.new(description: "Ton objectif business", theme_id: @theme.id)

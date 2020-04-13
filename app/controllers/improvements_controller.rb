@@ -3,6 +3,7 @@ class ImprovementsController < ApplicationController
   before_action :set_improvements, only: [:create, :destroy]
   before_action :set_improvement, only: [:destroy, :update]
   before_action :set_roadmap, only: [:create, :destroy, :update]
+  skip_before_action :verify_authenticity_token, raise: false
 
   def create
     @new_improvement = Improvement.new(name: "Amélioration", description: "Description de l'amélioration apportée", emoji: "🚀", theme_id: @theme.id)

@@ -1,3 +1,5 @@
+$(document).on('ready turbolinks:load', function() {
+
 const loaderContainer = document.querySelectorAll('.loader-container')[0]
 const loaderSignup = document.querySelectorAll('.loader-signup')[0]
 const loaderRocket = document.querySelectorAll('.loader-rocket')[0]
@@ -18,3 +20,4 @@ if(typeof(loaderSignup) != "undefined" && performance.navigation.type != 1) {
   }, 3000);
 }
 
+})

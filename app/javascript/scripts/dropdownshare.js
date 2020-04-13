@@ -1,3 +1,5 @@
+$(document).on('ready turbolinks:load', function() {
+
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 const dropdownShare = document.querySelectorAll(".dropdown-share")[0]
@@ -38,4 +40,4 @@ if(typeof(shareIcon) != "undefined") {
   })
 }
 
-
+})

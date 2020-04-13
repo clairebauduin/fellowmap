@@ -1,3 +1,5 @@
+$(document).on('ready turbolinks:load', function() {
+
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 const dropdownNavbar = document.querySelectorAll(".dropdown-navbar")[0]
@@ -14,3 +16,5 @@ if(typeof(userIcon) != "undefined") {
     }
   })
 }
+
+})
