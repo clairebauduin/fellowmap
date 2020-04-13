@@ -5,7 +5,7 @@ class RoadmapsController < ApplicationController
 
   def show
     @new_theme = Theme.new
-    @themes = Theme.where(:roadmap_id.in?(current_user.roadmap_ids))
+    @themes = Theme.where(roadmap_id: @roadmap.id).order(:created_at)
     @new_kpi = Kpi.new
     @new_improvement = Improvement.new
     @emojis = []

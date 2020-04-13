@@ -1,0 +1,19 @@
+<div class="kpis">
+<!-- Create Kpis -->
+<%= simple_form_for @new_kpi, url: roadmap_theme_kpis_path(id: @new_kpi.id, theme_id: theme.id, roadmap_id: @roadmap.id), method: :post, remote: true do |f| %>
+  <%= f.button :submit, "Ajouter un objectif", class: "btn btn-white w-100" %>
+<% end %>
+<!-- Index/Update/Destroy Kpis -->
+ <% theme.kpis.order(created_at: :desc).each do |kpi| %>
+    <%= simple_form_for kpi, url: roadmap_theme_kpi_path(id: kpi.id, theme_id: theme.id, roadmap_id: @roadmap.id), method: :patch, remote: true do |f| %>
+      <div class="kpi">
+        <div class="kpi-emoji">
+          <%= image_tag "target", class: "emoji" %>
+         </div>
+        <%= f.input :description, input_html: {value: kpi.description, class: "kpi-description"}, label: false  %>
+        <%= f.button :submit, class: "patch-kpi", name: "patch-kpi", style: "display: none" %>
+      </div>
+    <% end %>
+    <%= button_to 'delete', roadmap_theme_kpi_path(id: kpi.id, theme_id: theme.id, roadmap_id: @roadmap.id), method: 'delete', class: "delete-kpi", style: "display: none;", remote: true %>
+  <% end %>
+</div>

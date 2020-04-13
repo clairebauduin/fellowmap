@@ -8,7 +8,6 @@ class ImprovementsController < ApplicationController
     @new_improvement = Improvement.new(name: "Amélioration", description: "Description de l'amélioration apportée", emoji: "🚀", theme_id: @theme.id)
     if @new_improvement.save!
       redirect_to(@roadmap)
-      flash[:notice] = "Amélioration crée"
     else
       redirect_to(@roadmap)
       flash[:notice] = "Impossible de créer l'amélioration"
@@ -19,17 +18,14 @@ class ImprovementsController < ApplicationController
     @improvement.destroy
     if !@improvements.any?
       redirect_to(@roadmap)
-      flash[:notice] = "Amélioration supprimée"
     else
       redirect_to(@roadmap)
-      flash[:notice] = "Amélioration supprimée"
     end
   end
 
   def update
     if @improvement.update(improvement_params)
       redirect_to(@roadmap)
-      flash[:notice] = "Amélioration modifiée"
     else
       redirect_to(@roadmap)
       flash[:notice] = "Impossible d'éditer l'amélioration"

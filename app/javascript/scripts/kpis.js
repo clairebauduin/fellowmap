@@ -1,88 +1,87 @@
-const kpiDescription = document.getElementById("kpi_description");
 const improvementDescription = document.getElementById("improvement_description");
-const kpis = document.querySelectorAll(".goal");
-const improvements = document.querySelectorAll(".improvements");
-const emojiButtons = document.querySelectorAll(".improvements .emoji-button");
-const emojisSelector = document.querySelectorAll(".emojis-selector");
-const emojis = document.querySelectorAll(".emoji-select");
-const improvementDestroy = document.querySelectorAll(".improvement-destroy");
-const patchEmoji = document.querySelectorAll(".patch-emoji");
-const patchEmojiButton = document.querySelectorAll(".patch-emoji-button");
-let fired = false;
-
 let timeout = null;
 
-if (typeof(kpiDescription) !== 'undefined') {
-  console.log("zsw1")
-  kpis.forEach(theme => {
-    Array.prototype.forEach.call(theme.children, kpi => {
-      if (kpi.children[2] !== undefined) {
-        kpi.children[2].children[1].children[0].addEventListener('keydown', function keyDownK(e){
-          console.log("zsw2")
-          const target = event.currentTarget;
-          const currentLength = target.value.length;
-          console.log("coucou")
-          if (currentLength === 0 && e.key === 'Backspace' && fired === false) {
-            kpi.children[2].children[5][1].click();
-            kpi.children[2].children[1].children[0].removeEventListener("keydown", keyDownK);
-          }
-          clearTimeout(timeout);
-          timeout = setTimeout(function () {
-            kpi.submit()
-          }, 2000);
-          event.preventDefault;
-        })
-      }
-    })
-  })
-}
-
 if (typeof(improvementDescription) !== 'undefined') {
-  improvements.forEach(theme => {
-    Array.prototype.forEach.call(theme.children, improvement => {
-      if (improvement.children[2] !== undefined && improvement.children !== undefined && improvement.children[2].children[1] !== undefined) {
-        improvement.children[2].children[1].children[0].addEventListener('keydown', function keyDownI(e){
-          const target = event.currentTarget;
-          const currentLength = target.value.length;
-          if (currentLength === 0 && e.key === 'Backspace') {
-              improvement.children[2].children[5][1].click()
-               kpi.children[2].children[1].children[0].removeEventListener("keydown", keyDownI);
-          }
-          clearTimeout(timeout);
-          timeout = setTimeout(function () {
-            improvement.submit()
-          }, 2000);
-          event.preventDefault;
-        })
-        improvement.children[2].children[2].children[0].addEventListener('keydown', function keyDownI(e){
-          const target = event.currentTarget;
-          const currentLength = target.value.length;
-          if (currentLength === 0 && e.key === 'Backspace') {
-              improvement.children[2].children[5][1].click()
-               kpi.children[2].children[1].children[0].removeEventListener("keydown", keyDownI);
-          }
-          clearTimeout(timeout);
-          timeout = setTimeout(function () {
-            improvement.submit()
-          }, 2000);
-          event.preventDefault;
-        })
+  // Edit kpi description
+  $(".kpi-description").each(function() {
+    $(this).keydown(function(e) {
+      let currentLength = $(e.target).val().length;
+      if (currentLength === 0 && e.key === 'Backspace') {
+        $(e.target).parents().eq(2).nextAll(".button_to").children(".delete-kpi").click()
       }
+      clearTimeout(timeout);
+        timeout = setTimeout(function () {
+          $(e.target).parent().nextAll(".patch-kpi").click();
+      }, 200);
     })
   })
-}
 
-// Show Emoji selector for improvements
-if (typeof(improvementDescription) !== 'undefined') {
-  emojiButtons.forEach(button => {
-    button.addEventListener('click', function(e) {
-      emojisSelector[Array.prototype.indexOf.call(emojiButtons, button)].classList.toggle("dropdown-show-flex");
-      emojis.forEach(emoji => {
-        emoji.addEventListener('click', function(e) {
-          patchEmoji[Array.prototype.indexOf.call(emojiButtons, button)].value = emoji.innerHTML.trim();
-          patchEmojiButton[Array.prototype.indexOf.call(emojiButtons, button)].click();
-        })
-      })
+  // Edit improvement name
+  $(".improvement-name").each(function() {
+    $(this).keydown(function(e) {
+      const currentLength = $(e.target).val().length;
+      if (currentLength === 0 && e.key === 'Backspace') {
+        $(e.target).parent().nextAll(".delete-improvement").click();
+      }
+      clearTimeout(timeout);
+        timeout = setTimeout(function () {
+          $(e.target).parent().nextAll(".patch-improvement").click();
+      }, 200);
     })
   })
+
+
+  // Edit improvement name
+  $(".improvement-name").each(function() {
+    $(this).keydown(function(e) {
+      let currentLength = $(e.target).val().length;
+      if (currentLength === 0 && e.key === 'Backspace') {
+        $(e.target).parents().eq(2).nextAll(".button_to").children(".delete-improvement").click();
+      }
+      clearTimeout(timeout);
+        timeout = setTimeout(function () {
+          $(e.target).parent().nextAll(".patch-improvement").click();
+      }, 200);
+    })
+  })
+
+  // Edit improvement desc
+  $(".improvement-description").each(function() {
+    $(this).keydown(function(e) {
+      let currentLength = $(e.target).val().length;
+      if (currentLength === 0 && e.key === 'Backspace') {
+        $(e.target).parents().eq(2).nextAll(".button_to").children(".delete-improvement").click();
+      }
+      clearTimeout(timeout);
+        timeout = setTimeout(function () {
+          $(e.target).parent().nextAll(".patch-improvement").click();
+      }, 200);
+    })
+  })
+
+  // Show Emoji selector for improvements
+  $(".emoji-button").each(function() {
+    $(this).click(function(e){
+      $(e.target).next(".emojis-selector").css('display', 'flex')
+    })
+  })
+  $(document).mouseup(function(e) {
+    const selector = $(".emojis-selector");
+    if (!selector.is(e.target) && selector.has(e.target).length === 0)
+    {
+        selector.hide();
+    }
+  });
+
+
+  // Select emoji & patch
+  $(".emoji-select").each(function() {
+    $(this).click(function(e){
+      console.log($(e.target).parent().next(".improvement_emoji").children().val())
+      console.log($(e.target).parent().parent().nextAll(".patch-improvement"))
+      $(e.target).parent().next(".improvement_emoji").children().val(e.target.innerHTML);
+      $(e.target).parents().eq(1).nextAll(".patch-improvement").click();
+    })
+  })
+
 }
