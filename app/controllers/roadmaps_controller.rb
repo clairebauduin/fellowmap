@@ -8,6 +8,10 @@ class RoadmapsController < ApplicationController
     @themes = Theme.where(:roadmap_id.in?(current_user.roadmap_ids))
     @new_kpi = Kpi.new
     @new_improvement = Improvement.new
+    @emojis = []
+    Emoji.all.each do |emoji|
+      @emojis << emoji.raw
+    end
   end
 
   def new

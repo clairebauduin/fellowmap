@@ -1,17 +1,17 @@
 .improvement {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
 }
 
-.improvement_description, #improvement_description {
+.improvement_description, #improvement_description, #improvement_name {
   width: 100%;
   background: white;
   border: transparent;
-  padding-left:10px;
 }
 
-#improvement_description:hover, #improvement_description:focus {
+#improvement_description:hover, #improvement_description:focus, #improvement_name:hover, #improvement_name:focus {
   border: 1px dashed #979797;
   box-sizing: border-box;
   border-radius: 10px;
@@ -19,6 +19,67 @@
   margin:-1px;
 }
 
+.improvement-name {
+  font-weight: bold;
+}
+
+
+.improvement .improvement_name {
+  flex: 0 0 80%;
+}
+
+.improvement .form-group {
+  margin-bottom: 0 !important;
+}
+
+.improvement textarea.form-control.is-valid {
+  padding-right: 0 !important;
+}
+
 .improvement-emoji {
-  margin-bottom: 1rem;
+  position: relative;
+}
+
+.emojis-selector {
+  height: 150px;
+  width: 100px;
+  margin-top: 5px;
+  border-radius: 10px;
+  overflow-y: scroll;
+  position: absolute;
+  width: 230px;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: 2px 3px 0px rgba(0, 0, 0, 0.5);
+  z-index: 5;
+  padding: 10px;
+  display: none;
+}
+
+.emoji-select {
+  flex: 0 0 16.666%;
+  font-size: 20px;
+}
+
+.emoji-select:hover {
+  cursor: pointer;
+}
+
+.emoji-button {
+  padding: 10px;
+  margin-left: -9px;
+  font-size: 20px;
+  flex: 0 0 20%;
+}
+
+.emoji-button:hover, .emoji-button:focus,  {
+  cursor: pointer;
+  border: 1px dashed #979797;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: none;
+  margin-left: -9px;
 }
