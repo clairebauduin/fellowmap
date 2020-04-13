@@ -13,12 +13,15 @@ let fired = false;
 let timeout = null;
 
 if (typeof(kpiDescription) !== 'undefined') {
+  console.log("zsw1")
   kpis.forEach(theme => {
     Array.prototype.forEach.call(theme.children, kpi => {
       if (kpi.children[2] !== undefined) {
         kpi.children[2].children[1].children[0].addEventListener('keydown', function keyDownK(e){
+          console.log("zsw2")
           const target = event.currentTarget;
           const currentLength = target.value.length;
+          console.log("coucou")
           if (currentLength === 0 && e.key === 'Backspace' && fired === false) {
             kpi.children[2].children[5][1].click();
             kpi.children[2].children[1].children[0].removeEventListener("keydown", keyDownK);
