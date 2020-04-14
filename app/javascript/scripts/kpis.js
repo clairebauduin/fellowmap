@@ -21,20 +21,6 @@ let timeout = null;
     // Edit improvement name
     $(".improvement-name").each(function() {
       $(this).keydown(function(e) {
-        const currentLength = $(e.target).val().length;
-        if (currentLength === 0 && e.key === 'Backspace') {
-          $(e.target).parent().next(".delete-improvement").click();
-        }
-        clearTimeout(timeout);
-        timeout = setTimeout(function () {
-          $(e.target).parent().next(".patch-improvement").click();
-        }, 200);
-      })
-    })
-
-    // Edit improvement name
-    $(".improvement-name").each(function() {
-      $(this).keydown(function(e) {
         let currentLength = $(e.target).val().length;
         if (currentLength === 0 && e.key === 'Backspace') {
           $(e.target).parents().eq(2).next(".button_to").children(".delete-improvement").click();
@@ -73,7 +59,6 @@ let timeout = null;
           selector.hide();
       }
     });
-
 
     // Select emoji & patch
     $(".emoji-select").each(function() {
