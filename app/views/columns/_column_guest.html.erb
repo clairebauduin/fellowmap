@@ -1,21 +1,3 @@
-<div class="column-roadmap">
-  <h2>Temporality</h2>
-  <div class="column-content">
-    <div class="theme">
-      <h2>Thème</h2>
-      <p>Description du problème rencontré par les utilisateurs</p>
-    </div>
-    <div class="kpis">
-      <p><%= image_tag "target.png", class: "emoji" %> Objectif Business </p>
-    </div>
-    <div class="improvement">
-      <h3><%= image_tag "rocket.png", class: "emoji" %>Amélioration</h3>
-      <p>Description de l'amélioration</p>
-    </div>
-  </div>
-</div>
-
-
 <% @themes.each do |theme| %>
   <div class="column-roadmap">
     <h2><%= theme.temporality %></h2>
