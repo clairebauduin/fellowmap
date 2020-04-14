@@ -4,19 +4,21 @@
   align-items: center;
 }
 
-.kpi_description, #kpi_description {
+.kpi .form-group input, .kpi .form-group input:focus,
+.kpi .form-group textarea, .kpi .form-group textarea:focus {
   width: 100%;
   background: white;
   border: transparent;
   padding-left:10px;
+  box-shadow: none;
 }
 
-#kpi_description:hover, #kpi_description:focus {
+.kpi_description textarea:hover, .kpi_description textarea:focus {
   border: 1px dashed #979797;
   box-sizing: border-box;
   border-radius: 10px;
   box-shadow: none;
-  margin:-1px;
+  margin: -1px;
 }
 
 .kpi-emoji {

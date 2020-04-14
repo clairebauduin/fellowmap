@@ -1,3 +1,5 @@
+$(document).on('ready turbolinks:load', function() {
+
 const fields = document.querySelectorAll(".form-control")
 
 if (typeof(fields) !== 'undefined') {
@@ -17,3 +19,5 @@ if (typeof(fields) !== 'undefined') {
     })
   })
 }
+
+})
