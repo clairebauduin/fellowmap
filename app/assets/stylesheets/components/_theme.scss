@@ -1,0 +1,64 @@
+.theme {
+}
+
+.theme .form-group input,
+.theme .form-group textarea, {
+  width: 100%;
+  padding-left:10px;
+  box-shadow: none;
+  border: 2px dashed #979797;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: none;
+  min-height: 41px;
+  background:transparent !important;
+}
+
+.theme .form-group input:hover, .theme .form-group input:focus,
+.theme .form-group textarea:hover, .theme .form-group textarea:focus {
+  width: 100%;
+  border: transparent;
+  padding-left:10px;
+  box-shadow: none;
+  border: 2px dashed $my-black;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: none;
+  background:transparent !important;
+}
+
+.theme_description {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.theme-name {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.theme_name {
+  margin-bottom: 0.5rem !important;
+}
+
+.theme-temporality {
+  color: $my-white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+.theme-temporality:focus, .theme-temporality:hover {
+  color: $my-white;
+  font-size: 20px;
+  font-weight: bold;
+  border: 2px dashed $my-white !important;
+}
+
+.themes {
+  margin-bottom: 2rem;
+}
+
+.theme textarea.form-control.is-valid {
+  padding-right: 10px !important;
+}

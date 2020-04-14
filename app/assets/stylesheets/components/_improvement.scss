@@ -4,8 +4,8 @@
   margin-bottom: 1rem;
 }
 
-.improvement .form-group {
-  width: 100%;
+.improvement > * {
+  margin: 1%;
 }
 
 .improvement .form-group input, .improvement .form-group input:focus,
@@ -14,36 +14,45 @@
   background: white;
   border: transparent;
   box-shadow: none;
-}
-
-.improvement textarea:hover, .improvement_description textarea:focus,
-.improvement_name input:hover, .improvement_name input:focus {
-  border: 1px dashed #979797;
+  border: 2px dashed #979797;
   box-sizing: border-box;
   border-radius: 10px;
   box-shadow: none;
-  margin:-1px;
+  min-height: 41px;
+}
+
+.improvement .form-group input:focus, .improvement .form-group input:hover,
+.improvement .form-group textarea:focus, .improvement .form-group textarea:hover {
+  width: 100%;
+  background: white;
+  border: transparent;
+  box-shadow: none;
+  border: 2px dashed $my-black;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: none;
 }
 
 .improvement-name {
   font-weight: bold;
 }
 
-
-.improvement .improvement_name {
-  flex: 0 0 80%;
+.improvement_name {
+  flex: 0 0 76%;
 }
 
-.improvement .form-group {
-  margin-bottom: 0 !important;
+.improvement_description {
+  width: 100%;
 }
 
 .improvement textarea.form-control.is-valid {
-  padding-right: 0 !important;
+  padding-right: 10px !important;
 }
 
 .improvement-emoji {
   position: relative;
+  flex: 0 0 20%;
+  margin-bottom: calc(5px - 1rem);
 }
 
 .emojis-selector {
@@ -65,6 +74,10 @@
   display: none;
 }
 
+.emoji-button:hover, .emoji-button:focus {
+  border-color: $my-black;
+}
+
 .emoji-select {
   flex: 0 0 16.666%;
   font-size: 20px;
@@ -75,17 +88,14 @@
 }
 
 .emoji-button {
-  padding: 10px;
-  margin-left: -9px;
+  padding: 8px;
   font-size: 20px;
   flex: 0 0 20%;
-}
-
-.emoji-button:hover, .emoji-button:focus,  {
   cursor: pointer;
-  border: 1px dashed #979797;
+  border: 2px dashed #979797;
   box-sizing: border-box;
   border-radius: 10px;
   box-shadow: none;
-  margin-left: -9px;
+  text-align: center;
 }
+

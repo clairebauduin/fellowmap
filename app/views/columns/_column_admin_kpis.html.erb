@@ -11,9 +11,9 @@
           <%= image_tag "target", class: "emoji" %>
          </div>
         <%= f.input :description, input_html: {value: kpi.description, class: "kpi-description", id: "desckpi-#{kpi.id}"}, label: false  %>
-        <%= f.button :submit, class: "patch-kpi", name: "patch-kpi", style: "display: none", id: "patchkpi-#{kpi.id}" %>
+        <%= f.button :submit, class: "patch", name: "patch-kpi", style: "display: none", id: "patchkpi-#{kpi.id}" %>
       </div>
     <% end %>
-    <%= button_to 'delete', roadmap_theme_kpi_path(id: kpi.id, theme_id: theme.id, roadmap_id: @roadmap.id), method: 'delete', class: "delete-kpi", style: "display: none;", id: "deletekpi-#{kpi.id}", remote: true %>
+    <%= button_to 'delete', roadmap_theme_kpi_path(id: kpi.id, theme_id: theme.id, roadmap_id: @roadmap.id), method: 'delete', class: "delete", style: "display: none;", id: "deletekpi-#{kpi.id}", remote: true %>
   <% end %>
 </div>

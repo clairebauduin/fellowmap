@@ -1,48 +1,34 @@
 $(document).on('ready turbolinks:load', function() {
-
-const improvementDescription = document.querySelectorAll(".improvement-description");
-let timeout = null;
+  const improvementDescription = document.querySelectorAll(".improvement-description");
+  let timeout = null;
 
   if (typeof(improvementDescription) !== 'undefined') {
-    // Edit kpi description
-    $(".kpi-description").each(function() {
-      $(this).on("keydown", function(e) {
-        let currentLength = $(e.target).val().length;
-        if (currentLength === 0 && e.key === 'Backspace') {
-          $(e.target).parents().eq(2).next(".button_to").children(".delete-kpi").click()
+    //textareas flexible
+    $("textarea").elastic();
+
+    // Patch or delete names & descriptions
+    $(".column-content .form-control").each(function(e) {
+      $(this).keydown(function(ev1) {
+        let currentLength = $(ev1.target).val().length;
+        if (currentLength === 0 && ev1.key === 'Backspace' && !$(ev1.target).parents().eq(2).hasClass("theme")) {
+          $(ev1.target).parents().eq(2).next(".button_to").children(".delete").click();
         }
+      })
+      $(this).keyup(function(ev2) {
         clearTimeout(timeout);
         timeout = setTimeout(function () {
-          $(e.target).parent().next(".patch-kpi").click();
-        }, 200);
+          $(ev2.target).parent().nextAll(".patch").first().click();
+        }, 2000);
       })
     })
 
-    // Edit improvement name
-    $(".improvement-name").each(function() {
-      $(this).keydown(function(e) {
-        let currentLength = $(e.target).val().length;
-        if (currentLength === 0 && e.key === 'Backspace') {
-          $(e.target).parents().eq(2).next(".button_to").children(".delete-improvement").click();
-        }
+    // Patch temporality
+    $(".theme_temporality .form-control").each(function(e) {
+      $(this).on('input', function(e) {
         clearTimeout(timeout);
         timeout = setTimeout(function () {
-          $(e.target).parent().next(".patch-improvement").click();
-        }, 200);
-      })
-    })
-
-    // Edit improvement desc
-    $(".improvement-description").each(function() {
-      $(this).keydown(function(e) {
-        let currentLength = $(e.target).val().length;
-        if (currentLength === 0 && e.key === 'Backspace') {
-          $(e.target).parents().eq(2).next(".button_to").children(".delete-improvement").click();
-        }
-      clearTimeout(timeout);
-        timeout = setTimeout(function () {
-          $(e.target).parent().next(".patch-improvement").click();
-        }, 200);
+          $(e.target).parent().nextAll(".column-content").first().children('.patch').click();
+        }, 2000);
       })
     })
 
@@ -56,15 +42,15 @@ let timeout = null;
       const selector = $(".emojis-selector");
       if (!selector.is(e.target) && selector.has(e.target).length === 0)
       {
-          selector.hide();
+        selector.hide();
       }
     });
 
     // Select emoji & patch
     $(".emoji-select").each(function() {
       $(this).click(function(e){
-        $(e.target).parent().next(".improvement_emoji").children().val(e.target.innerHTML);
-        $(e.target).parents().eq(1).next(".patch-improvement").click();
+        $(e.target).parent().nextAll(".improvement_emoji").first().children().val(e.target.innerHTML);
+        $(e.target).parents().eq(1).nextAll(".patch").first().click();
       })
     })
   }

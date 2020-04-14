@@ -14,3 +14,27 @@
     </div>
   </div>
 </div>
+
+
+<% @themes.each do |theme| %>
+  <div class="column-roadmap">
+    <h2><%= theme.temporality %></h2>
+    <div class="column-content">
+      <div class="theme">
+        <h2><%= theme.name %></h2>
+        <p><%= theme.description %></p>
+      </div>
+      <div class="kpis">
+        <% theme.kpis.order(created_at: :desc).each do |kpi| %>
+          <p><%= image_tag "target", class: "emoji" %> <%= kpi.description %></p>
+        <% end %>
+      </div>
+      <% theme.improvements.order(created_at: :desc).each do |improvement| %>
+        <div class="improvement">
+          <h3><%= improvement.emoji %> <%= improvement.name %></h3>
+          <p><%= improvement.description %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
