@@ -1,17 +1,21 @@
 <% @themes.each do |theme| %>
   <div class="column-roadmap">
-    <h2><%= theme.name %></h2>
-    <div class="column-content">
+        <!-- Theme -->
+        <%= simple_form_for theme, url: roadmap_theme_path(id: theme.id, roadmap_id: @roadmap.id), remote: true, method: :patch, data: { 'turbolinks-scroll': false } do |f| %>
       <div class="theme">
-        <h2>Thème</h2>
-        <p>Description du problème rencontré par les utilisateurs</p>
+          <%= f.input :temporality, input_html: {value: theme.temporality, class: "theme-temporality", id: "temporality-#{theme.id}"} %>
+        <div class="column-content">
+          <%= f.input :name, input_html: {value: theme.name, class: "theme-name", id: "name-#{theme.id}"}, label: "Nom du thème" %>
+          <%= f.input :description, input_html: {value: theme.description, class: "theme-description", id: "descthem-#{theme.id}"}  %>
+          <%= f.button :submit, class: "patch", name: "patch-theme", style: "display: none", id: "patchthem-#{theme.id}" %>
+        <% end %>
+          <%= render partial: 'columns/column_admin_kpis.html.erb', locals: {theme: theme} %>
+          <%= render partial: 'columns/column_admin_improvements.html.erb', locals: {theme: theme} %>
+          <div class="delete-column mt-3 text-center">
+            <%= button_to "Supprimer", {controller: :themes, action: 'destroy', id: theme.id, roadmap_id: @roadmap.id }, method: :delete, class: "btn btn-white btn-red", data: { confirm: 'Tu es sûr(e) de supprimer ce thème? Tout va disparaître.' } %>
+          </div>
+        </div>
       </div>
-      <%= render partial: 'columns/column_admin_kpis.html.erb', locals: {theme: theme} %>
-      <%= render partial: 'columns/column_admin_improvements.html.erb', locals: {theme: theme} %>
-      <div class="delete-column mt-3 text-center">
-        <%= button_to "Supprimer", {controller: :themes, action: 'destroy', id: theme.id, roadmap_id: @roadmap.id }, method: :delete, class: "btn btn-white btn-red", data: { confirm: 'Tu es sûr(e) de supprimer ce thème? Tout va disparaître.' } %>
-      </div>
-    </div>
   </div>
 <% end %>
 

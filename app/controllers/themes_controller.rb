@@ -1,7 +1,7 @@
 class ThemesController < ApplicationController
-  before_action :set_roadmap, only: [:create, :destroy]
+  before_action :set_roadmap, only: [:create, :destroy, :update]
   before_action :set_themes, only: [:create, :destroy]
-  before_action :set_theme, only: [:destroy]
+  before_action :set_theme, only: [:destroy, :update]
 
   def create
     @theme = Theme.new(name: "yop", description: "yop", temporality: "yop", roadmap_id: @roadmap.id)
@@ -27,6 +27,15 @@ class ThemesController < ApplicationController
     else
       redirect_to(@roadmap)
       flash[:notice] = "Thème supprimé"
+    end
+  end
+
+  def update
+    if @theme.update(theme_params)
+      redirect_to(@roadmap)
+    else
+      redirect_to(@roadmap)
+      flash[:notice] = "Impossible d'éditer l'objectif'"
     end
   end
 

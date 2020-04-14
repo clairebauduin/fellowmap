@@ -4,8 +4,8 @@
     <%= f.button :submit, "Ajouter une amélioration", class: "btn btn-white w-100" %>
   <% end %>
   <!-- Index/Update/Destroy Kpis -->
-  <% theme.improvements.order(:created_at).each do |improvement| %>
-    <%= simple_form_for improvement, url: roadmap_theme_improvement_path(id: improvement.id, theme_id: theme.id, roadmap_id: @roadmap.id), remote: true, method: :patch do |f| %>
+  <% theme.improvements.order(created_at: :desc).each do |improvement| %>
+    <%= simple_form_for improvement, url: roadmap_theme_improvement_path(id: improvement.id, theme_id: theme.id, roadmap_id: @roadmap.id), remote: true, method: :patch,  data: { 'turbolinks-scroll': false } do |f| %>
       <div class="improvement">
         <div class="improvement-emoji">
           <div class="emoji-button"><%= improvement.emoji %></div>
@@ -14,9 +14,9 @@
         </div>
         <%= f.input :name, input_html: {value: improvement.name, class: "improvement-name", id: "name-#{improvement.id}"}, label: false %>
         <%= f.input :description, input_html: {value: improvement.description, class: "improvement-description", id: "descimp-#{improvement.id}"}, label: false  %>
-        <%= f.button :submit, class: "patch-improvement", name: "patch-improvement", style: "display: none", id: "patchimp-#{improvement.id}" %>
+        <%= f.button :submit, class: "patch", name: "patch-improvement", style: "display: none", id: "patchimp-#{improvement.id}" %>
       </div>
     <% end %>
-    <%= button_to 'delete improvement', roadmap_theme_improvement_path(id: improvement.id, theme_id: theme.id, roadmap_id: @roadmap.id), method: 'delete', class: "delete-improvement", style: "display: none;", remote: true, id: "deleteimp-#{improvement.id}" %>
+    <%= button_to 'delete improvement', roadmap_theme_improvement_path(id: improvement.id, theme_id: theme.id, roadmap_id: @roadmap.id), method: 'delete', class: "delete", style: "display: none;", remote: true, id: "deleteimp-#{improvement.id}" %>
   <% end %>
 </div>
