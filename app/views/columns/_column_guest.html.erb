@@ -1,29 +1,33 @@
 <% @themes.each do |theme| %>
-  <div class="column-roadmap preview-guest">
-    <h2><%= theme.temporality %></h2>
-    <div class="column-content">
-      <div class="theme">
-        <img src="https://images.pexels.com/photos/595804/pexels-photo-595804.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="theme-img">
-        <h2><%= theme.name %></h2>
-        <p><%= theme.description %></p>
-      </div>
-      <hr>
-      <div class="kpis">
-        <h2>Objectifs</h2>
-        <% theme.kpis.order(created_at: :desc).each do |kpi| %>
-          <div class="kpi-guest">
-            <%= image_tag "target", class: "emoji" %> <%= kpi.description %>
+  <% if !current_user.nil? && Roadmap.where(user_id: current_user.id).map(&:id).include?(params[:id].to_i) %>
+    <div class="column-roadmap preview-guest" style="display: none">
+  <% else %>
+    <div class="column-roadmap preview-guest">
+  <% end %>
+      <h2><%= theme.temporality %></h2>
+      <div class="column-content">
+        <div class="theme">
+          <img src="https://images.pexels.com/photos/595804/pexels-photo-595804.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="theme-img">
+          <h2><%= theme.name %></h2>
+          <p><%= theme.description %></p>
+        </div>
+        <hr>
+        <div class="kpis">
+          <h2>Objectifs</h2>
+          <% theme.kpis.order(created_at: :desc).each do |kpi| %>
+            <div class="kpi-guest">
+              <%= image_tag "target", class: "emoji" %> <%= kpi.description %>
+            </div>
+          <% end %>
+        </div>
+        <hr>
+        <h2>Améliorations</h2>
+        <% theme.improvements.order(created_at: :desc).each do |improvement| %>
+          <div class="improvement">
+            <h3><%= improvement.emoji %> <%= improvement.name %></h3>
+            <p><%= improvement.description %></p>
           </div>
         <% end %>
       </div>
-      <hr>
-      <h2>Améliorations</h2>
-      <% theme.improvements.order(created_at: :desc).each do |improvement| %>
-        <div class="improvement">
-          <h3><%= improvement.emoji %> <%= improvement.name %></h3>
-          <p><%= improvement.description %></p>
-        </div>
-      <% end %>
     </div>
-  </div>
 <% end %>
