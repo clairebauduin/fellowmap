@@ -41,7 +41,7 @@ class ThemesController < ApplicationController
       redirect_to(@roadmap)
     else
       redirect_to(@roadmap)
-      flash[:notice] = "Impossible d'éditer l'objectif'"
+      flash[:notice] = "Impossible d'éditer l'objectif"
     end
   end
 
@@ -58,6 +58,6 @@ class ThemesController < ApplicationController
   end
 
   def theme_params
-    params.require(:theme).permit(:temporality, :name, :description, :roadmap_id)
+    params.require(:theme).permit(:temporality, :name, :description, :cover, :roadmap_id)
   end
 end

@@ -11,10 +11,10 @@
 .improvement .form-group input, .improvement .form-group input:focus,
 .improvement .form-group textarea, .improvement .form-group textarea:focus {
   width: 100%;
-  background: white;
+  background: $my-gray !important;
   border: transparent;
   box-shadow: none;
-  border: 2px dashed #979797;
+  border: 1px dashed $my-black;
   box-sizing: border-box;
   border-radius: 10px;
   box-shadow: none;
@@ -24,10 +24,10 @@
 .improvement .form-group input:focus, .improvement .form-group input:hover,
 .improvement .form-group textarea:focus, .improvement .form-group textarea:hover {
   width: 100%;
-  background: white;
+  background: $my-gray !important;
   border: transparent;
   box-shadow: none;
-  border: 2px dashed $my-black;
+  border: 1px dashed $my-black;
   box-sizing: border-box;
   border-radius: 10px;
   box-shadow: none;
@@ -92,10 +92,11 @@
   font-size: 20px;
   flex: 0 0 20%;
   cursor: pointer;
-  border: 2px dashed #979797;
+  border: 1px dashed $my-black;
   box-sizing: border-box;
   border-radius: 10px;
   box-shadow: none;
   text-align: center;
+  background: $my-gray !important;
 }
 

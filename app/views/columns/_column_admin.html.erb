@@ -1,21 +1,26 @@
 <% @themes.each do |theme| %>
   <div class="column-roadmap admin">
-        <!-- Theme -->
-        <%= simple_form_for theme, url: roadmap_theme_path(id: theme.id, roadmap_id: @roadmap.id), remote: true, method: :patch, data: { 'turbolinks-scroll': false } do |f| %>
-      <div class="theme">
-          <%= f.input :temporality, label: false, input_html: {value: theme.temporality, class: "theme-temporality", id: "temporality-#{theme.id}"} %>
-        <div class="column-content">
-          <%= f.input :name, input_html: {value: theme.name, class: "theme-name", id: "name-#{theme.id}"}, label: "Nom du thème" %>
-          <%= f.input :description, input_html: {value: theme.description, class: "theme-description", id: "descthem-#{theme.id}"}  %>
-          <%= f.button :submit, class: "patch", name: "patch-theme", style: "display: none", id: "patchthem-#{theme.id}" %>
-        <% end %>
-          <%= render partial: 'columns/column_admin_kpis.html.erb', locals: {theme: theme} %>
-          <%= render partial: 'columns/column_admin_improvements.html.erb', locals: {theme: theme} %>
-          <div class="delete-column mt-3 text-center">
-            <%= button_to "Supprimer", {controller: :themes, action: 'destroy', id: theme.id, roadmap_id: @roadmap.id }, method: :delete, class: "btn btn-white btn-red", data: { confirm: 'Tu es sûr(e) de supprimer ce thème? Tout va disparaître.' } %>
-          </div>
+    <!-- Theme -->
+    <%= simple_form_for theme, url: roadmap_theme_path(id: theme.id, roadmap_id: @roadmap.id) do |f| %>
+    <div class="theme">
+      <%= f.input :temporality, label: false, input_html: {value: theme.temporality, class: "theme-temporality", id: "temporality-#{theme.id}"} %>
+      <div class="column-content">
+        <div class="upload-img">
+        <%= f.hidden_field :cover_cache %>
+        <%= image_tag theme.cover_url if !theme.cover_url.nil? %>
+        <%= f.file_field :cover, label: "🖼️", id: "picture-#{theme.id}" %>
+        </div>
+        <%= f.input :name, input_html: {value: theme.name, class: "theme-name", id: "name-#{theme.id}"}, label: "Nom du thème" %>
+        <%= f.input :description, input_html: {value: theme.description, class: "theme-description", id: "descthem-#{theme.id}"}  %>
+        <%= f.button :submit, class: "patch", name: "patch-theme",  id: "patchthem-#{theme.id}" %>
+      <% end %>
+        <%= render partial: 'columns/column_admin_kpis.html.erb', locals: {theme: theme} %>
+        <%= render partial: 'columns/column_admin_improvements.html.erb', locals: {theme: theme} %>
+        <div class="delete-column mt-3 text-center">
+        <%= button_to "Supprimer", {controller: :themes, action: 'destroy', id: theme.id, roadmap_id: @roadmap.id }, method: :delete, class: "btn btn-white btn-red", data: { confirm: 'Tu es sûr(e) de supprimer ce thème? Tout va disparaître.' } %>
         </div>
       </div>
+    </div>
   </div>
 <% end %>
 

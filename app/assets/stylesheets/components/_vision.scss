@@ -11,11 +11,11 @@
 .vision-container .form-group input, .vision-container .form-group input:focus,
 .vision-container .form-group textarea, .vision-container .form-group textarea:focus {
   width: 100%;
-  background: white;
+  background: $my-gray;
   border: transparent;
   padding-left:10px;
   box-shadow: none;
-  border: 2px dashed #979797;
+  border: 1px dashed $my-black;
   box-sizing: border-box;
   border-radius: 10px;
   box-shadow: none;
@@ -25,11 +25,11 @@
 .vision-container .form-group input:hover, .vision-container .form-group input:focus,
 .vision-container .form-group textarea:hover, .vision-container .form-group textarea:focus {
   width: 100%;
-  background: white;
+  background: $my-gray !important;
   border: transparent;
   padding-left:10px;
   box-shadow: none;
-  border: 2px dashed $my-black;
+  border: 1px dashed $my-black;
   box-sizing: border-box;
   border-radius: 10px;
   box-shadow: none;
