@@ -7,10 +7,11 @@ $(document).on('ready turbolinks:load', function() {
     $("textarea").elastic();
 
     // Patch or delete names & descriptions
-    $(".column-content .form-control").each(function(e) {
+    $(".description, .name, .roadmap-vision").each(function(e) {
       $(this).keydown(function(ev1) {
         let currentLength = $(ev1.target).val().length;
-        if (currentLength === 0 && ev1.key === 'Backspace' && !$(ev1.target).parents().eq(2).hasClass("theme")) {
+        if (currentLength === 0 && ev1.key === 'Backspace' && !$(ev1.target).parents().eq(2).hasClass("theme")
+            && !$(ev1.target).parents().eq(2).hasClass("roadmap-vision")){
           $(ev1.target).parents().eq(2).next(".button_to").children(".delete").click();
         }
       })
@@ -22,12 +23,20 @@ $(document).on('ready turbolinks:load', function() {
       })
     })
 
-    // Patch temporality
-    $(".theme_temporality .form-control").each(function(e) {
+    // Patch theme
+    $(".theme-description, .theme-name").each(function(e) {
       $(this).on('input', function(e) {
         clearTimeout(timeout);
         timeout = setTimeout(function () {
-          $(e.target).parent().nextAll(".column-content").first().children('.patch').click();
+          $(e.target).parent().nextAll(".patch").first().click();
+        }, 2000);
+      })
+    })
+    $(".theme-temporality").each(function(e) {
+      $(this).on('input', function(e) {
+        clearTimeout(timeout);
+        timeout = setTimeout(function () {
+          $(e.target).parent().nextAll(".column-content").children().nextAll(".patch").first().click();
         }, 2000);
       })
     })

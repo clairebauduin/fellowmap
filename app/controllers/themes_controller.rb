@@ -4,7 +4,13 @@ class ThemesController < ApplicationController
   before_action :set_theme, only: [:destroy, :update]
 
   def create
-    @theme = Theme.new(name: "yop", description: "yop", temporality: "yop", roadmap_id: @roadmap.id)
+    if @themes.count == 0
+      @theme = Theme.new(name: "Nom du thème", description: "Description du problème que tu veux régler", temporality: "Court terme", roadmap_id: @roadmap.id)
+    elsif @themes.count == 1
+      @theme = Theme.new(name: "Nom du thème", description: "Description du problème que tu veux régler", temporality: "Moyen terme", roadmap_id: @roadmap.id)
+    else
+      @theme = Theme.new(name: "Nom du thème", description: "Description du problème que tu veux régler", temporality: "Long terme", roadmap_id: @roadmap.id)
+    end
     if @theme.save
       @kpi = Kpi.new(description: "Ton objectif business", theme_id: @theme.id)
       @kpi.save

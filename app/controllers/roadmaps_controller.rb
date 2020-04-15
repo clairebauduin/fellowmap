@@ -36,7 +36,6 @@ class RoadmapsController < ApplicationController
   def update
     if @roadmap.update(roadmap_params)
         redirect_to(@roadmap)
-        flash[:notice] = "Roadmap modifiée"
     else
       render :edit
       flash[:notice] = "Impossible d'éditer la roadmap"
@@ -67,6 +66,6 @@ class RoadmapsController < ApplicationController
   end
 
   def roadmap_params
-    params.require(:roadmap).permit(:name, :user)
+    params.require(:roadmap).permit(:name, :user, :vision)
   end
 end
