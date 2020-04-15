@@ -18,6 +18,8 @@ gem 'webpacker'
 gem 'jquery-rails'
 gem 'gemoji'
 gem 'turbolinks'
+gem 'cloudinary'
+gem 'carrierwave'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
