@@ -1,0 +1,52 @@
+.roadmap-vision {
+  width: 100%;
+}
+
+.vision-container {
+  margin-bottom: 2rem;
+  position: fixed;
+  width:100%;
+}
+
+.vision-container .form-group input, .vision-container .form-group input:focus,
+.vision-container .form-group textarea, .vision-container .form-group textarea:focus {
+  width: 100%;
+  background: white;
+  border: transparent;
+  padding-left:10px;
+  box-shadow: none;
+  border: 2px dashed #979797;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: none;
+  min-height: 41px;
+}
+
+.vision-container .form-group input:hover, .vision-container .form-group input:focus,
+.vision-container .form-group textarea:hover, .vision-container .form-group textarea:focus {
+  width: 100%;
+  background: white;
+  border: transparent;
+  padding-left:10px;
+  box-shadow: none;
+  border: 2px dashed $my-black;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: none;
+}
+
+.vision-form {
+  margin: 0 35px;
+  padding: 15px;
+  width: 60%;
+  margin: 0 auto;
+}
+
+@media(max-width: 415px) {
+  .vision-form {
+    margin: 0 auto;
+    width: calc(100% - 40px);
+  }
+}
+
+

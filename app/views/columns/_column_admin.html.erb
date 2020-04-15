@@ -1,9 +1,9 @@
 <% @themes.each do |theme| %>
-  <div class="column-roadmap">
+  <div class="column-roadmap admin">
         <!-- Theme -->
         <%= simple_form_for theme, url: roadmap_theme_path(id: theme.id, roadmap_id: @roadmap.id), remote: true, method: :patch, data: { 'turbolinks-scroll': false } do |f| %>
       <div class="theme">
-          <%= f.input :temporality, input_html: {value: theme.temporality, class: "theme-temporality", id: "temporality-#{theme.id}"} %>
+          <%= f.input :temporality, label: false, input_html: {value: theme.temporality, class: "theme-temporality", id: "temporality-#{theme.id}"} %>
         <div class="column-content">
           <%= f.input :name, input_html: {value: theme.name, class: "theme-name", id: "name-#{theme.id}"}, label: "Nom du thème" %>
           <%= f.input :description, input_html: {value: theme.description, class: "theme-description", id: "descthem-#{theme.id}"}  %>
@@ -19,3 +19,4 @@
   </div>
 <% end %>
 
+<%= render 'columns/column_guest' %>

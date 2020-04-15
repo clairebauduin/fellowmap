@@ -1,29 +1,59 @@
 <div class="show-container">
-  <div class="columns">
+  <!-- Toggle public/admin -->
+  <div class="vision-container">
     <% if !current_user.nil? && Roadmap.where(user_id: current_user.id).map(&:id).include?(params[:id].to_i) %>
-    <!-- Si connecté & sur sa roadmap -->
-      <%= render 'columns/column_admin' %>
-
-      <%= simple_form_for @new_theme, url: roadmap_themes_path(@roadmap), method: :post, remote: true do |f| %>
-        <% if @themes.first.nil? %>
-          <%= f.button :submit, "+ Crée ton premier thème", class: "btn btn-white create-theme" %>
-        <% else %>
-          <%= f.button :submit, "+ Ajoute un thème", class: "btn btn-white create-theme" %>
+    <div class="btn-switch">
+      <span>Prévisualisation :</span>
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
+    </div>
+      <div class="vision-form column-content vision-admin">
+        <%= simple_form_for @roadmap, html: {id: "roadmapvis-#{@roadmap.id}"}, remote: true do |f| %>
+          <%= f.input :vision, label: "Vision produit", input_html: {value: @roadmap.vision, placeholder: "Écris ici l'objectif que tu veux atteindre avec ton produit. Qui veux-tu aider et comment ?", class: "roadmap-vision",  id: "vision-#{@roadmap.id}"} %>
+          <%= f.button :submit, class: "patch", name: "patch-vision", style: "display: none", id: "patchivis-#{@roadmap.id}" %>
         <% end %>
-      <% end %>
-
-      <% if @themes.first.nil? %>
-        <div class="text-helper">
-          <h2>Lance toi et crée ton 1èr thème !</h2>
+      </div>
+    <div class="vision-form column-content vision-preview" style="display: none">
+      <h2>Vision produit :</h2>
+      <p><%= @roadmap.vision %></p>
+    </div>
+  </div>
+  <% else %>
+  <div class="vision-container">
+    <div class="vision-form column-content">
+      <h2>Vision produit :</h2>
+      <p><%= @roadmap.vision %></p>
+    </div>
+  </div>
+  <% end %>
+    <% if !current_user.nil? && Roadmap.where(user_id: current_user.id).map(&:id).include?(params[:id].to_i) %>
+      <div class="columns">
+      <!-- Si connecté & sur sa roadmap -->
+        <%= render 'columns/column_admin' %>
+        <div class="new-theme">
+          <%= simple_form_for @new_theme, url: roadmap_themes_path(@roadmap), method: :post, remote: true do |f| %>
+            <% if @themes.first.nil? %>
+              <%= f.button :submit, "+ Crée ton premier thème", class: "btn btn-white create-theme" %>
+            <% else %>
+              <%= f.button :submit, "+ Ajoute un thème", class: "btn btn-white create-theme" %>
+            <% end %>
+          <% end %>
         </div>
-      <% end %>
-
-
+        <% if @themes.first.nil? %>
+          <div class="text-helper">
+            <h2>Lance toi et crée ton 1èr thème !</h2>
+          </div>
+        <% end %>
+      </div>
     <% else %>
     <!-- Si pas connecté ou pas sur sa roadmap -->
-      <%= render 'columns/column_guest' %>
+      <div class="columns">
+        <%= render 'columns/column_guest' %>
+      </div>
     <% end %>
-  </div>
+
 </div>
 
 <!-- Afficher un loader cool si je crée une roadmap : -->
