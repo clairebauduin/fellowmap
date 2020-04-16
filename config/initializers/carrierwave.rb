@@ -19,6 +19,11 @@ CarrierWave.configure do |config|
       config.asset_host = 'https://s3-eu-west-3.amazonaws.com/test.fellowmap'
       config.storage = :fog
 
+    when 'staging'
+      config.fog_directory = 'test.fellowmap'
+      config.asset_host = 'https://s3-eu-west-3.amazonaws.com/test.fellowmap'
+      config.storage = :fog
+
     when 'test'
       config.fog_directory = 'test.fellowmap'
       config.asset_host = 'https://s3-eu-west-3.amazonaws.com/test.fellowmap'
