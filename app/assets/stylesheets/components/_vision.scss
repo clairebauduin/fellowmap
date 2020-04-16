@@ -8,6 +8,10 @@
   width:100%;
 }
 
+.vision-container textarea::placeholder {
+  color: $my-black;
+}
+
 .vision-container .form-group input, .vision-container .form-group input:focus,
 .vision-container .form-group textarea, .vision-container .form-group textarea:focus {
   width: 100%;

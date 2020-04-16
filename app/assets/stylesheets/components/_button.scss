@@ -45,6 +45,15 @@ button.roadmap-name:hover {
   box-shadow: none;
   outline: none;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+@media(max-width:415px) {
+  button.roadmap-name {
+    max-width: 49%;
+  }
 }
 
 
@@ -93,7 +102,7 @@ button.roadmap-name:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: $my-gray;
+  background-color: $my-black;
   -webkit-transition: .4s;
   transition: .4s;
 }

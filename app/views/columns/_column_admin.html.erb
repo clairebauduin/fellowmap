@@ -19,7 +19,9 @@
         <%= f.input :description, input_html: {value: theme.description, class: "theme-description", id: "descthem-#{theme.id}"}  %>
         <%= f.button :submit, class: "patch", name: "patch-theme", style: "display: none", id: "patchthem-#{theme.id}" %>
       <% end %>
+        <hr>
         <%= render partial: 'columns/column_admin_kpis.html.erb', locals: {theme: theme} %>
+        <hr>
         <%= render partial: 'columns/column_admin_improvements.html.erb', locals: {theme: theme} %>
         <div class="delete-column mt-3 text-center">
         <%= button_to "Supprimer", {controller: :themes, action: 'destroy', id: theme.id, roadmap_id: @roadmap.id }, method: :delete, class: "btn btn-white btn-red", data: { confirm: 'Tu es sûr(e) de supprimer ce thème? Tout va disparaître.' } %>
