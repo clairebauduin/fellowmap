@@ -1,5 +1,4 @@
 class CoverUploader < CarrierWave::Uploader::Base
-  include Cloudinary::CarrierWave
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
@@ -12,14 +11,6 @@ class CoverUploader < CarrierWave::Uploader::Base
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
-  end
-
-   version :standard do
-    process :resize_to_fill => [100, 150, :north]
-  end
-
-  version :thumbnail do
-    process :resize_to_fit => [50, 50]
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
