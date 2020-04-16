@@ -8,7 +8,7 @@
     <%= simple_form_for kpi, url: roadmap_theme_kpi_path(id: kpi.id, theme_id: theme.id, roadmap_id: @roadmap.id), method: :patch, remote: true do |f| %>
       <div class="kpi">
         <div class="kpi-emoji">
-          <%= image_tag "target", class: "emoji" %>
+          <%= image_tag "target.png", class: "emoji" %>
          </div>
         <%= f.input :description, input_html: {value: kpi.description, class: "description kpi-description", id: "desckpi-#{kpi.id}"}, label: false  %>
         <%= f.button :submit, class: "patch", name: "patch-kpi", style: "display: none", id: "patchkpi-#{kpi.id}" %>

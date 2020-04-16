@@ -20,7 +20,7 @@
           <h2>Objectifs</h2>
           <% theme.kpis.order(created_at: :desc).each do |kpi| %>
             <div class="kpi-guest">
-              <%= image_tag "target", class: "emoji" %> <%= kpi.description %>
+              <%= image_tag "target.png", class: "emoji" %> <%= kpi.description %>
             </div>
           <% end %>
         </div>
