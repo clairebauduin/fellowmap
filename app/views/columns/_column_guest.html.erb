@@ -7,7 +7,11 @@
       <h2><%= theme.temporality %></h2>
       <div class="column-content">
         <div class="theme">
-          <img src="https://images.pexels.com/photos/595804/pexels-photo-595804.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="theme-img">
+          <% if !theme.cover.url.nil? %>
+            <div class="upload-img uploaded">
+              <%= image_tag theme.cover.url %>
+            </div>
+          <% end %>
           <h2><%= theme.name %></h2>
           <p><%= theme.description %></p>
         </div>

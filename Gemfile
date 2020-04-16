@@ -18,8 +18,10 @@ gem 'webpacker'
 gem 'jquery-rails'
 gem 'gemoji'
 gem 'turbolinks'
-gem 'cloudinary'
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'aws-sdk'
 gem 'carrierwave'
+gem 'fog'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

@@ -58,6 +58,6 @@ class ThemesController < ApplicationController
   end
 
   def theme_params
-    params.require(:theme).permit(:temporality, :name, :description, :cover, :roadmap_id)
+    params.require(:theme).permit(:temporality, :name, :description, :cover, :cover_cache, :roadmap_id)
   end
 end

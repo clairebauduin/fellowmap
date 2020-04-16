@@ -40,6 +40,9 @@ $(document).on('ready turbolinks:load', function() {
         }, 2000);
       })
     })
+    $(".upload-cover").change(function(e) {
+      $(e.target).parent().nextAll(".patch").first().click();
+    })
 
     // Show Emoji selector for improvements
     $(".emoji-button").each(function() {
