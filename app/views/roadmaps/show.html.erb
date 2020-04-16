@@ -1,7 +1,7 @@
 <div class="show-container">
   <!-- Toggle public/admin -->
+  <% if !current_user.nil? && Roadmap.where(user_id: current_user.id).map(&:id).include?(params[:id].to_i) %>
   <div class="vision-container">
-    <% if !current_user.nil? && Roadmap.where(user_id: current_user.id).map(&:id).include?(params[:id].to_i) %>
     <div class="btn-switch">
       <span>Prévisualisation :</span>
       <label class="switch">
@@ -41,11 +41,6 @@
             <% end %>
           <% end %>
         </div>
-        <% if @themes.first.nil? %>
-          <div class="text-helper">
-            <h2>Lance toi et crée ton 1èr thème !</h2>
-          </div>
-        <% end %>
       </div>
     <% else %>
     <!-- Si pas connecté ou pas sur sa roadmap -->

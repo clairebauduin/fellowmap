@@ -10,6 +10,8 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
+  config.assets.digest = true
+
   config.active_storage.service = :aws
 
   # Show full error reports.

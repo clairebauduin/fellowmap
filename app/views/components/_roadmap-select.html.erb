@@ -12,7 +12,7 @@
         <%= link_to image_tag("pen.png"), edit_roadmap_path(@roadmap), class: "decoration-none emoji emoji-roadmap" %>
       </div>
       <button class="roadmap-name">
-        <span class="roadmap-name-ellipsis"><%= @roadmap.name %></span>
+        <div class="roadmap-name-ellipsis"><p><%= @roadmap.name %></p></div>
         <%= image_tag "dropdown-arrow.svg", class: "ml-1", alt: "dropdown arrow" %>
       </button>
       <div class="emoji-link bg-blue02">
