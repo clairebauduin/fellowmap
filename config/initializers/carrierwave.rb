@@ -4,7 +4,6 @@ CarrierWave.configure do |config|
     aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
     aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
     region: 'eu-west-3',
-    profile_name: 'pabauduin'
   }
   config.fog_directory  = 'fellowmap'
 
@@ -29,8 +28,6 @@ CarrierWave.configure do |config|
       config.asset_host = 'https://s3-eu-west-3.amazonaws.com/test.fellowmap'
       config.storage = :fog
   end
-
-  s3 = Aws::S3::Client.new(profile: 'pabauduin', region: 'eu-west-3')
 end
 
 
