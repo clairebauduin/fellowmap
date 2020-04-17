@@ -35,8 +35,8 @@
     </div>
     <!-- Vision admin preview -->
     <div class="vision vision-preview" style="display: none;">
-      <%= image_tag @roadmap.logo.url if !@roadmap.logo.url.nil? %>
       <div class="vision-form">
+        <h2>Notre vision</h2>
         <p><%= @roadmap.vision %></p>
       </div>
     </div>
@@ -44,8 +44,8 @@
   <!-- Vision guest -->
 <% else %>
   <div class="vision vision-preview">
-    <%= image_tag @roadmap.logo.url if !@roadmap.logo.url.nil? %>
     <div class="vision-form">
+      <h2>Notre vision</h2>
       <p><%= @roadmap.vision %></p>
     </div>
   </div>

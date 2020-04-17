@@ -20,7 +20,9 @@
 
   <% else %>
 
-    <div class="pr-4" id="navbarSupportedContent">
+    <div class="roadmap-logo"><%= image_tag @roadmap.logo.url if !@roadmap.logo.url.nil? %></div>
+
+    <div class="navbar-collapse collapse pr-4" id="navbarSupportedContent">
       <%= link_to "Connexion", new_user_session_path, class: "c-black" %>
     </div>
 

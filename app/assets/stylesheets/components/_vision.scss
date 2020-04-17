@@ -44,11 +44,15 @@
 .vision-form {
   margin: auto 0;
   position: relative;
+  background: $my-white;
+  color: $my-black;
+  padding: 30px;
+  border-radius: 20px;
+  border: 2px solid $my-yellow;
 }
 
 .vision-form p {
   margin-bottom: 0;
-  font-weight: bold;
 }
 
 .vision-form .form-group {
