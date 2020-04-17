@@ -56,7 +56,6 @@ button.roadmap-name:hover {
   }
 }
 
-
 // Button for switch preview/admin mode
 
 .switch-container {
@@ -68,11 +67,16 @@ button.roadmap-name:hover {
 }
 
 .btn-switch {
-  bottom: 20px;
+  margin-bottom: 20px;
   z-index: 9999;
   max-width: 300px;
-  text-align: center;
-  margin: 10px auto;
+  margin-left: 35px;
+}
+
+@media(max-width: 415px){
+  .btn-switch {
+    margin-left: 20px;
+  }
 }
 
 .btn-switch label {

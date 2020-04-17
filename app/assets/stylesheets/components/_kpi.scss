@@ -40,9 +40,6 @@
   width: 100%;
 }
 
-.kpis {
-  margin-bottom: 2rem;
-}
 
 .kpi textarea.form-control.is-valid {
   padding-right: 10px !important;
@@ -50,8 +47,14 @@
 
 .kpi-guest {
   margin-bottom: 1rem;
+  display: flex;
 }
 
 .kpi-guest img {
   margin-bottom: 6px;
+  margin-right: 10px;
+}
+
+.kpi-guest p {
+  margin-bottom: 0;
 }

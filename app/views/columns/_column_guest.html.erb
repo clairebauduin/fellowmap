@@ -2,7 +2,7 @@
   <% if !current_user.nil? && Roadmap.where(user_id: current_user.id).map(&:id).include?(params[:id].to_i) %>
   <div class="column-roadmap preview-guest" style="display: none">
   <% else %>
-  <div class="column-roadmap preview-guest">
+  <div class="column-roadmap">
   <% end %>
     <h2><%= theme.temporality %></h2>
     <div class="column-content">
@@ -20,7 +20,7 @@
         <h2>Objectifs</h2>
         <% theme.kpis.order(created_at: :desc).each do |kpi| %>
           <div class="kpi-guest">
-            <%= image_tag "target.png", class: "emoji" %> <%= kpi.description %>
+            <%= image_tag "target.png", class: "emoji" %> <p><%= kpi.description %></p>
           </div>
         <% end %>
       </div>
