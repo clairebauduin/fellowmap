@@ -1,0 +1,52 @@
+<!-- Toggle public/admin -->
+<% if !current_user.nil? && Roadmap.where(user_id: current_user.id).map(&:id).include?(params[:id].to_i) %>
+  <div class="vision-container">
+    <div class="btn-switch">
+      <span>Prévisualisation :</span>
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <!-- Vision admin -->
+    <div class="vision-grid vision-admin">
+      <%= simple_form_for @roadmap, html: {id: "roadmaplogo-#{@roadmap.id}"}, url: roadmap_path do |f| %>
+        <div class="roadmap-logo">
+          <div class="upload-img img-vision">
+            <% if !@roadmap.logo.url.nil? %>
+              <%= image_tag @roadmap.logo.url %>
+              <div class="black-filter">🖼️</div>
+            <% else %>
+            <p>Logo</p>
+              🖼️
+            <% end %>
+            <%= f.file_field :logo, class: "upload-logo", id: "upload1-#{@roadmap.id}" %>
+            <%= f.hidden_field :logo_cache, id: "upload2-#{@roadmap.id}" %>
+            <%= f.button :submit, class: "patch", name: "patch-logo", style: "display: none", id: "patchivis-#{@roadmap.id}" %>
+          </div>
+        </div>
+      <% end %>
+      <div class="vision-form">
+        <%= simple_form_for @roadmap, html: {id: "roadmapvis-#{@roadmap.id}"}, remote: true do |f| %>
+          <%= f.input :vision, label: "Vision produit", input_html: {value: @roadmap.vision, placeholder: "Écris ici l'objectif que tu veux atteindre avec ton produit. Qui veux-tu aider et comment ?", class: "roadmap-vision",  id: "vision-#{@roadmap.id}"} %>
+          <%= f.button :submit, class: "patch", name: "patch-vision", style: "display: none", id: "patchivis-#{@roadmap.id}" %>
+        <% end %>
+      </div>
+    </div>
+    <!-- Vision admin preview -->
+    <div class="vision vision-preview" style="display: none;">
+      <%= image_tag @roadmap.logo.url if !@roadmap.logo.url.nil? %>
+      <div class="vision-form">
+        <p><%= @roadmap.vision %></p>
+      </div>
+    </div>
+  </div>
+  <!-- Vision guest -->
+<% else %>
+  <div class="vision vision-preview">
+    <%= image_tag @roadmap.logo.url if !@roadmap.logo.url.nil? %>
+    <div class="vision-form">
+      <p><%= @roadmap.vision %></p>
+    </div>
+  </div>
+<% end %>

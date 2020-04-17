@@ -23,6 +23,12 @@ $(document).on('ready turbolinks:load', function() {
       })
     })
 
+    // Patch roadmap logo
+    $(".upload-logo").change(function(e) {
+      console.log($(e.target).nextAll(".patch").first())
+      $(e.target).nextAll(".patch").first().click();
+    })
+
     // Patch theme
     $(".theme-description, .theme-name").each(function(e) {
       $(this).on('input', function(e) {

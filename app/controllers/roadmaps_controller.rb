@@ -66,6 +66,6 @@ class RoadmapsController < ApplicationController
   end
 
   def roadmap_params
-    params.require(:roadmap).permit(:name, :user, :vision)
+    params.require(:roadmap).permit(:name, :logo, :logo_cache, :user, :vision)
   end
 end

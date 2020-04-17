@@ -1,16 +1,17 @@
 .upload-img {
   background-color: $my-gray;
   border-radius: 10px;
-  height:30px;
   width: 100%;
   height: 100px;
   margin-bottom: 20px;
   margin-top: -20px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
   border: 1px dashed $my-black;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .upload-img img {
@@ -59,3 +60,9 @@
   color: white;
   text-align: center;
 }
+
+
+.roadmap-logo .upload-img {
+  margin: 0;
+}
+
