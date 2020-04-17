@@ -10,7 +10,7 @@
     </div>
     <!-- Vision admin -->
     <div class="vision-grid vision-admin">
-      <%= simple_form_for @roadmap, html: {id: "roadmaplogo-#{@roadmap.id}"}, url: roadmap_path do |f| %>
+      <%= simple_form_for @roadmap, html: {id: "roadmaplogo-#{@roadmap.id}"} do |f| %>
         <div class="roadmap-logo">
           <div class="upload-img img-vision">
             <% if !@roadmap.logo.url.nil? %>
