@@ -44,11 +44,7 @@
 .vision-form {
   margin: auto 0;
   position: relative;
-  background: $my-white;
   color: $my-black;
-  padding: 30px;
-  border-radius: 20px;
-  border: 2px solid $my-yellow;
 }
 
 .vision-form p {
@@ -62,7 +58,6 @@
 @media(max-width: 415px) {
   .vision-form {
     width: calc(100%);
-    margin-top: 20px;
   }
 }
 
@@ -100,6 +95,13 @@
 .vision {
   margin: 0 35px 20px 35px;
   display: flex;
+  border-left: 2px solid $yellow;
+  color: $my-white;
+  padding: 30px;
+}
+
+.vision h2, .vision p {
+  color: white;
 }
 
 .vision img {

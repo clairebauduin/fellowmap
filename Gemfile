@@ -22,6 +22,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'aws-sdk'
 gem 'carrierwave'
 gem 'fog'
+gem 'sprockets-rails'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

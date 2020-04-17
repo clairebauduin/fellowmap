@@ -1379,6 +1379,7 @@ DEPENDENCIES
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
+  sprockets-rails
   turbolinks
   uglifier
   web-console (>= 3.3.0)
