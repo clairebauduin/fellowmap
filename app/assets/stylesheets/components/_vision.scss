@@ -100,7 +100,8 @@
 
 .vision img {
   margin-right: 35px;
-  max-height: 70px;
+  height: 100%;
+  min-width: 200px;
 }
 
 @media(max-width: 415px) {
