@@ -1,56 +1,30 @@
-.home-container0 {
-  min-height: 100vh;
+.home-container {
   position: relative;
-  display: flex;
   align-items: center;
-  padding: 0 8% 0 8%;
-  color: $my-white;
+  color: $my-black;
   scroll-behavior: smooth;
+  padding: 0 20%;
 }
 
-.home-container1 {
-  min-height: 95vh;
-  position: relative;
+.home-container-form {
+  height: 100vh;
   display: flex;
+  justify-content: space-around;
   align-items: center;
-  padding: 0 8% 0 8%;
-  color: $my-white;
-  scroll-behavior: smooth;
+  background: $my-blue;
 }
 
-.home-container2 {
-  min-height: 100vh;
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 0 8% 0 8%;
-  color: $my-white;
-  scroll-behavior: smooth;
+#home-preview:hover {
+  cursor: pointer;
 }
 
-@media(max-width: 415px){
-  .home-content {
-    margin-top: 90px;
-  }
-}
-
-@media(min-width: 416px) {
-  .home-baseline {
-    max-width: 37vw;
-  }
-  .home-content {
-    margin-left: 5%;
-  }
-}
-
-@media(max-width: 415px) {
-  .home-baseline {
-    margin-top: 80px;
-  }
+#typed {
+  color: $my-blue;
 }
 
 .home-cta {
   position: absolute;
+  top: 460px;
 }
 
 .zi-2 {
@@ -59,4 +33,120 @@
 
 .zi-9999 {
   z-index: 9999;
+}
+
+.home-container1 {
+  background: $my-gray;
+}
+
+.home-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.home-content1 {
+  padding-top: 30px;
+  padding-bottom: 260px;
+}
+
+.home-baseline br {
+  display: none;
+}
+
+.home-container2 {
+  background: $my-blue;
+}
+
+
+.home-content2 {
+  color: $my-white;
+  padding-bottom: 100px;
+}
+
+.home-content2 img {
+  margin-top: -110px;
+  margin-bottom: 30px;
+}
+
+.home-container3 {
+  background: $my-white;
+}
+
+.home-content3 {
+  color: $my-white;
+  padding: 100px 0;
+  display:flex;
+  justify-content: center;
+  flex-direction: row;
+  text-align: left;
+}
+
+.slack {
+  padding: 26px 60px;
+}
+
+.slack-text {
+  color: $my-black;
+  margin-left: 30px;
+}
+
+.slack img {
+  width: 150px;
+  height: 61px;
+}
+
+.home-container4 {
+  background: $my-gray;
+  padding: 0 30%;
+}
+
+.home-content4 {
+  color: $my-black;
+  padding: 100px 0;
+}
+
+.home-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 12px;
+  text-align: left;
+  margin: 20px -10px 0 -10px;
+}
+
+.home-card {
+  background: $my-white;
+  padding: 35px;
+  border-radius: 20px;
+  flex: 0 0 calc(50% - 20px);
+  margin: 10px;
+}
+
+@media(max-width: 415px) {
+  .home-container {
+    padding: 0 15px;
+  }
+  .home-content2 img {
+    max-width: 90%;
+  }
+  .home-content3 {
+    flex-direction: column;
+    text-align: center;
+  }
+  .slack-text {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+  .home-card{
+    flex: 0 0 calc(100% - 20px);
+  }
+  .home-cta {
+    position: absolute;
+    top: 550px;
+  }
+  .home-baseline br {
+    display: block;
+  }
 }

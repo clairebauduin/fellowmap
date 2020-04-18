@@ -1,26 +1,24 @@
 .map {
-  height: calc(100vh - 80px);
-  position: absolute;
+  height: 220px;
   display: flex;
-  right: 10%;
   align-items: center;
-  top: 40px;
+  margin-top: 40px;
 }
 
 .bg-map {
   position: relative;
   background-image: image-url('map.svg');
-  width: 441px;
-  height: 348px;
+  width: 190px;
+  height: 152px;
   background-repeat: no-repeat;
   background-size: contain;
 }
 
 .map-dot {
   position: absolute;
-  width: 65px;
-  bottom: 91px;
-  left: 95px;
+  width: 35px;
+  bottom: 34px;
+  left: 38px;
   animation-name: map-dot;
   animation-delay: 0s;
   animation-duration: 6s;
@@ -30,66 +28,29 @@
 
 .map-position {
   position: absolute;
-  right: 54px;
-  bottom: 254px;
+  right: 23px;
+  bottom: 114px;
   animation-name: map-position;
   animation-delay: 6s;
   animation-duration: 12s;
   animation-iteration-count: infinite;
+  height: 63px;
 }
 
 @keyframes map-dot {
-  0%   {bottom: 91px; left: 95px;}
-  15%  {bottom: 101px; left: 147px;}
-  32%  {bottom: 201px; left: 107px;}
-  47% {bottom: 191px; left: 187px;}
-  65% {bottom: 121px; left: 236px;}
-  75% {bottom: 151px; left: 252px;}
-  90% {bottom: 178px; left: 292px;}
-  100% {bottom: 208px; left: 292px;}
+  0%   {bottom: 36px; left: 32px;}
+  15%  {bottom: 44px; left: 60px;}
+  32%  {bottom: 86px; left: 43px;}
+  47% {bottom: 76px; left: 78px;}
+  65% {bottom: 49px; left: 97px;}
+  75% {bottom: 65px; left: 105px;}
+  90% {bottom: 72px; left: 120px;}
+  100% {bottom: 87px; left: 120px;}
 }
 
 @keyframes map-position {
-  0%   {width: 133px;}
-  12%   {width: 153px;}
-  25% {width: 133px;}
-  100% {width: 133px;}
-}
-
-@media(max-width:768px) {
-  .map {
-    position: relative;
-    height: 146px;
-    margin-left: 30px;
-  }
-  .bg-map {
-    width: 184px;
-    height: 146px;
-  }
-  .map-dot {
-    width: 20%;
-    bottom: 31px;
-    left: 28px;
-  }
-  .map-position {
-    width: 20%;
-    right: 31px;
-    bottom: 129px;
-  }
-  @keyframes map-position {
-    0%   {width: 20%;}
-    12%   {width: 30%;}
-    25% {width: 20%;}
-    100% {width: 20%;}
-  }
-  @keyframes map-dot {
-    0%   {bottom: 31px; left: 28px;}
-    15%  {bottom: 41px; left: 56px;}
-    32%  {bottom: 79px; left: 40px;}
-    47% {bottom: 71px; left: 75px;}
-    65% {bottom: 46px; left: 94px;}
-    75% {bottom: 62px; left: 102px;}
-    90% {bottom: 69px; left: 117px;}
-    100% {bottom: 84px; left: 117px;}
-  }
+  0%   {height: 63px;}
+  12%   {height: 83px;}
+  25% {height: 63px;}
+  100% {height: 63px;}
 }

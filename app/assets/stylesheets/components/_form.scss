@@ -1,3 +1,26 @@
+.sign-in, .sign-up, .forgot-password {
+  text-align: center;
+  padding: 35px;
+  background: $my-white;
+  border: 2px $my-black solid;
+  border-radius: 20px;
+}
+
+.form-group textarea, .form-group input {
+  background: $my-gray !important;
+  border: transparent;
+  box-shadow: none;
+  border: 1px dashed $my-black;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: none;
+  min-height: 41px;
+}
+
+#user_remember_me {
+  min-height: auto;
+}
+
 .form-control {
   background-color: rgba(255, 255, 255, 0.5);
   border: none;
@@ -24,10 +47,6 @@ input::placeholder {
   background-color: $my-white;
   border-bottom: $my-green solid 2px;
   background-image: image-url('check.svg');
-}
-
-.form-check-input.is-valid ~ .form-check-label {
-    color: $my-white;
 }
 
 .invalid-feedback {

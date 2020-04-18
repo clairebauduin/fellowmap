@@ -3,6 +3,8 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require("jquery")
+require('../scripts/typed.js');
+
 
 import {} from '../scripts/flexibleArea'
 import {} from '../scripts/kpis'
@@ -14,3 +16,6 @@ import {} from '../scripts/loaders'
 import {} from '../scripts/alert'
 import {} from '../scripts/vision'
 import {} from '../scripts/preview-mode'
+import {} from '../scripts/typed'
+import {} from '../scripts/h1-typed'
+import {} from '../scripts/home-roadmap-preview'

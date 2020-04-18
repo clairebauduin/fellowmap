@@ -1,4 +1,4 @@
-<div class="home-container0">
+<div class="home-container home-container-form">
   <div class="main-content sign-up zi-9999">
     <h1>Créer une roadmap</h1>
 
@@ -18,23 +18,12 @@
 
   </div>
 
-  <div class="character zi-2">
-      <%= image_tag "char-red.svg", alt: "fellowmap mascott" %>
-  </div>
 </div>
-
-<!-- Rectangles -->
-
-<div class="rectangle-bg rectangle-bg-top">
-  <%= image_tag "rectangle-top.svg", alt: "top rectangle background" %>
-</div>
-
-<div class="rectangle-bg rectangle-bg-bottom rectangle-bg-red">
-  <%= image_tag "rectangle-bottom.svg", alt: "bottom rectangle background" %>
-</div>
-
 
 <!-- Afficher un loader cool si j'ai créé mon user avant de créer la roadmap : -->
 <% if request.referrer.last(7) == 'sign_up' %>
   <%= render 'components/loader_signup' %>
 <% end %>
+display: flex;
+    height: 100vh;
+    justify-content: space-around;

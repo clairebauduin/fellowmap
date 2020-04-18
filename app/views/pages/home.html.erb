@@ -1,5 +1,5 @@
-<div class="home-container1">
-  <div class="home-content zi-2">
+<div class="home-container home-container1">
+  <div class="home-content home-content1 zi-2">
     <div class="map zi-2">
       <div class="bg-map">
         <%= image_tag "dot.svg", class: "map-dot" %>
@@ -7,27 +7,8 @@
       </div>
     </div>
     <div class="home-baseline">
-      <h1>La stratégie produit peut être sexy, votre roadmap aussi.</h1>
-      <h2>Allez à l’essentiel, dessinez votre vision et notifiez vos collègues.</p>
-    </div>
-    <div class="home-cta">
-      <% if @roadmaps.last.nil? && user_signed_in? %>
-        <%= render 'components/button_link.html.erb', text: "C'est parti", link: new_roadmap_path, class: "btn-white btn-landing" %>
-      <% elsif user_signed_in? %>
-        <%= render 'components/button_link.html.erb', text: "C'est parti", link: roadmap_path(@roadmaps.last.id), class: "btn-white btn-landing" %>
-      <% else %>
-        <%= render 'components/button_link.html.erb', text: "Connexion", link: new_user_session_path, class: "btn-white btn-landing" %>
-      <% end %>
-    </div>
-    <%= render 'components/footer.html.erb' %>
-  </div>
-</div>
-
-<div class="home-container2 bg-red">
-  <div class="home-content zi-2">
-    <div class="home-baseline">
-      <h1>La stratégie produit peut être sexy, votre roadmap aussi.</h1>
-      <h2>Allez à l’essentiel, dessinez votre vision et notifiez vos collègues.</p>
+        <h1>Dites adieu aux <br><span id="typed"></span></h1>
+        <h3>Avec <strong>fellowmap</strong>, créez une roadmap <u>sexy</u> 🕶️ et <u>compréhensible</u> 💡 pour votre entreprise. Communiquez votre vision facilement et notifiez vos collègues en un clic.</p>
     </div>
     <div class="home-cta">
       <% if @roadmaps.last.nil? && user_signed_in? %>
@@ -41,12 +22,49 @@
   </div>
 </div>
 
-<!-- Rectangles -->
-
-<div class="rectangle-bg rectangle-bg-top">
-  <%= image_tag "rectangle-top.svg", alt: "top rectangle background" %>
+<div class="home-container home-container2">
+  <div class="home-content home-content2">
+    <div id="home-roadmap-admin"><%= image_tag "home-example.png" %></div>
+    <div id="home-roadmap-preview" style="display: none;"><%= image_tag "home-example2.png" %></div>
+    <h2>Créez votre roadmap facilement</h2>
+    <h3>Créez, priorisez, et éditez votre roadmap grâce à un des éditeurs les plus fluides, pensés pour les Product Managers.
+      <div style="padding-top:10px;"><a style="color: #FFB906;" id="home-preview">Prévisualisez le résultat à tout instant. 👆</a></div>
+    </h3>
+  </div>
 </div>
 
-<div class="rectangle-bg rectangle-bg-bottom rectangle-bg-yellow">
-  <%= image_tag "rectangle-bottom.svg", alt: "bottom rectangle background" %>
+<div class="home-container home-container3">
+  <div class="home-content home-content3">
+    <div class="slack"><%= image_tag "slack.svg" %></div>
+    <div class="slack-text">
+      <h2>Notifiez vos collègues</h2>
+      <h3>Impliquez directement votre entreprise en la tenant au courant. Partagez en quelques instants les changements apportés à la roadmap, sur Slack.</h3>
+    </div>
+  </div>
 </div>
+
+<div class="home-container home-container4">
+  <div class="home-content home-content4">
+    <h2>Construisez de la meilleure des manières</h2>
+    <div class="home-cards">
+      <div class="home-card">
+        <h3>🔭 Vision</h3>
+        <p>Fellowmap vous apprend à communiquer une vision claire dans votre entreprise. Montrez là où vous souhaitez emmener votre produit !</p>
+      </div>
+      <div class="home-card">
+        <h3>📅 Priorisation</h3>
+        <p>Choisissez et modifiez quand vous le souhaitez votre priorisation dans le temps. Ne vous sentez pas obligé d'y préciser une date !</p>
+      </div>
+      <div class="home-card">
+        <h3>🎯 Objectifs business</h3>
+        <p>Inscrivez des objectifs clairs pour montrer à vos équipes pourquoi il faut mener ces efforts. Montrez à vos dirigeants que vous travaillez pour que le produit soit rentable.</p>
+      </div>
+      <div class="home-card">
+        <h3>💬 Communication</h3>
+        <p>Sortez avec une roadmap claire qui vous permet de communiquer votre stratégie produit, sans effort. Expliquez à vos collègues comment vous allez accomplir votre vision.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render "components/footer" %>
