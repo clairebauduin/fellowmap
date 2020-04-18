@@ -5,13 +5,41 @@ h1 {
   padding-bottom: 15px;
 }
 
-.home-baseline h1 {
-  font-size: 33px;
-  line-height: 41px;
+.home-content h1 {
+  font-size: 2rem;
+  line-height: 37px;
 }
 
-.home-baseline h2 {
+@media(max-width:415px) {
+  .home-content h1 {
+    font-size: 2rem;
+    line-height: 37px;
+  }
+  .home-content h2 {
+    font-size: 1rem;
+    line-height: 26px;
+  }
+}
+
+.home-content h2 {
+  font-weight: bold;
+  margin: 0 auto;
+  font-size: 26px;
+  margin-bottom: 15px;
+}
+
+.home-content1 h3 {
+  margin: 0 auto;
+}
+
+.home-content h3 {
   font-weight: normal;
+  max-width: 560px;
+  font-size: 20px;
+}
+
+.home-content p {
+  margin: 0;
 }
 
 h2 {

@@ -13,6 +13,10 @@
   color: $my-black;
 }
 
+.vision-container label {
+  color: $my-white;
+}
+
 .vision-container .form-group input, .vision-container .form-group input:focus,
 .vision-container .form-group textarea, .vision-container .form-group textarea:focus {
   width: 100%;
@@ -63,7 +67,7 @@
 
 .vision-grid {
   display: grid;
-  grid-template-columns: 0fr 1fr 6fr 1fr;
+  grid-template-columns: 0fr 1fr 3fr 1fr;
   grid-template-rows: 1fr;
   grid-column-gap: 35px;
   grid-row-gap: 0px;
@@ -75,7 +79,7 @@
   .vision-grid {
     display: flex;
     flex-direction: column;
-    padding: 20px 20px;
+    padding: 20px;
     width: 100%;
   }
 }
@@ -97,7 +101,7 @@
   display: flex;
   border-left: 2px solid $yellow;
   color: $my-white;
-  padding: 30px;
+  padding-left: 20px;
 }
 
 .vision h2, .vision p {
