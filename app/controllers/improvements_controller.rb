@@ -26,7 +26,9 @@ class ImprovementsController < ApplicationController
 
   def update
     if @improvement.update(improvement_params)
-      redirect_to(@roadmap)
+      respond_to do |format|
+        format.html
+      end
     else
       redirect_to(@roadmap)
       flash[:notice] = "Impossible d'éditer l'amélioration"

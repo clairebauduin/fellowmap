@@ -38,7 +38,9 @@ class ThemesController < ApplicationController
 
   def update
     if @theme.update(theme_params)
-      redirect_to(@roadmap)
+      respond_to do |format|
+        format.html
+      end
     else
       redirect_to(@roadmap)
       flash[:notice] = "Impossible d'éditer l'objectif"

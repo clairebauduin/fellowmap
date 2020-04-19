@@ -1,5 +1,5 @@
 <% @themes.each do |theme| %>
-  <div class="column-roadmap admin">
+  <div class="column-roadmap" id="<%= theme.id %>">
     <!-- Theme -->
     <%= simple_form_for theme, url: roadmap_theme_path(id: theme.id, roadmap_id: @roadmap.id) do |f| %>
     <div class="theme">

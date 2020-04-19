@@ -1,12 +1,12 @@
 <div class="improvements">
   <!-- Create Improvements -->
-  <%= simple_form_for @new_improvement, url: roadmap_theme_improvements_path(id: @new_improvement.id, theme_id: theme.id, roadmap_id: @roadmap.id), html: {id: "newimpr-#{theme.id}"}, method: :post, remote: true do |f| %>
+  <%= simple_form_for @new_improvement, url: roadmap_theme_improvements_path(id: @new_improvement.id, theme_id: theme.id, roadmap_id: @roadmap.id), html: {id: "newimpr-#{theme.id}"}, method: :post do |f| %>
     <%= f.button :submit, "Ajouter une amélioration", class: "btn btn-white w-100" %>
   <% end %>
   <!-- Index/Update/Destroy Kpis -->
   <% theme.improvements.order(created_at: :desc).each do |improvement| %>
-    <%= simple_form_for improvement, url: roadmap_theme_improvement_path(id: improvement.id, theme_id: theme.id, roadmap_id: @roadmap.id), remote: true, method: :patch,  data: { 'turbolinks-scroll': false } do |f| %>
-      <div class="improvement">
+    <%= simple_form_for improvement, url: roadmap_theme_improvement_path(id: improvement.id, theme_id: theme.id, roadmap_id: @roadmap.id) do |f| %>
+      <div class="improvement" id="<%= improvement.id %>">
         <div class="improvement-emoji">
           <div class="emoji-button"><%= improvement.emoji %></div>
           <%= render 'components/emoji_selector', locals: {improvement: improvement} %>
@@ -17,6 +17,6 @@
         <%= f.button :submit, class: "patch", name: "patch-improvement", style: "display: none", id: "patchimp-#{improvement.id}" %>
       </div>
     <% end %>
-    <%= button_to 'delete improvement', roadmap_theme_improvement_path(id: improvement.id, theme_id: theme.id, roadmap_id: @roadmap.id), method: 'delete', class: "delete", style: "display: none;", remote: true, id: "deleteimp-#{improvement.id}" %>
+    <%= button_to 'delete improvement', roadmap_theme_improvement_path(id: improvement.id, theme_id: theme.id, roadmap_id: @roadmap.id), method: 'delete', class: "delete", style: "display: none;", id: "deleteimp-#{improvement.id}" %>
   <% end %>
 </div>

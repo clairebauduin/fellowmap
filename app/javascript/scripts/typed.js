@@ -1,4 +1,5 @@
 $(document).on('ready turbolinks:load', function() {
+if (document.getElementById("home-roadmap-admin") !== null) {
 /*!
  *
  *   typed.js - A JavaScript Typing Animation Library
@@ -1049,5 +1050,5 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ })
 /******/ ])
 });
-;
-})
+};
+});

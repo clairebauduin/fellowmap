@@ -27,7 +27,7 @@
         </div>
       <% end %>
       <div class="vision-form">
-        <%= simple_form_for @roadmap, html: {id: "roadmapvis-#{@roadmap.id}"}, remote: true do |f| %>
+        <%= simple_form_for @roadmap, html: {id: "roadmapvis-#{@roadmap.id}"} do |f| %>
           <%= f.input :vision, label: "Vision produit", input_html: {value: @roadmap.vision, placeholder: "Écris ici l'objectif que tu veux atteindre avec ton produit. Qui veux-tu aider et comment ?", class: "roadmap-vision",  id: "vision-#{@roadmap.id}"} %>
           <%= f.button :submit, class: "patch", name: "patch-vision", style: "display: none", id: "patchivis-#{@roadmap.id}" %>
         <% end %>
