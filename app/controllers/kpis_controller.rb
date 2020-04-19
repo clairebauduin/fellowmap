@@ -4,11 +4,14 @@ class KpisController < ApplicationController
   before_action :set_kpi, only: [:destroy, :update]
   before_action :set_roadmap, only: [:create, :destroy, :update]
   skip_before_action :verify_authenticity_token, raise: false
+  respond_to :html, :js
 
   def create
     @new_kpi = Kpi.new(description: "Ton objectif business", theme_id: @theme.id)
     if @new_kpi.save!
-      redirect_to(@roadmap)
+      respond_to do |format|
+        format.html
+      end
     else
       redirect_to(@roadmap)
       flash[:notice] = "Impossible de créer l'objectif"
@@ -26,7 +29,9 @@ class KpisController < ApplicationController
 
   def update
     if @kpi.update(kpi_params)
-      redirect_to(@roadmap)
+      respond_to do |format|
+        format.html
+      end
     else
       redirect_to(@roadmap)
       flash[:notice] = "Impossible d'éditer l'objectif'"

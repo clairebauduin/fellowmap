@@ -7,7 +7,7 @@ require('../scripts/typed.js');
 
 
 import {} from '../scripts/flexibleArea'
-import {} from '../scripts/kpis'
+import {} from '../scripts/kpis.js'
 import {} from '../scripts/fields'
 import {} from '../scripts/dropdownuser'
 import {} from '../scripts/dropdownshare'

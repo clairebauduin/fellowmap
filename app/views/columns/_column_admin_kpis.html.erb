@@ -1,19 +1,21 @@
 <div class="kpis">
-<!-- Create Kpis -->
-<%= simple_form_for @new_kpi, url: roadmap_theme_kpis_path(id: @new_kpi.id, theme_id: theme.id, roadmap_id: @roadmap.id), html: {id: "nwkpi-#{theme.id}"}, method: :post, remote: true do |f| %>
-  <%= f.button :submit, "Ajouter un objectif", class: "btn btn-white w-100" %>
-<% end %>
-<!-- Index/Update/Destroy Kpis -->
- <% theme.kpis.order(created_at: :desc).each do |kpi| %>
-    <%= simple_form_for kpi, url: roadmap_theme_kpi_path(id: kpi.id, theme_id: theme.id, roadmap_id: @roadmap.id), method: :patch, remote: true do |f| %>
-      <div class="kpi">
-        <div class="kpi-emoji">
-          <%= image_tag "target.png", class: "emoji" %>
-         </div>
-        <%= f.input :description, input_html: {value: kpi.description, class: "description kpi-description", id: "desckpi-#{kpi.id}"}, label: false  %>
-        <%= f.button :submit, class: "patch", name: "patch-kpi", style: "display: none", id: "patchkpi-#{kpi.id}" %>
-      </div>
-    <% end %>
-    <%= button_to 'delete', roadmap_theme_kpi_path(id: kpi.id, theme_id: theme.id, roadmap_id: @roadmap.id), method: 'delete', class: "delete", style: "display: none;", id: "deletekpi-#{kpi.id}", remote: true %>
+  <!-- Create Kpis -->
+  <%= simple_form_for @new_kpi, url: roadmap_theme_kpis_path(id: @new_kpi.id, theme_id: theme.id, roadmap_id: @roadmap.id), html: {id: "nwkpi-#{theme.id}"}, method: :post do |f| %>
+    <%= f.button :submit, "Ajouter un objectif", class: "btn btn-white w-100 new-kpi" %>
   <% end %>
+  <!-- Index/Update/Destroy Kpis -->
+  <div class="kpis-list">
+   <% theme.kpis.order(created_at: :desc).each do |kpi| %>
+      <%= simple_form_for kpi, url: roadmap_theme_kpi_path(id: kpi.id, theme_id: theme.id, roadmap_id: @roadmap.id), method: :patch do |f| %>
+        <div class="kpi" id="<%= kpi.id %>">
+          <div class="kpi-emoji">
+            <%= image_tag "target.png", class: "emoji" %>
+           </div>
+          <%= f.input :description, input_html: {value: kpi.description, class: "description kpi-description", id: "desckpi-#{kpi.id}"}, label: false  %>
+          <%= f.button :submit, class: "patch", name: "patch-kpi", style: "display: none", id: "patchkpi-#{kpi.id}" %>
+        </div>
+      <% end %>
+      <%= button_to 'delete', roadmap_theme_kpi_path(id: kpi.id, theme_id: theme.id, roadmap_id: @roadmap.id), method: 'delete', class: "delete", style: "display: none;", id: "deletekpi-#{kpi.id}" %>
+    <% end %>
+  </div>
 </div>
