@@ -7,8 +7,14 @@ class ImprovementsController < ApplicationController
 
   def create
     @new_improvement = Improvement.new(name: "Amélioration", description: "Description de l'amélioration apportée", emoji: "🚀", theme_id: @theme.id)
+    @emojis = []
+    Emoji.all.each do |emoji|
+      @emojis << emoji.raw
+    end
     if @new_improvement.save!
-      redirect_to(@roadmap)
+      respond_to do |format|
+        format.js
+      end
     else
       redirect_to(@roadmap)
       flash[:notice] = "Impossible de créer l'amélioration"

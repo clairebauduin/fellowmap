@@ -8,9 +8,9 @@ class KpisController < ApplicationController
 
   def create
     @new_kpi = Kpi.new(description: "Ton objectif business", theme_id: @theme.id)
-    if @new_kpi.save!
+    if @new_kpi.save
       respond_to do |format|
-        format.html
+        format.js
       end
     else
       redirect_to(@roadmap)

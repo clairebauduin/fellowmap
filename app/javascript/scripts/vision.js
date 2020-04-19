@@ -1,7 +1,7 @@
 $(document).on('ready turbolinks:load', function() {
   // initial margin-top for columns
-  $(".admin, .new-theme, .column-roadmap").css('margin-top',$(".vision-container").height() + 35);
-  $(".preview-guest").css('margin-top',$(".vision").height() + 120);
+  $(".admin").css('margin-top',$(".vision-container").height() + 35);
+  $(".guest").css('margin-top',$(".vision").height() + 120);
   // dynamic show/hide vision on scroll
   $(window).scroll(function (event) {
     if ($(window).scrollTop() > 20) {
@@ -13,7 +13,7 @@ $(document).on('ready turbolinks:load', function() {
   });
   //change margin-top if vision gets more height
   $(".roadmap-vision").keyup(function(ev1) {
-    $(".admin.new-theme, .column-roadmap").css('margin-top',$(".vision-container").height() + 35);
-    $(".preview-guest").css('margin-top',$(".vision").height() + 120);
+    $(".admin").css('margin-top',$(".vision-container").height() + 35);
+    $(".guest").css('margin-top',$(".vision").height() + 120);
   })
 })

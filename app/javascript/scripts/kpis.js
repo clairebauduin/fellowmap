@@ -32,18 +32,18 @@ $(document).on('ready turbolinks:load', function() {
       let theme_id = $(this).closest(".column-roadmap").attr('id')
       let improvement_id = $(this).closest(".improvement").attr('id')
       let description = $(this).val()
-      $(this).parent().nextAll(".patch").first().on('click', function(e) {
-        e.preventDefault();
-        $.ajax({
-          type: 'PATCH',
-          url: "/roadmaps/" + roadmap_id + "/themes/" + theme_id + "/improvements/" + improvement_id,
-          data: { improvement: {
-              description: description }
-          },
-        });
-      })
       clearTimeout(timeout);
       timeout = setTimeout(function () {
+        $(this).parent().nextAll(".patch").first().on('click', function(e) {
+          e.preventDefault();
+          $.ajax({
+            type: 'PATCH',
+            url: "/roadmaps/" + roadmap_id + "/themes/" + theme_id + "/improvements/" + improvement_id,
+            data: { improvement: {
+                description: description }
+            },
+          });
+        })
         $(e.target).parent().nextAll(".patch").first()[0].click();
       }, 400);
     })
@@ -72,18 +72,18 @@ $(document).on('ready turbolinks:load', function() {
       let theme_id = $(this).closest(".column-roadmap").attr('id')
       let improvement_id = $(this).closest(".improvement").attr('id')
       let name = $(this).val()
-      $(this).parent().nextAll(".patch").first().on('click', function(e) {
-        e.preventDefault();
-        $.ajax({
-          type: 'PATCH',
-          url: "/roadmaps/" + roadmap_id + "/themes/" + theme_id + "/improvements/" + improvement_id,
-          data: { improvement: {
-              name: name }
-          },
-        });
-      })
       clearTimeout(timeout);
       timeout = setTimeout(function () {
+        $(this).parent().nextAll(".patch").first().on('click', function(e) {
+          e.preventDefault();
+          $.ajax({
+            type: 'PATCH',
+            url: "/roadmaps/" + roadmap_id + "/themes/" + theme_id + "/improvements/" + improvement_id,
+            data: { improvement: {
+                name: name }
+            },
+          });
+        })
         $(e.target).parent().nextAll(".patch").first()[0].click();
       }, 400);
     })
@@ -110,6 +110,18 @@ $(document).on('ready turbolinks:load', function() {
       $(e.target).parents().eq(1).nextAll(".patch").first().click();
     })
 
+  // IMPROVEMENT ADD AJAX
+    // post
+    $(".new-improvement").on('click', function(e) {
+      e.preventDefault();
+      let theme_id = $(this).closest(".column-roadmap").attr('id')
+      $.ajax({
+        type: 'POST',
+        url: "/roadmaps/" + roadmap_id + "/themes/" + theme_id + "/improvements/"
+      });
+      $(this).blur();
+    });
+
   // KPI DESCRIPTION AJAX
     // delete
     $(".kpi-description").keydown(function(e) {
@@ -134,18 +146,18 @@ $(document).on('ready turbolinks:load', function() {
       let theme_id = $(this).closest(".column-roadmap").attr('id')
       let kpi_id = $(this).closest(".kpi").attr('id')
       let description = $(this).parents().eq(1).children(".kpi_description").children(".kpi-description").val()
-      $(this).parent().nextAll(".patch").first().on('click', function(e) {
-        e.preventDefault();
-        $.ajax({
-          type: 'PATCH',
-          url: "/roadmaps/" + roadmap_id + "/themes/" + theme_id + "/kpis/" + kpi_id,
-          data: { kpi: {
-              description: description }
-          },
-        });
-      })
       clearTimeout(timeout);
       timeout = setTimeout(function () {
+        $(this).parent().nextAll(".patch").first().on('click', function(e) {
+          e.preventDefault();
+          $.ajax({
+            type: 'PATCH',
+            url: "/roadmaps/" + roadmap_id + "/themes/" + theme_id + "/kpis/" + kpi_id,
+            data: { kpi: {
+                description: description }
+            },
+          });
+        })
         $(e.target).parent().nextAll(".patch").first()[0].click();
       }, 400);
     })
@@ -155,20 +167,11 @@ $(document).on('ready turbolinks:load', function() {
     $(".new-kpi").on('click', function(e) {
       e.preventDefault();
       let theme_id = $(this).closest(".column-roadmap").attr('id')
-
       $.ajax({
         type: 'POST',
-        url: "/roadmaps/" + roadmap_id + "/themes/" + theme_id + "/kpis/",
-        data: {
-          kpi: {
-            description: "Ton objectif business"
-          }
-        },
-        success: function(data) {
-          console.log(data)
-          $('.kpis').append("<div class='kpi' id='" + data.id + "'><div class='kpi-emoji'><img class='emoji' src='/assets/target.png'></div><div class='form-group text optional kpi_description form-group-valid'><textarea class='form-control is-valid text optional description kpi-description' id='desckpi-312' name='kpi[description]' style='overflow: hidden;'>Ton objectif business</textarea><div style='position: absolute; display: none; overflow-wrap: break-word; white-space: pre-wrap; border-color: rgb(0, 0, 0); border-style: dashed; border-width: 0.989583px; font-weight: 400; width: 225.781px; font-family: Nunito, Helvetica, sans-serif; line-height: 21px; font-size: 14px; padding: 6px 10px;'>" + data.description + "</div></div><input type='submit' name='patch-kpi' value='Update Kpi' class='btn patch' style='display: none' id='patchkpi-" + data.id + "' data-disable-with='Update Kpi'></div>");
-        }
+        url: "/roadmaps/" + roadmap_id + "/themes/" + theme_id + "/kpis/"
       });
+      $(this).blur();
     });
 
   // THEME NAME AJAX
@@ -176,15 +179,15 @@ $(document).on('ready turbolinks:load', function() {
     $(".theme-name").keyup(function(e) {
       let theme_id = $(this).closest(".column-roadmap").attr('id')
       let name = $(this).val()
-      $(this).parent().nextAll(".patch").first().on('click', function(e) {
-        e.preventDefault();
-        $.ajax({
-          type: 'PATCH',
-          url: "/roadmaps/" + roadmap_id + "/themes/" + theme_id,
-        });
-      })
       clearTimeout(timeout);
       timeout = setTimeout(function () {
+        $(this).parent().nextAll(".patch").first().on('click', function(e) {
+          e.preventDefault();
+          $.ajax({
+            type: 'PATCH',
+            url: "/roadmaps/" + roadmap_id + "/themes/" + theme_id,
+          });
+        })
         $(e.target).parent().nextAll(".patch").first().click();
       }, 400);
     })
@@ -194,18 +197,18 @@ $(document).on('ready turbolinks:load', function() {
     $(".theme-description").keyup(function(e) {
       let theme_id = $(this).closest(".column-roadmap").attr('id')
       let description = $(this).val()
-      $(this).parent().nextAll(".patch").first().on('click', function(e) {
-        e.preventDefault();
-        $.ajax({
-          type: 'PATCH',
-          url: "/roadmaps/" + roadmap_id + "/themes/" + theme_id,
-          data: { theme: {
-            description: description  }
-          },
-        });
-      })
       clearTimeout(timeout);
       timeout = setTimeout(function () {
+        $(this).parent().nextAll(".patch").first().on('click', function(e) {
+          e.preventDefault();
+          $.ajax({
+            type: 'PATCH',
+            url: "/roadmaps/" + roadmap_id + "/themes/" + theme_id,
+            data: { theme: {
+              description: description  }
+            },
+          });
+        })
         $(e.target).parent().nextAll(".patch").first().click();
       }, 400);
     })
@@ -215,38 +218,49 @@ $(document).on('ready turbolinks:load', function() {
     $(".theme-temporality").keyup(function(e) {
       let theme_id = $(this).closest(".column-roadmap").attr('id')
       let temporality = $(this).val()
-      $(this).parent().nextAll(".patch").first().on('click', function(e) {
-        e.preventDefault();
-        $.ajax({
-          type: 'PATCH',
-          url: "/roadmaps/" + roadmap_id + "/themes/" + theme_id,
-          data: { theme: {
-            temporality: temporality  }
-          },
-        });
-      })
       clearTimeout(timeout);
       timeout = setTimeout(function () {
+        $(this).parent().nextAll(".patch").first().on('click', function(e) {
+          e.preventDefault();
+          $.ajax({
+            type: 'PATCH',
+            url: "/roadmaps/" + roadmap_id + "/themes/" + theme_id,
+            data: { theme: {
+              temporality: temporality  }
+            },
+          });
+        })
         $(e.target).parent().nextAll(".column-content").children().nextAll(".patch").first().click();
       }, 400);
     })
+
+ // THEME ADD AJAX
+  // post
+  $(".new-theme").on('click', function(e) {
+    e.preventDefault();
+    $.ajax({
+      type: 'POST',
+      url: "/roadmaps/" + roadmap_id + "/themes/"
+    });
+    $(this).blur();
+  });
 
   // ROADMAP VISION AJAX
     // patch
     $(".roadmap-vision").keyup(function(e) {
       let vision = $(this).val()
-      $(this).parent().nextAll(".patch").first().on('click', function(e) {
-        e.preventDefault();
-        $.ajax({
-          type: 'PATCH',
-          url: "/roadmaps/" + roadmap_id,
-          data: { roadmap: {
-            vision: vision  }
-          },
-        });
-      })
       clearTimeout(timeout);
       timeout = setTimeout(function () {
+        $(this).parent().nextAll(".patch").first().on('click', function(e) {
+          e.preventDefault();
+          $.ajax({
+            type: 'PATCH',
+            url: "/roadmaps/" + roadmap_id,
+            data: { roadmap: {
+              vision: vision  }
+            },
+          });
+        })
         $(e.target).parent().nextAll(".patch").first().click();
       }, 400);
     })

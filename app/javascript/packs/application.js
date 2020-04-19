@@ -5,7 +5,8 @@ require("channels")
 require("jquery")
 require('../scripts/typed.js');
 
-
+import $ from 'jquery';
+global.$ = jQuery;
 import {} from '../scripts/flexibleArea'
 import {} from '../scripts/kpis.js'
 import {} from '../scripts/fields'
