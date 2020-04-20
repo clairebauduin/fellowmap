@@ -1,12 +1,12 @@
-<div class="kpis">
+<div class="kpis" id="kpis-<%= theme.id%>">
   <!-- Create Kpis -->
-  <%= simple_form_for @new_kpi, url: roadmap_theme_kpis_path(id: @new_kpi.id, theme_id: theme.id, roadmap_id: @roadmap.id), html: {id: "nwkpi-#{theme.id}"}, method: :post do |f| %>
+  <%= simple_form_for @new_kpi, remote: true, url: roadmap_theme_kpis_path(id: @new_kpi.id, theme_id: theme.id, roadmap_id: @roadmap.id), html: {id: "newkpi-#{theme.id}"}, method: :post do |f| %>
     <%= f.button :submit, "Ajouter un objectif", class: "btn btn-white w-100 new-kpi" %>
   <% end %>
   <!-- Index/Update/Destroy Kpis -->
   <div class="kpis-list">
    <% theme.kpis.order(created_at: :desc).each do |kpi| %>
-      <%= simple_form_for kpi, url: roadmap_theme_kpi_path(id: kpi.id, theme_id: theme.id, roadmap_id: @roadmap.id), method: :patch do |f| %>
+      <%= simple_form_for kpi, remote: true, url: roadmap_theme_kpi_path(id: kpi.id, theme_id: theme.id, roadmap_id: @roadmap.id) do |f| %>
         <div class="kpi" id="<%= kpi.id %>">
           <div class="kpi-emoji">
             <%= image_tag "target.png", class: "emoji" %>
@@ -19,3 +19,4 @@
     <% end %>
   </div>
 </div>
+

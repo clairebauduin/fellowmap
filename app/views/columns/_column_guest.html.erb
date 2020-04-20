@@ -1,37 +1,39 @@
-<% @themes.each do |theme| %>
-  <% if !current_user.nil? && Roadmap.where(user_id: current_user.id).map(&:id).include?(params[:id].to_i) %>
-  <div class="column-roadmap preview-guest" style="display: none">
-  <% else %>
-  <div class="column-roadmap">
-  <% end %>
-    <h2><%= theme.temporality %></h2>
-    <div class="column-content">
-      <div class="theme">
-        <% if !theme.cover.url.nil? %>
-          <div class="upload-img uploaded">
-            <%= image_tag theme.cover.url %>
-          </div>
-        <% end %>
-        <h2><%= theme.name %></h2>
-        <p><%= theme.description %></p>
-      </div>
-      <hr>
-      <div class="kpis">
-        <h2>Objectifs</h2>
-        <% theme.kpis.order(created_at: :desc).each do |kpi| %>
-          <div class="kpi-guest">
-            <%= image_tag "target.png", class: "emoji" %> <p><%= kpi.description %></p>
-          </div>
-        <% end %>
-      </div>
-      <hr>
-      <h2>Améliorations</h2>
-      <% theme.improvements.order(created_at: :desc).each do |improvement| %>
-        <div class="improvement">
-          <h3><%= improvement.emoji %> <%= improvement.name %></h3>
-          <p><%= improvement.description %></p>
+<div class="columns guest" style="display:none;" id="<%= @roadmap.id %>">
+  <% @themes.each do |theme| %>
+    <% if !current_user.nil? && Roadmap.where(user_id: current_user.id).map(&:id).include?(params[:id].to_i) %>
+    <div class="column-roadmap preview-guest">
+    <% else %>
+    <div class="column-roadmap">
+    <% end %>
+      <h2><%= theme.temporality %></h2>
+      <div class="column-content">
+        <div class="theme">
+          <% if !theme.cover.url.nil? %>
+            <div class="upload-img uploaded">
+              <%= image_tag theme.cover.url %>
+            </div>
+          <% end %>
+          <h2><%= theme.name %></h2>
+          <p><%= theme.description %></p>
         </div>
-      <% end %>
+        <hr>
+        <div class="kpis">
+          <h2>Objectifs</h2>
+          <% theme.kpis.order(created_at: :desc).each do |kpi| %>
+            <div class="kpi-guest">
+              <%= image_tag "target.png", class: "emoji" %> <p><%= kpi.description %></p>
+            </div>
+          <% end %>
+        </div>
+        <hr>
+        <h2>Améliorations</h2>
+        <% theme.improvements.order(created_at: :desc).each do |improvement| %>
+          <div class="improvement">
+            <h3><%= improvement.emoji %> <%= improvement.name %></h3>
+            <p><%= improvement.description %></p>
+          </div>
+        <% end %>
+      </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>

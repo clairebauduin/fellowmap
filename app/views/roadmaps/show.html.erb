@@ -1,24 +1,11 @@
 <div class="show-container">
   <%= render 'columns/vision' %>
   <% if !current_user.nil? && Roadmap.where(user_id: current_user.id).map(&:id).include?(params[:id].to_i) %>
-    <div class="columns" id="<%= @roadmap.id %>">
     <!-- Si connecté & sur sa roadmap -->
       <%= render 'columns/column_admin' %>
-      <div class="new-theme">
-        <%= simple_form_for @new_theme, url: roadmap_themes_path(@roadmap), method: :post do |f| %>
-          <% if @themes.first.nil? %>
-            <%= f.button :submit, "+ Crée ton premier thème", class: "btn btn-white create-theme" %>
-          <% else %>
-            <%= f.button :submit, "+ Ajoute un thème", class: "btn btn-white create-theme" %>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
   <% else %>
   <!-- Si pas connecté ou pas sur sa roadmap -->
-    <div class="columns">
-      <%= render 'columns/column_guest' %>
-    </div>
+    <%= render 'columns/column_guest' %>
   <% end %>
 </div>
 

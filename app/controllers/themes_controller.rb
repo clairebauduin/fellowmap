@@ -11,13 +11,19 @@ class ThemesController < ApplicationController
     else
       @theme = Theme.new(name: "Nom du thème", description: "Description du problème que tu veux régler", temporality: "Long terme", roadmap_id: @roadmap.id)
     end
+    @emojis = []
+    Emoji.all.each do |emoji|
+      @emojis << emoji.raw
+    end
     if @theme.save
-      @kpi = Kpi.new(description: "Ton objectif business", theme_id: @theme.id)
-      @kpi.save
-      @improvement = Improvement.new(name: "Amélioration", description: "Description de l'amélioration apportée",
+      @new_kpi = Kpi.new(description: "Ton objectif business", theme_id: @theme.id)
+      @new_kpi.save
+      @new_improvement = Improvement.new(name: "Amélioration", description: "Description de l'amélioration apportée",
                                      emoji: "🚀", theme_id: @theme.id)
-      @improvement.save
-      redirect_to(@roadmap)
+      @new_improvement.save
+      respond_to do |format|
+        format.js
+      end
       flash[:notice] = "Colonne crée"
     else
       redirect_to(@roadmap)

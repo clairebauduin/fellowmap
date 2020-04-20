@@ -11,23 +11,23 @@
     <!-- Vision admin -->
     <div class="vision-grid vision-admin">
       <%= simple_form_for @roadmap, html: {id: "roadmaplogo-#{@roadmap.id}"} do |f| %>
-        <div class="roadmap-logo">
+        <div class="roadmap-logo roadmap-logo-admin">
+          <div class="c-white" style="margin-bottom: 0.5rem">Logo</div>
           <div class="upload-img img-vision">
             <% if !@roadmap.logo.url.nil? %>
               <%= image_tag @roadmap.logo.url %>
               <div class="black-filter">🖼️</div>
             <% else %>
-            <p>Logo</p>
               🖼️
             <% end %>
             <%= f.file_field :logo, class: "upload-logo", id: "upload1-#{@roadmap.id}" %>
             <%= f.hidden_field :logo_cache, id: "upload2-#{@roadmap.id}" %>
-            <%= f.button :submit, class: "patch", name: "patch-logo", style: "display: none", id: "patchivis-#{@roadmap.id}" %>
+            <%= f.button :submit, class: "patch", name: "patch-logo", style: "display: none", id: "patchilog-#{@roadmap.id}" %>
           </div>
         </div>
       <% end %>
       <div class="vision-form">
-        <%= simple_form_for @roadmap, html: {id: "roadmapvis-#{@roadmap.id}"} do |f| %>
+        <%= simple_form_for @roadmap, remote: true, html: {id: "roadmapvis-#{@roadmap.id}"}, method: :patch do |f| %>
           <%= f.input :vision, label: "Vision produit", input_html: {value: @roadmap.vision, placeholder: "Écris ici l'objectif que tu veux atteindre avec ton produit. Qui veux-tu aider et comment ?", class: "roadmap-vision",  id: "vision-#{@roadmap.id}"} %>
           <%= f.button :submit, class: "patch", name: "patch-vision", style: "display: none", id: "patchivis-#{@roadmap.id}" %>
         <% end %>
