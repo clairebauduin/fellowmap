@@ -1,5 +1,4 @@
-$(document).ready(function(){
-  $(".vision-container").fadeIn()
+document.addEventListener("turbolinks:load", function() {
   $("textarea").elastic();
   // initial margin-top for columns
   $(".admin").css('margin-top',$(".vision-container").height() + 35);
@@ -19,6 +18,5 @@ $(document).ready(function(){
     $(".guest").css('margin-top',$(".vision").height() + 75);
   })
 
-  $(".admin").fadeIn()
   $("textarea").elastic();
 })

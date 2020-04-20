@@ -22,7 +22,7 @@ function patchImprovement() {
   })
 }
 
-$(document).ready( function() {
+document.addEventListener("turbolinks:load", function() {
   const improvementDescription = document.querySelectorAll(".improvement-description");
   let timeout = null;
   let roadmap_id = $(".columns").attr('id')
@@ -301,5 +301,3 @@ $(document).ready( function() {
     });
   }
 })
-
-export {patchImprovement}

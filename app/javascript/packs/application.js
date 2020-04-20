@@ -12,7 +12,6 @@ global.$ = jQuery;
 
 // stuff
 import {} from '../scripts/alert'
-import {} from '../scripts/fields'
 import {} from '../scripts/typed'
 import {} from '../scripts/h1-typed'
 import {} from '../scripts/loaders'

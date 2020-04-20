@@ -1,6 +1,6 @@
 <!-- Toggle public/admin -->
 <% if !current_user.nil? && Roadmap.where(user_id: current_user.id).map(&:id).include?(params[:id].to_i) %>
-  <div class="vision-container" style="display: none">
+  <div class="vision-container">
     <div class="btn-switch">
       <span>Prévisualisation :</span>
       <label class="switch">
