@@ -1,6 +1,6 @@
 <div class="column-roadmap admin" id="<%= theme.id %>">
   <!-- Theme -->
-  <%= simple_form_for theme, url: roadmap_theme_path(id: theme.id, roadmap_id: @roadmap.id) do |f| %>
+  <%= simple_form_for theme, remote: true, url: roadmap_theme_path(id: theme.id, roadmap_id: @roadmap.id) do |f| %>
   <div class="theme">
     <%= f.input :temporality, label: false, input_html: {value: theme.temporality, class: "theme-temporality", id: "temporality-#{theme.id}"} %>
     <div class="column-content">

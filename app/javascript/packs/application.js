@@ -7,16 +7,22 @@ require('../scripts/typed.js');
 
 import $ from 'jquery';
 global.$ = jQuery;
-import {} from '../scripts/flexibleArea'
-import {} from '../scripts/kpis.js'
+
+
+
+// stuff
+import {} from '../scripts/alert'
 import {} from '../scripts/fields'
+import {} from '../scripts/typed'
+import {} from '../scripts/h1-typed'
+import {} from '../scripts/loaders'
+
+// roadmap show
+import {} from '../scripts/flexibleArea'
+import {} from '../scripts/roadmap-form'
+import {} from '../scripts/vision-margin'
 import {} from '../scripts/dropdownuser'
 import {} from '../scripts/dropdownshare'
 import {} from '../scripts/dropdownroadmap'
-import {} from '../scripts/loaders'
-import {} from '../scripts/alert'
-import {} from '../scripts/vision'
 import {} from '../scripts/preview-mode'
-import {} from '../scripts/typed'
-import {} from '../scripts/h1-typed'
 import {} from '../scripts/home-roadmap-preview'

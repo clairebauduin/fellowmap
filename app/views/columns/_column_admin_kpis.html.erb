@@ -1,4 +1,4 @@
-<div class="kpis">
+<div class="kpis" id="kpis-<%= theme.id%>">
   <!-- Create Kpis -->
   <%= simple_form_for @new_kpi, remote: true, url: roadmap_theme_kpis_path(id: @new_kpi.id, theme_id: theme.id, roadmap_id: @roadmap.id), html: {id: "newkpi-#{theme.id}"}, method: :post do |f| %>
     <%= f.button :submit, "Ajouter un objectif", class: "btn btn-white w-100 new-kpi" %>

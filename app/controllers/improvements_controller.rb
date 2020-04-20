@@ -24,9 +24,13 @@ class ImprovementsController < ApplicationController
   def destroy
     @improvement.destroy
     if !@improvements.any?
-      redirect_to(@roadmap)
+      respond_to do |format|
+        format.html
+      end
     else
-      redirect_to(@roadmap)
+      respond_to do |format|
+        format.html
+      end
     end
   end
 

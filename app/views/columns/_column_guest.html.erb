@@ -1,7 +1,7 @@
-<div class="columns guest" style="display: none;" id="<%= @roadmap.id %>">
+<div class="columns guest" style="display:none;" id="<%= @roadmap.id %>">
   <% @themes.each do |theme| %>
     <% if !current_user.nil? && Roadmap.where(user_id: current_user.id).map(&:id).include?(params[:id].to_i) %>
-    <div class="column-roadmap preview-guest" style="display: none">
+    <div class="column-roadmap preview-guest">
     <% else %>
     <div class="column-roadmap">
     <% end %>

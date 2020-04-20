@@ -1,1 +1,2 @@
 $(".new-theme").before("<%= j render partial: 'theme', locals: { theme: @theme, kpi: @new_kpi, improvement: @new_improvement} %>");
+$(".guest").append("<%= j render partial: 'theme-guest', locals: { theme: @theme, kpi: @new_kpi, improvement: @new_improvement} %>");

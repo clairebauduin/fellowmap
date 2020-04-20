@@ -4,13 +4,13 @@ $(document).on('ready turbolinks:load', function() {
       $(".vision-admin").hide();
       $(".vision-preview").show();
       $(".admin").hide();
-      $(".preview-guest").show();
+      $(".guest").show();
       $(".new-theme").hide();
     }
     else {
       $(".vision-preview").hide();
       $(".vision-admin").show();
-      $(".preview-guest").hide();
+      $(".guest").hide();
       $(".admin").show();
       $(".new-theme").show();
     }

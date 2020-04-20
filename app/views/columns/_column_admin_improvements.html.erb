@@ -1,4 +1,4 @@
-<div class="improvements">
+<div class="improvements" id="impr-<%= theme.id %>">
   <!-- Create Improvements -->
   <%= simple_form_for @new_improvement, url: roadmap_theme_improvements_path(id: @new_improvement.id, theme_id: theme.id, roadmap_id: @roadmap.id), html: {id: "newimpr-#{theme.id}"}, method: :post do |f| %>
     <%= f.button :submit, "Ajouter une amélioration", class: "btn btn-white w-100 new-improvement" %>
