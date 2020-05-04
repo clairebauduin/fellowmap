@@ -5,20 +5,20 @@ class ThemesController < ApplicationController
 
   def create
     if @themes.count == 0
-      @theme = Theme.new(name: "Nom du thème", description: "Description du problème que tu veux régler", temporality: "Court terme", roadmap_id: @roadmap.id)
+      @theme = Theme.new(name: "", description: "", temporality: "Court terme", roadmap_id: @roadmap.id)
     elsif @themes.count == 1
-      @theme = Theme.new(name: "Nom du thème", description: "Description du problème que tu veux régler", temporality: "Moyen terme", roadmap_id: @roadmap.id)
+      @theme = Theme.new(name: "", description: "", temporality: "Moyen terme", roadmap_id: @roadmap.id)
     else
-      @theme = Theme.new(name: "Nom du thème", description: "Description du problème que tu veux régler", temporality: "Long terme", roadmap_id: @roadmap.id)
+      @theme = Theme.new(name: "", description: "", temporality: "Long terme", roadmap_id: @roadmap.id)
     end
     @emojis = []
     Emoji.all.each do |emoji|
       @emojis << emoji.raw
     end
     if @theme.save
-      @new_kpi = Kpi.new(description: "Ton objectif business", theme_id: @theme.id)
+      @new_kpi = Kpi.new(description: "", theme_id: @theme.id)
       @new_kpi.save
-      @new_improvement = Improvement.new(name: "Amélioration", description: "Description de l'amélioration apportée",
+      @new_improvement = Improvement.new(name: "", description: "",
                                      emoji: "🚀", theme_id: @theme.id)
       @new_improvement.save
       respond_to do |format|
@@ -47,6 +47,7 @@ class ThemesController < ApplicationController
       respond_to do |format|
         format.html
       end
+      redirect_to(@roadmap)
     else
       redirect_to(@roadmap)
       flash[:notice] = "Impossible d'éditer l'objectif"

@@ -24,7 +24,7 @@
 
 .home-cta {
   position: absolute;
-  top: 460px;
+  top: 400px;
 }
 
 .zi-2 {
@@ -37,6 +37,7 @@
 
 .home-container1 {
   background: $my-gray;
+  padding-top: 160px;
 }
 
 .home-content{
@@ -48,7 +49,7 @@
 
 .home-content1 {
   padding-top: 30px;
-  padding-bottom: 260px;
+  padding-bottom: 500px;
 }
 
 .home-baseline br {
@@ -59,19 +60,18 @@
   background: $my-blue;
 }
 
-
 .home-content2 {
   color: $my-white;
   padding-bottom: 100px;
 }
 
 .home-content2 img {
-  margin-top: -110px;
-  margin-bottom: 30px;
+  margin-top: -338px;
+  margin-bottom: 100px;
 }
 
 .home-container3 {
-  background: $my-white;
+  background: $my-blue;
 }
 
 .home-content3 {
@@ -88,7 +88,7 @@
 }
 
 .slack-text {
-  color: $my-black;
+  color: $my-white;
   margin-left: 30px;
 }
 
@@ -128,12 +128,27 @@
   .home-container {
     padding: 0 15px;
   }
+  .home-container1 {
+    padding: 100px 15px 0 15px;
+  }
+  .home-content1  {
+    padding-bottom: 200px;
+  }
   .home-content2 img {
-    max-width: 90%;
+    display: none;
+  }
+  .home-content2 {
+    padding-bottom: 50px;
+    padding-top: 50px;
   }
   .home-content3 {
     flex-direction: column;
     text-align: center;
+    padding-top: 0;
+  }
+  .home-content4 {
+    padding-bottom: 50px;
+    padding-top: 50px;
   }
   .slack-text {
     margin-left: 0;
@@ -144,7 +159,7 @@
   }
   .home-cta {
     position: absolute;
-    top: 550px;
+    top: 380px;
   }
   .home-baseline br {
     display: block;

@@ -31,6 +31,10 @@
   color: $my-black;
 }
 
+.form-control::placeholder {
+  color: $my-black;
+}
+
 .form-control:focus {
   color: $my-black;
 }
@@ -41,7 +45,9 @@
 
 input::placeholder {
   font-size: 14px;
+  color: $my-black;
 }
+
 
 .form-control.is-valid, .form-control.is-valid:focus {
   background-color: $my-white;
@@ -75,4 +81,8 @@ input::placeholder {
 textarea {
   overflow-y: hidden;
   resize: none;
+}
+
+.theme_name input::placeholder {
+  font-size: 20px;
 }

@@ -16,8 +16,8 @@
             <%= f.file_field :cover, class: "upload-cover", id: "upload1-#{theme.id}" %>
             <%= f.hidden_field :cover_cache, id: "upload2-#{theme.id}" %>
           </div>
-          <%= f.input :name, input_html: {value: theme.name, class: "theme-name", id: "name-#{theme.id}"}, label: "Nom du thème" %>
-          <%= f.input :description, input_html: {value: theme.description, class: "theme-description", id: "descthem-#{theme.id}"}  %>
+          <%= f.input :name, placeholder: "Nom du thème", input_html: {value: theme.name, class: "theme-name", id: "name-#{theme.id}"}, label: false %>
+          <%= f.input :description, placeholder: "Description", input_html: {value: theme.description, class: "theme-description", id: "descthem-#{theme.id}"}  %>
           <%= f.button :submit, class: "patch", name: "patch-theme", style: "display: none", id: "patchthem-#{theme.id}" %>
         <% end %>
           <hr>
@@ -34,7 +34,7 @@
   <div class="new-theme">
         <%= simple_form_for @new_theme, url: roadmap_themes_path(@roadmap), method: :post do |f| %>
           <% if @themes.first.nil? %>
-            <%= f.button :submit, "+ Crée ton premier thème", class: "btn btn-white create-theme" %>
+            <%= f.button :submit, "+ Ajoute un thème", class: "btn btn-white create-theme" %>
           <% else %>
             <%= f.button :submit, "+ Ajoute un thème", class: "btn btn-white create-theme" %>
           <% end %>
