@@ -6,7 +6,7 @@ class ImprovementsController < ApplicationController
   skip_before_action :verify_authenticity_token, raise: false
 
   def create
-    @new_improvement = Improvement.new(name: "Amélioration", description: "Description de l'amélioration apportée", emoji: "🚀", theme_id: @theme.id)
+    @new_improvement = Improvement.new(name: "", description: "", emoji: "🚀", theme_id: @theme.id)
     @emojis = []
     Emoji.all.each do |emoji|
       @emojis << emoji.raw

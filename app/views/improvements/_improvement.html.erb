@@ -5,8 +5,8 @@
       <%= render 'components/emoji_selector', locals: {improvement: improvement} %>
       <%= f.input :emoji, as: :hidden, input_html: {value: improvement.emoji, class: "patch-emoji", id: "emoji-#{improvement.id}"}  %>
     </div>
-    <%= f.input :name, input_html: {value: improvement.name, class: "name improvement-name", id: "name-#{improvement.id}"}, label: false %>
-    <%= f.input :description, input_html: {value: improvement.description, class: "description improvement-description", id: "descimp-#{improvement.id}"}, label: false  %>
+    <%= f.input :name, placeholder: "Amélioration", input_html: {value: improvement.name, class: "name improvement-name", id: "name-#{improvement.id}"}, label: false %>
+    <%= f.input :description, placeholder: "Description de l'amélioration que tu souhaites apporter", input_html: {value: improvement.description, class: "description improvement-description", id: "descimp-#{improvement.id}"}, label: false  %>
     <%= f.button :submit, class: "patch", name: "patch-improvement", style: "display: none", id: "patchimp-#{improvement.id}" %>
   </div>
 <% end %>

@@ -14,8 +14,8 @@
         <%= f.file_field :cover, class: "upload-cover", id: "upload1-#{theme.id}" %>
         <%= f.hidden_field :cover_cache, id: "upload2-#{theme.id}" %>
       </div>
-      <%= f.input :name, input_html: {value: theme.name, class: "theme-name", id: "name-#{theme.id}"}, label: "Nom du thème" %>
-      <%= f.input :description, input_html: {value: theme.description, class: "theme-description", id: "descthem-#{theme.id}"}  %>
+      <%= f.input :name, placeholder: "Nom du thème", input_html: {value: theme.name, class: "theme-name", id: "name-#{theme.id}"}, label: false %>
+      <%= f.input :description, placeholder: "Description du problème principal que tu veux régler", input_html: {value: theme.description, class: "theme-description", id: "descthem-#{theme.id}"}, label: false %>
       <%= f.button :submit, class: "patch", name: "patch-theme", style: "display: none", id: "patchthem-#{theme.id}" %>
     <% end %>
       <hr>

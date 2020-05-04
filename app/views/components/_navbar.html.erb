@@ -9,14 +9,16 @@
 
     <%= render 'components/roadmap-select.html.erb' %>
 
-    <div class="navbar-links">
+    <div class="roadmap-logo-preview" style="display: none;"><%= image_tag @roadmap.logo.url if !@roadmap.logo.url.nil? %></div>
 
+    <div class="navbar-links">
       <div class="menu">
         <div class="emoji-link bg-gray">
           <%= image_tag "profile.png", alt: "user icon", class: "user-icon emoji" %>
         </div>
       </div>
     </div>
+
 
   <% else %>
 

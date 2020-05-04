@@ -6,6 +6,8 @@ $(document).on('ready turbolinks:load', function() {
       $(".admin").hide();
       $(".guest").show();
       $(".new-theme").hide();
+      $(".roadmap-selection").hide();
+      $(".roadmap-logo-preview").show();
     }
     else {
       $(".vision-preview").hide();
@@ -13,6 +15,8 @@ $(document).on('ready turbolinks:load', function() {
       $(".guest").hide();
       $(".admin").show();
       $(".new-theme").show();
+      $(".roadmap-selection").show();
+      $(".roadmap-logo-preview").hide();
     }
   })
 })

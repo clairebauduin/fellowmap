@@ -3,7 +3,7 @@
     <div class="kpi-emoji">
       <%= image_tag "target.png", class: "emoji" %>
      </div>
-    <%= f.input :description, input_html: {value: kpi.description, class: "description kpi-description", id: "desckpi-#{kpi.id}"}, label: false  %>
+    <%= f.input :description, placeholder: "Ton objectif business", input_html: {value: kpi.description, class: "description kpi-description", id: "desckpi-#{kpi.id}"}, label: false  %>
     <%= f.button :submit, class: "patch", name: "patch-kpi", style: "display: none", id: "patchkpi-#{kpi.id}" %>
   </div>
 <% end %>

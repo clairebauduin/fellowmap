@@ -10,7 +10,7 @@
     </div>
     <!-- Vision admin -->
     <div class="vision-grid vision-admin">
-      <%= simple_form_for @roadmap, html: {id: "roadmaplogo-#{@roadmap.id}"} do |f| %>
+      <%= simple_form_for @roadmap, remote: true, html: {id: "roadmaplogo-#{@roadmap.id}"} do |f| %>
         <div class="roadmap-logo roadmap-logo-admin">
           <div class="c-white" style="margin-bottom: 0.5rem">Logo</div>
           <div class="upload-img img-vision">

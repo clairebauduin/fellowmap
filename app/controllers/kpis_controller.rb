@@ -7,7 +7,6 @@ class KpisController < ApplicationController
   respond_to :html, :js
 
   def create
-    @new_kpi = Kpi.new(description: "Ton objectif business", theme_id: @theme.id)
     if @new_kpi.save
       respond_to do |format|
         format.js
