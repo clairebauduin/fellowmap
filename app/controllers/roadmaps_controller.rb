@@ -38,7 +38,6 @@ class RoadmapsController < ApplicationController
       respond_to do |format|
         format.html
       end
-      redirect_to(@roadmap)
     else
       redirect_to(@roadmap)
       flash[:notice] = "Impossible d'éditer la roadmap"
