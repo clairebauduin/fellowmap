@@ -1,1 +1,2 @@
 $("#newimpr-<%= @theme.id %>").after("<%= j render partial: 'improvement', locals: { theme: @theme, improvement: @new_improvement } %>");
+$("textarea").elastic();

@@ -1,1 +1,2 @@
 $("#newkpi-<%= @theme.id %>").after("<%= j render partial: 'kpi', locals: { theme: @theme, kpi: @new_kpi } %>");
+$("textarea").elastic();
